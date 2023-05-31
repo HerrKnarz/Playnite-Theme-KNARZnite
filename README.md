@@ -9,3 +9,13 @@ This is my personal lightweight Playnite theme with all the features I need. It'
 ### List view
 ![Screenshot](https://raw.githubusercontent.com/HerrKnarz/Playnite-Theme-KNARZnite/main/screenshots/ListView.webp)
 
+## Extensions
+The following extensions are currently integrated:
+- [DuplicateHider](https://playnite.link/addons.html#felixkmh_DuplicateHider_Plugin)
+- [Extra Metadata Loader](https://playnite.link/addons.html#ExtraMetadataLoader_705fdbca-e1fc-4004-b839-1d040b8b4429)
+- [GameActivity](https://playnite.link/addons.html#playnite-gameactivity-plugin)
+- [HowLongToBeat](https://playnite.link/addons.html#playnite-howlongtobeat-plugin)
+- [ScreenshotsVisualizer](https://playnite.link/addons.html#playnite-screenshotsvisualizer-plugin)
+- [SuccessStory](https://playnite.link/addons.html#playnite-successstory-plugin)
+- [ThemeExtras](https://playnite.link/addons.html#felixkmh_Extras_Plugin)
+- [ThemeModifier](https://playnite.link/addons.html#playnite-thememodifier-plugin)
