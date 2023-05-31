@@ -11,16 +11,16 @@ This is my personal lightweight Playnite theme with all the features I need. It'
 
 ## Extensions
 The following extensions are currently integrated:
-- [CheckDlc](https://playnite.link/addons.html#playnite-checkdlc-plugin)
-- [CheckLocalizations](https://playnite.link/addons.html#playnite-checklocalizations-plugin)
-- [DuplicateHider](https://playnite.link/addons.html#felixkmh_DuplicateHider_Plugin)
-- [Extra Metadata Loader](https://playnite.link/addons.html#ExtraMetadataLoader_705fdbca-e1fc-4004-b839-1d040b8b4429)
-- [GameActivity](https://playnite.link/addons.html#playnite-gameactivity-plugin)
-- [HowLongToBeat](https://playnite.link/addons.html#playnite-howlongtobeat-plugin)
-- [LibraryManagement](https://playnite.link/addons.html#playnite-librarymanagement-plugin)
-- [PlayState](https://playnite.link/addons.html#PlayState)
-- [ScreenshotsVisualizer](https://playnite.link/addons.html#playnite-screenshotsvisualizer-plugin)
-- [SuccessStory](https://playnite.link/addons.html#playnite-successstory-plugin)
-- [SystemChecker](https://playnite.link/addons.html#playnite-systemchecker-plugin)
-- [ThemeExtras](https://playnite.link/addons.html#felixkmh_Extras_Plugin)
-- [ThemeModifier](https://playnite.link/addons.html#playnite-thememodifier-plugin)
+- [CheckDlc](https://playnite.link/addons.html#playnite-checkdlc-plugin) - button, if game has DLC
+- [CheckLocalizations](https://playnite.link/addons.html#playnite-checklocalizations-plugin) - button integration
+- [DuplicateHider](https://playnite.link/addons.html#felixkmh_DuplicateHider_Plugin) - displays buttons to duplicates on mouse over in detail view list
+- [Extra Metadata Loader](https://playnite.link/addons.html#ExtraMetadataLoader_705fdbca-e1fc-4004-b839-1d040b8b4429) - logo support in detail and grid view
+- [GameActivity](https://playnite.link/addons.html#playnite-gameactivity-plugin) - button integration
+- [HowLongToBeat](https://playnite.link/addons.html#playnite-howlongtobeat-plugin) - button integration
+- [LibraryManagement](https://playnite.link/addons.html#playnite-librarymanagement-plugin) - displays feature icons in detail and grid view
+- [PlayState](https://playnite.link/addons.html#PlayState) - button integration
+- [ScreenshotsVisualizer](https://playnite.link/addons.html#playnite-screenshotsvisualizer-plugin) - button, if game has screenshots
+- [SuccessStory](https://playnite.link/addons.html#playnite-successstory-plugin) - button, if game has achievements
+- [SystemChecker](https://playnite.link/addons.html#playnite-systemchecker-plugin) - button integration
+- [ThemeExtras](https://playnite.link/addons.html#felixkmh_Extras_Plugin) - link icons and banners in detail and grid view
+- [ThemeModifier](https://playnite.link/addons.html#playnite-thememodifier-plugin) - theme and color settings
