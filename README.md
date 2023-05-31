@@ -1,9 +1,6 @@
 # Playnite-Theme-KNARZnite
 This is my personal lightweight Playnite theme with all the features I need. It's basically the default theme with bits from [Harmony](https://playnite.link/addons.html#Harmony_d49ef7bc-49de-4fd0-9a67-bd1f26b56047) and [DH_Dawn](https://playnite.link/addons.html#felixkmh_DesktopTheme_DH_Dawn) and some own ideas thrown in. My goal was a simple, lightweight and elegant theme without slow animations, that still integrates several extensions. It's mainly designed for full and half screen use on my widescreen display, but should work in every modern resolution.
 
-## Installation
-To install the theme head over to the [Playnite addon database](https://playnite.link/addons.html) and download the theme or simply find it in the extensions menu in Playnite itself. You could also download the newest release here and drag the file on your playnite window.
-
 ## Screenshots
 ### Grid view in widescreen format
 ![Screenshot](https://raw.githubusercontent.com/HerrKnarz/Playnite-Theme-KNARZnite/main/screenshots/GridView.webp)
@@ -27,6 +24,9 @@ The following extensions are currently integrated:
 - [SystemChecker](https://playnite.link/addons.html#playnite-systemchecker-plugin) - button integration
 - [ThemeExtras](https://playnite.link/addons.html#felixkmh_Extras_Plugin) - link icons and banners in detail and grid view
 - [ThemeModifier](https://playnite.link/addons.html#playnite-thememodifier-plugin) - theme and color settings
+
+## Installation
+To install the theme head over to the [Playnite addon database](https://playnite.link/addons.html) and download the theme or simply find it in the extensions menu in Playnite itself. You could also download the newest release here and drag the file on your playnite window.
 
 ## Support
 - In case of bugs or feature requests, please open a new [issue](https://github.com/HerrKnarz/Playnite-Theme-KNARZnite/issues)
