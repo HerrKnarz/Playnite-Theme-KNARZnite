@@ -1,0 +1,9 @@
+ThemeId: KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9
+PersistentPaths:
+- Images/Banners
+- Images/Icons
+BannersBySpecIdPath: Images/Banners/PlatformSpecId
+BannersByPlatformNamePath: Images/Banners/PlatformName
+BannersByPluginIdPath: Images/Banners/PluginId
+DefaultBannerPath: Images/Banners/UnknownLibrary.png
+BannerDecodeHeight: 75

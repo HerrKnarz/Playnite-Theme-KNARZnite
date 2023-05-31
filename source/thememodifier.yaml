@@ -1,0 +1,10 @@
+Constants:
+- Details View
+- DetailsViewDetailsMaxWidth: 'Maximum width of details'
+- DetailsViewCoverDisplayLibraryBanner: 'Show banners (Requires ThemeExtras extension)'
+- DetailsViewAllowUseOfLogos: 'Allow use of logos (Requires Extra Metadata Loader extension)'
+- DetailsViewHideGameNameIfLogoVisible: 'Hide game name if logo is visible'
+- DetailsViewLibraryGameShowFavorite: 'Show favorites icon in list view'
+- Grid View
+- GridViewCoverDisplayLibraryBanner: 'Show banners (Requires ThemeExtras extension)'
+- GridViewLibraryGameShowFavorite: 'Show favorites icon'
