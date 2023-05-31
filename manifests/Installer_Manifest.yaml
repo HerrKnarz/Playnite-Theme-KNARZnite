@@ -1,0 +1,8 @@
+AddonId: KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9
+Packages:
+  - Version: 1.0
+    RequiredApiVersion: 2.5
+    ReleaseDate: 2023-05-31
+    PackageUrl: https://github.com/HerrKnarz/Playnite-Theme-KNARZnite/releases/download/v1.0/KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9_1_0.pthm
+    Changelog:
+      - initial release
