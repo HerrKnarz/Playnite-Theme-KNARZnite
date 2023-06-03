@@ -1,3 +1,8 @@
+[![DownloadCountTotal](https://img.shields.io/github/downloads/HerrKnarz/Playnite-Theme-KNARZnite/total?style=flat)](https://github.com/HerrKnarz/Playnite-Theme-KNARZnite/archive/refs/heads/main.zip)
+[![LatestVersion](https://img.shields.io/github/v/release/HerrKnarz/Playnite-Theme-KNARZnite?include_prereleases&style=flat)](https://github.com/HerrKnarz/Playnite-Theme-KNARZnite/releases)
+[![LastCommit](https://img.shields.io/github/last-commit/HerrKnarz/Playnite-Theme-KNARZnite?style=flat)](https://github.com/HerrKnarz/Playnite-Theme-KNARZnite/commits/main)
+[![License](https://img.shields.io/github/license/HerrKnarz/Playnite-Theme-KNARZnite?style=flat)](https://github.com/HerrKnarz/Playnite-Theme-KNARZnite/blob/main/LICENSE.txt)
+
 # Playnite-Theme-KNARZnite
 This is my personal lightweight Playnite theme with all the features I need. It's basically the default theme with bits from [Harmony](https://playnite.link/addons.html#Harmony_d49ef7bc-49de-4fd0-9a67-bd1f26b56047) and [DH_Dawn](https://playnite.link/addons.html#felixkmh_DesktopTheme_DH_Dawn) and some own ideas thrown in. My goal was a simple, lightweight and elegant theme without slow animations, that still integrates several extensions. It's mainly designed for full and half screen use on my widescreen display, but should work in every modern resolution.
 
