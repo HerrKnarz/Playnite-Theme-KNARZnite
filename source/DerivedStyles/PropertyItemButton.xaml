@@ -11,7 +11,7 @@
                     <TextBlock FontSize="{TemplateBinding FontSize}"
                                Foreground="{TemplateBinding Foreground}"
                                Text="{TemplateBinding Content, Converter={StaticResource ObjectToStringConverter}}"
-                               TextWrapping="Wrap"/>
+                               TextTrimming="CharacterEllipsis" />
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -24,5 +24,19 @@
                 <Setter Property="Foreground" Value="{DynamicResource TextBrushDarker}" />
             </Trigger>
         </Style.Triggers>
+    </Style>
+
+    <Style x:Key="PropertyItemFeedPanelButton" TargetType="Button" BasedOn="{StaticResource PropertyItemButton}">
+        <Setter Property="Margin" Value="0,4,10,4" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <TextBlock FontSize="{TemplateBinding FontSize}"
+                               Foreground="{TemplateBinding Foreground}"
+                               Text="{TemplateBinding Content, Converter={StaticResource ObjectToStringConverter}}"
+                               TextWrapping="NoWrap"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
 </ResourceDictionary>

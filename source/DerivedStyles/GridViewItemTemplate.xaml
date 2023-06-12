@@ -35,7 +35,7 @@
                                         <Image Name="PART_ImageCover" Grid.Row="1" Height="{Settings GridItemHeight}"
                                                RenderOptions.BitmapScalingMode="Fant" StretchDirection="Both"
                                                HorizontalAlignment="Center" VerticalAlignment="Top"
-                                               Stretch="{Settings CoverArtStretch}" />
+                                               Stretch="{Settings CoverArtStretch}"/>
                                         <Grid Grid.RowSpan="2">
                                             <Border Background="#99000000" x:Name="TextGameName" Visibility="Collapsed">
                                                 <TextBlock Text="{Binding DisplayName}"
@@ -44,9 +44,9 @@
                                                            TextTrimming="CharacterEllipsis" TextAlignment="Center"
                                                            HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                             </Border>
-                                            <Border Background="#AA000000" x:Name="BorderMouseOver" Visibility="Collapsed" />
+                                            <Border Background="#AA000000" x:Name="BorderMouseOver" Visibility="Collapsed"/>
                                         </Grid>
-                                    
+
                                         <Grid Grid.Row="1" Height="{Settings GridItemHeight}">
                                             <DockPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5">
                                                 <TextBlock Text="&#xF000;" Foreground="{DynamicResource GlyphBrush}"
@@ -73,7 +73,7 @@
                                                 </TextBlock>
                                             </DockPanel>
                                             <Viewbox VerticalAlignment="Bottom" HorizontalAlignment="Center"
-                                                     Name="GameControls"  Visibility="Collapsed">
+                                                     Name="GameControls" Visibility="Collapsed">
                                                 <StackPanel Orientation="Horizontal">
                                                     <Button Name="PART_ButtonPlay" Style="{StaticResource SimpleButton}"
                                                             Margin="20,0,2,5" VerticalAlignment="Center"

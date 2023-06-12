@@ -101,7 +101,7 @@
                                         </DockPanel>
                                         <DockPanel Margin="0,15,0,0" LastChildFill="False">
                                             <Button DockPanel.Dock="Left" x:Name="ButtonPlayAction" VerticalAlignment="Center" Style="{DynamicResource PlayButton}" Command="{Binding ContextActionCommand}" ToolTip="{Binding ContextActionDescription}"/>
-                                            <Button DockPanel.Dock="Left" x:Name="ButtonInstallAction" VerticalAlignment="Center" Style="{DynamicResource InstallButton}" Command="{Binding ContextActionCommand}" ToolTip="{Binding ContextActionDescription}"/>
+                                            <Button DockPanel.Dock="Left" x:Name="ButtonInstallAction" VerticalAlignment="Center" Style="{DynamicResource InstallButton}" Command="{Binding ContextActionCommand}" ToolTip="{Binding ContextActionDescription}" Tag="{DynamicResource HidePlayButtonForManualGames}"/>
                                             <Button DockPanel.Dock="Left" x:Name="ButtonContextAction" VerticalAlignment="Center" Style="{DynamicResource ContextActionButton}" Command="{Binding ContextActionCommand}" ToolTip="{Binding ContextActionDescription}"/>
                                             <Button DockPanel.Dock="Left" x:Name="PART_ButtonEditGame" Content="&#xEDED;" VerticalAlignment="Center" Margin="10,0,0,0" Height="40" Width="40" FontFamily="{DynamicResource FontIcoFont}" />
                                             <Button DockPanel.Dock="Left" x:Name="PART_ButtonMoreActions" Content="&#xEFA2;" VerticalAlignment="Center" Margin="10,0,0,0" Height="40" Width="40" FontFamily="{DynamicResource FontIcoFont}" />
@@ -140,19 +140,117 @@
 
                                         <GridEx Margin="0,5,0,10"
                                                 ColumnCount="2" StarColumns="1"
-                                                RowCount="25" AutoLayoutColumns="2">
+                                                RowCount="30" AutoLayoutColumns="2">
                                             <Grid.Resources>
                                                 <Style TargetType="TextBlock" BasedOn="{StaticResource BaseTextBlockStyle}" />
                                                 <Style x:Key="Icon" TargetType="TextBlock" BasedOn="{StaticResource BaseTextBlockStyle}">
                                                     <Setter Property="Width" Value="24"/>
                                                     <Setter Property="FontFamily" Value="{StaticResource FontIcoFont}" />
                                                     <Setter Property="Foreground" Value="{DynamicResource GlyphBrush}" />
-                                                    <Setter Property="Visibility" Value="{Binding ElementName=GridEx, Path=Tag}" />
                                                 </Style>
                                                 <Style TargetType="Label">
                                                     <Setter Property="FontWeight" Value="Normal" />
                                                     <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
                                                     <Setter Property="Margin" Value="0,0,0,0" />
+                                                </Style>
+                                                <Style x:Key="FeatureSpan" TargetType="Control">
+                                                    <Setter Property="Grid.ColumnSpan" Value="2"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Path=Game.Features.Count}" Value="1">
+                                                            <Setter Property="Grid.ColumnSpan" Value="1"></Setter>
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding Tag, RelativeSource={RelativeSource Self}, FallbackValue=True}" Value="True">
+                                                            <Setter Property="Grid.ColumnSpan" Value="1"></Setter>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                                <Style x:Key="FeatureMargin" TargetType="WrapPanel">
+                                                    <Setter Property="Margin" Value="15,0,0,0"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Path=Game.Features.Count}" Value="1">
+                                                            <Setter Property="Margin" Value="0,0,0,0"></Setter>
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding Tag, RelativeSource={RelativeSource Self}, FallbackValue=True}" Value="True">
+                                                            <Setter Property="Margin" Value="0,0,0,0"></Setter>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                                <Style x:Key="FeatureWrapper" TargetType="TextBlock">
+                                                    <Setter Property="Margin" Value="0,0,0,0"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Path=Game.Features.Count}" Value="1">
+                                                            <Setter Property="Margin" Value="0,0,1000,0"></Setter>
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding Tag, RelativeSource={RelativeSource Self}, FallbackValue=True}" Value="True">
+                                                            <Setter Property="Margin" Value="0,0,1000,0"></Setter>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                                <Style x:Key="LinkSpan" TargetType="Control">
+                                                    <Setter Property="Grid.ColumnSpan" Value="2"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Path=Game.Links.Count}" Value="1">
+                                                            <Setter Property="Grid.ColumnSpan" Value="1"></Setter>
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding Tag, RelativeSource={RelativeSource Self}, FallbackValue=True}" Value="True">
+                                                            <Setter Property="Grid.ColumnSpan" Value="1"></Setter>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                                <Style x:Key="LinkMargin" TargetType="WrapPanel">
+                                                    <Setter Property="Margin" Value="15,0,0,0"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Path=Game.Links.Count}" Value="1">
+                                                            <Setter Property="Margin" Value="0,0,0,0"></Setter>
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding Tag, RelativeSource={RelativeSource Self}, FallbackValue=True}" Value="True">
+                                                            <Setter Property="Margin" Value="0,0,0,0"></Setter>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                                <Style x:Key="LinkWrapper" TargetType="TextBlock">
+                                                    <Setter Property="Margin" Value="0,0,0,0"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Path=Game.Links.Count}" Value="1">
+                                                            <Setter Property="Margin" Value="0,0,1000,0"></Setter>
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding Tag, RelativeSource={RelativeSource Self}, FallbackValue=True}" Value="True">
+                                                            <Setter Property="Margin" Value="0,0,1000,0"></Setter>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                                <Style x:Key="TagSpan" TargetType="Control">
+                                                    <Setter Property="Grid.ColumnSpan" Value="2"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Path=Game.Tags.Count}" Value="1">
+                                                            <Setter Property="Grid.ColumnSpan" Value="1"></Setter>
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding Tag, RelativeSource={RelativeSource Self}, FallbackValue=True}" Value="True">
+                                                            <Setter Property="Grid.ColumnSpan" Value="1"></Setter>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                                <Style x:Key="TagMargin" TargetType="WrapPanel">
+                                                    <Setter Property="Margin" Value="15,0,0,0"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Path=Game.Tags.Count}" Value="1">
+                                                            <Setter Property="Margin" Value="0,0,0,0"></Setter>
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding Tag, RelativeSource={RelativeSource Self}, FallbackValue=True}" Value="True">
+                                                            <Setter Property="Margin" Value="0,0,0,0"></Setter>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                                <Style x:Key="TagWrapper" TargetType="TextBlock">
+                                                    <Setter Property="Margin" Value="0,0,0,0"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Path=Game.Tags.Count}" Value="1">
+                                                            <Setter Property="Margin" Value="0,0,1000,0"></Setter>
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding Tag, RelativeSource={RelativeSource Self}, FallbackValue=True}" Value="True">
+                                                            <Setter Property="Margin" Value="0,0,1000,0"></Setter>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
                                                 </Style>
                                             </Grid.Resources>
 
@@ -332,29 +430,46 @@
                                             </Label>
                                             <TextBlock Name="PART_TextUserScore" VerticalAlignment="Center" Style="{DynamicResource TextBlockGameScore}" />
 
-                                            <Label Name="PART_ElemFeatures" >
+
+                                            <Label Name="PART_ElemFeatures" Style="{DynamicResource FeatureSpan}" Tag="{DynamicResource DisplayFeaturesAsList}">
                                                 <StackPanel Orientation="Horizontal">
                                                     <TextBlock Text="&#xEF74;" Style="{DynamicResource Icon}" />
                                                     <TextBlock Text="{DynamicResource LOCFeaturesLabel}" />
                                                 </StackPanel>
                                             </Label>
-                                            <ItemsControl Name="PART_ItemsFeatures" />
+                                            <ItemsControl ItemsSource="{Binding Game.Features}" Margin="0,3,0,3" Visibility="{Binding FeatureVisibility}" Style="{DynamicResource FeatureSpan}" Tag="{DynamicResource DisplayFeaturesAsList}">
+                                                <ItemsControl.ItemsPanel>
+                                                    <ItemsPanelTemplate>
+                                                        <WrapPanel Orientation="Horizontal" Style="{DynamicResource FeatureMargin}" Tag="{DynamicResource DisplayFeaturesAsList}"/>
+                                                    </ItemsPanelTemplate>
+                                                </ItemsControl.ItemsPanel>
+                                                <ItemsControl.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <DockPanel>
+                                                            <Button DockPanel.Dock="Left" Content="{Binding Name}" Style="{StaticResource PropertyItemFeedPanelButton}"
+                                                                    Command="{Binding RelativeSource={RelativeSource AncestorType=Grid}, Path=DataContext.SetFeatureFilterCommand}"
+                                                                    CommandParameter="{Binding}"/>
+                                                            <TextBlock DockPanel.Dock="Left" Text="" Style="{DynamicResource FeatureWrapper}" Tag="{DynamicResource DisplayFeaturesAsList}"/>
+                                                        </DockPanel>
+                                                    </DataTemplate>
+                                                </ItemsControl.ItemTemplate>
+                                            </ItemsControl>
 
-                                            <Label Name="PART_ElemLinks" >
+                                            <Label Name="PART_ElemLinks" Style="{DynamicResource LinkSpan}" Tag="{DynamicResource DisplayLinksAsList}">
                                                 <StackPanel Orientation="Horizontal">
                                                     <TextBlock Text="&#xEF71;" Style="{DynamicResource Icon}" />
                                                     <TextBlock Text="{DynamicResource LOCLinksLabel}" />
                                                 </StackPanel>
                                             </Label>
-                                            <ItemsControl ItemsSource="{Binding Game.Links}" Visibility="{Binding LinkVisibility}">
+                                            <ItemsControl ItemsSource="{Binding Game.Links}" Visibility="{Binding LinkVisibility}" Style="{DynamicResource LinkSpan}" Tag="{DynamicResource DisplayLinksAsList}">
                                                 <ItemsControl.ItemsPanel>
                                                     <ItemsPanelTemplate>
-                                                        <StackPanel/>
+                                                        <WrapPanel Orientation="Horizontal" Style="{DynamicResource LinkMargin}" Tag="{DynamicResource DisplayLinksAsList}"/>
                                                     </ItemsPanelTemplate>
                                                 </ItemsControl.ItemsPanel>
                                                 <ItemsControl.ItemTemplate>
                                                     <DataTemplate DataType="{x:Type Link}">
-                                                        <DockPanel Margin="0,5">
+                                                        <DockPanel Margin="0,4,10,4">
                                                             <Viewbox DockPanel.Dock="Left" Margin="0,0,5,0" Width="18" Height="18" 
                                                                                      RenderOptions.ClearTypeHint="Enabled" RenderOptions.BitmapScalingMode="Fant">
                                                                 <ContentControl DockPanel.Dock="Left"
@@ -368,18 +483,35 @@
                                                                         <Run Text="{Binding Name}"/>
                                                                     </Hyperlink>
                                                             </TextBlock>
+                                                            <TextBlock DockPanel.Dock="Left" Text="" Style="{DynamicResource LinkWrapper}" Tag="{DynamicResource DisplayLinksAsList}"/>
                                                         </DockPanel>
                                                     </DataTemplate>
                                                 </ItemsControl.ItemTemplate>
                                             </ItemsControl>
 
-                                            <Label Name="PART_ElemTags" >
+                                            <Label Name="PART_ElemTags" Style="{DynamicResource TagSpan}" Tag="{DynamicResource DisplayTagsAsList}">
                                                 <StackPanel Orientation="Horizontal">
                                                     <TextBlock Text="&#xEC85;" Style="{DynamicResource Icon}" />
                                                     <TextBlock Text="{DynamicResource LOCTagsLabel}" />
                                                 </StackPanel>
                                             </Label>
-                                            <ItemsControl Name="PART_ItemsTags" />
+                                            <ItemsControl ItemsSource="{Binding Game.Tags}" Margin="0,3,0,3" Visibility="{Binding TagVisibility}" Style="{DynamicResource TagSpan}" Tag="{DynamicResource DisplayTagsAsList}">
+                                                <ItemsControl.ItemsPanel>
+                                                    <ItemsPanelTemplate>
+                                                        <WrapPanel Orientation="Horizontal" Style="{DynamicResource TagMargin}" Tag="{DynamicResource DisplayTagsAsList}"/>
+                                                    </ItemsPanelTemplate>
+                                                </ItemsControl.ItemsPanel>
+                                                <ItemsControl.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <DockPanel>
+                                                            <Button Content="{Binding Name}" Style="{StaticResource PropertyItemFeedPanelButton}"
+                                                                    Command="{Binding RelativeSource={RelativeSource AncestorType=Grid}, Path=DataContext.SetTagFilterCommand}"
+                                                                    CommandParameter="{Binding}"/>
+                                                            <TextBlock DockPanel.Dock="Left" Text="" Style="{DynamicResource TagWrapper}" Tag="{DynamicResource DisplayTagsAsList}"/>
+                                                        </DockPanel>
+                                                    </DataTemplate>
+                                                </ItemsControl.ItemTemplate>
+                                            </ItemsControl>
                                         </GridEx>
                                     </StackPanel>
 
@@ -417,7 +549,8 @@
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
                                 <Condition Binding="{Binding Tag, ElementName=PART_TextDisplayName}" Value="{StaticResource True}"/>
-                                <Condition Binding="{Binding IsVisible, ElementName=ExtraMetadataLoader_LogoLoaderControl}" Value="True"/>
+                                <Condition Binding="{Binding ElementName=ExtraMetadataLoader_LogoLoaderControl, Path=Visibility, FallbackValue=Collapsed}" Value="Visible" />
+                                <Condition Binding="{PluginSettings Plugin=ExtraMetadataLoader, Path=IsLogoAvailable, FallbackValue=False}" Value="True" />
                             </MultiDataTrigger.Conditions>
                             <Setter TargetName="TitleIconPanel" Property="Visibility" Value="Collapsed"/>
                         </MultiDataTrigger>

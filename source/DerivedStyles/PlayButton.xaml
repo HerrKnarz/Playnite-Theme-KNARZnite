@@ -8,6 +8,7 @@
         <Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Margin" Value="0,10,0,10" />
         <Setter Property="Height" Value="40" />
         <Setter Property="Width" Value="40" />
         <Setter Property="FontFamily" Value="{DynamicResource FontIcoFont}" />
@@ -49,6 +50,7 @@
         <Setter Property="Foreground" Value="{DynamicResource TextBrushDark}" />
         <Setter Property="FontSize" Value="20" />
         <Setter Property="Content" Value="&#xEC74;" />
+        <Setter Property="Margin" Value="0,0,0,0" />
         <Setter Property="Height" Value="60" />
         <Setter Property="Width" Value="60" />
         <Style.Triggers>
@@ -77,12 +79,18 @@
     </Style>
 
     <Style x:Key="InstallButton" TargetType="{x:Type Button}" BasedOn="{StaticResource BaseActionButton}">
-        <Setter Property="Margin" Value="0,10,0,10" />
         <Setter Property="Content" Value="&#xEF07;" />
         <Style.Triggers>
             <DataTrigger Binding="{Binding IsInstalled}" Value="False">
                 <Setter Property="Visibility" Value="Visible" />
             </DataTrigger>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding Game.IsCustomGame}" Value="True"/>
+                    <Condition Binding="{Binding Tag, RelativeSource={RelativeSource Self}, FallbackValue=False}" Value="True"/>
+                </MultiDataTrigger.Conditions> 
+                <Setter Property="Visibility" Value="Collapsed" />
+            </MultiDataTrigger>
             <DataTrigger Binding="{Binding IsInstalling}" Value="True">
                 <Setter Property="Visibility" Value="Collapsed" />
             </DataTrigger>
@@ -124,9 +132,9 @@
         <Setter Property="FontSize" Value="20" />
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="DockPanel.Dock" Value="Left" />
+        <Setter Property="Margin" Value="10,10,0,10" />
         <Setter Property="Height" Value="40" />
         <Setter Property="MinWidth" Value="40" />
         <Setter Property="MaxWidth" Value="150" />
-        <Setter Property="Margin" Value="10,0,0,0" />
     </Style>
 </ResourceDictionary>
