@@ -62,9 +62,10 @@
                                         <ContentControl x:Name="ExtraMetadataLoader_LogoLoaderControl" />
                                     </Border>
                                     <DockPanel VerticalAlignment="Bottom"
-                                            HorizontalAlignment="Right"
-                                            Visibility="{Binding CoverVisibility}"
-                                                   x:Name="CoverDockPanel">
+                                               HorizontalAlignment="Right"
+                                               Visibility="{Binding CoverVisibility}"
+                                               x:Name="CoverDockPanel"
+                                               Effect="{DynamicResource DefaultDropShadow}">
                                         <ContentControl x:Name="ThemeExtras_Banner"
                                                             RenderOptions.BitmapScalingMode="Fant"
                                                             Width="{Binding ActualWidth, ElementName=PART_ImageCover}"
