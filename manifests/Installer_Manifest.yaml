@@ -1,5 +1,16 @@
 AddonId: KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9
 Packages:
+  - Version: 1.2
+    RequiredApiVersion: 2.5
+    ReleaseDate: 2023-10-07
+    PackageUrl: https://github.com/HerrKnarz/Playnite-Theme-KNARZnite/releases/download/v1.2/KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9_1_2.pthm
+    Changelog:
+      - changed banners for Arcade, NES, PC Windows, Sega Genesis (switched to Mega Drive), Riot Games, Origin to EA Desktop, Humble Bundle, GOG
+      - moved banners for MSX, MSX2 and PC98 from PlatformName to PlatformSpecId
+      - added banners for FM Towns, Flash, Sammy Atomiswave, Amiga, Amiga CD32, Neo Geo and GameJolt
+      - changed colors slightly
+      - made scrollbar visible when not hovered over
+      - added drop shadow to cover in details view
   - Version: 1.1
     RequiredApiVersion: 2.5
     ReleaseDate: 2023-06-12
