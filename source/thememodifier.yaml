@@ -5,7 +5,7 @@ Constants:
 - DisplayTagsAsList: Display tags as a list (true) or box (false)
 - DisplayLinksAsList: Display links as a list (true) or box (false)
 - Details View
-- DetailsViewDetailsMaxWidth: 'Maximum width of details'
+- DetailsViewDetailsMaxWidth(1024,2400): 'Maximum width of details'
 - DetailsViewCoverDisplayLibraryBanner: 'Show banners (Requires ThemeExtras extension)'
 - DetailsViewAllowUseOfLogos: 'Allow use of logos (Requires Extra Metadata Loader extension)'
 - DetailsViewHideGameNameIfLogoVisible: 'Hide game name if logo is visible'
