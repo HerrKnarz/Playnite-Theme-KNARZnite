@@ -32,7 +32,7 @@ The following extensions are currently integrated:
 - [Extra Metadata Loader](https://playnite.link/addons.html#ExtraMetadataLoader_705fdbca-e1fc-4004-b839-1d040b8b4429) - logo support and video tab in detail and grid view
 - [GameActivity](https://playnite.link/addons.html#playnite-gameactivity-plugin) - button and tab
 - [Game Relations](https://playnite.link/addons.html#GameRelations_a4c15d63-9ab4-4d96-9a0c-8f9b35d43a1f) - tab
-- [HowLongToBeat](https://playnite.link/addons.html#playnite-howlongtobeat-plugin) - button
+- [HowLongToBeat](https://playnite.link/addons.html#playnite-howlongtobeat-plugin) - button and progress bar
 - [LibraryManagement](https://playnite.link/addons.html#playnite-librarymanagement-plugin) - displays feature icons in detail and grid view
 - [PlayNotes](https://playnite.link/addons.html#PlayNotes_4208657d-4f78-42d2-968f-39f24de275e1) - tab
 - [PlayState](https://playnite.link/addons.html#PlayState) - button
