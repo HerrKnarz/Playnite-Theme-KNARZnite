@@ -2,6 +2,7 @@
 [![LatestVersion](https://img.shields.io/github/v/release/HerrKnarz/Playnite-Theme-KNARZnite?include_prereleases&style=flat)](https://github.com/HerrKnarz/Playnite-Theme-KNARZnite/releases)
 [![LastCommit](https://img.shields.io/github/last-commit/HerrKnarz/Playnite-Theme-KNARZnite?style=flat)](https://github.com/HerrKnarz/Playnite-Theme-KNARZnite/commits/main)
 [![License](https://img.shields.io/github/license/HerrKnarz/Playnite-Theme-KNARZnite?style=flat)](https://github.com/HerrKnarz/Playnite-Theme-KNARZnite/blob/main/LICENSE.txt)
+[![Ko-fi Badge](https://img.shields.io/badge/Tip%20on%20Ko--fi-F16061)](https://ko-fi.com/herrknarz)
 
 # Playnite-Theme-KNARZnite
 
