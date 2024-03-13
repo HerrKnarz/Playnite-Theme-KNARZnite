@@ -109,6 +109,21 @@
                                             <ContentControl x:Name="PlayState_GameStateSwitchControl" Style="{DynamicResource ActionControl}" Visibility="{PluginSettings Plugin=PlayState, Path=IsControlVisible, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
                                             <ContentControl x:Name="ScreenshotsVisualizer_PluginButton" Style="{DynamicResource ActionControl}" Visibility="{PluginSettings Plugin=ScreenshotsVisualizer, Path=HasData, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
                                             <ContentControl x:Name="HowLongToBeat_PluginButton" Style="{DynamicResource ActionControl}" Visibility="{PluginSettings Plugin=HowLongToBeat, Path=EnableIntegrationButton, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
+
+                                            <StackPanel Margin="10,0,0,0" VerticalAlignment="Center"> 
+                                                <StackPanel.Style>     
+                                                    <Style TargetType="{x:Type StackPanel}">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{PluginSettings Plugin=HowLongToBeat, Path=HasData, FallbackValue=False}" Value="True">
+                                                                <Setter Property="Visibility" Value="Visible" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>                                      
+                                                </StackPanel.Style>
+                                                <ContentControl x:Name="HowLongToBeat_PluginProgressBar" Height="40" Width="310"/>
+                                            </StackPanel>
+
                                             <ContentControl x:Name="CheckDlc_PluginButton" Style="{DynamicResource ActionControl}" Visibility="{PluginSettings Plugin=CheckDlc, Path=EnableIntegrationButton, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
                                             <ContentControl x:Name="SuccessStory_PluginButton" Style="{DynamicResource ActionControl}" Visibility="{PluginSettings Plugin=SuccessStory, Path=HasData, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
                                             <ContentControl x:Name="GameActivity_PluginButton" Style="{DynamicResource ActionControl}" Visibility="{PluginSettings Plugin=GameActivity, Path=HasData, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
@@ -121,7 +136,7 @@
                                 </DockPanel>
                                 <DockPanel MaxWidth="{DynamicResource DetailsViewDetailsMaxWidth}" Grid.Row="3">
                                     <StackPanel DockPanel.Dock="Left" Width="300"
-                                                Margin="2,0,0,0">
+                                                Margin="2,0,10,0">
                                         <StackPanel.Resources>
                                             <Style TargetType="ItemsControl">
                                                 <Setter Property="VerticalAlignment" Value="Center" />

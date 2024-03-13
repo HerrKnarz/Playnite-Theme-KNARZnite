@@ -1,5 +1,15 @@
 AddonId: KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9
 Packages:
+  - Version: 1.4
+    RequiredApiVersion: 2.6
+    ReleaseDate: 2024-03-13
+    PackageUrl: https://github.com/HerrKnarz/Playnite-Theme-KNARZnite/releases/download/v1.4/KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9_1_4.pthm
+    Changelog:
+      - added support for How Long To Beat progress bar
+      - tweaked colors a bit
+      - added small gap between details and description panels
+      - fixed install button on game covers in grid view not hiding, when option is set.
+      - tweaked inconsistent top margins in html view
   - Version: 1.3
     RequiredApiVersion: 2.5
     ReleaseDate: 2023-11-11

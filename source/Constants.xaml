@@ -31,17 +31,18 @@
     <Color x:Key="WhiteColor">#FFFFFFFF</Color>
     <Color x:Key="TextColor">#FFF2F2F2</Color>
     <Color x:Key="TextColorDarker">#FF878484</Color>
-    <Color x:Key="TextColorDark">#FF151515</Color>
+    <Color x:Key="TextColorDark">#FF262626</Color>
     <Color x:Key="MainColor">#FF191919</Color>
     <Color x:Key="MainColorDark">#FF262626</Color>
+    <Color x:Key="MainColorDarker">#FF121212</Color>
     <Color x:Key="HoverColor">#7FC34934</Color>
     <Color x:Key="GlyphColor">#FFC34934</Color>
     <Color x:Key="HighlightGlyphColor">#FFeb6047</Color>
     <Color x:Key="PopupBackgroundColor">#FF191919</Color>
-    <Color x:Key="PopupBorderColor">#FF151515</Color>
+    <Color x:Key="PopupBorderColor">#FF121212</Color>
     <Color x:Key="BackgroundToneColor">#FFFF6250</Color>
-    <Color x:Key="GridItemBackgroundColor">#FF1D1D1D</Color>
-    <Color x:Key="PanelSeparatorColor">#FF202020</Color>
+    <Color x:Key="GridItemBackgroundColor">#FF1F1F1F</Color>
+    <Color x:Key="PanelSeparatorColor">#FF1F1F1F</Color>
     <Color x:Key="WindowPanelSeparatorColor">#33FF947D</Color>
     <Color x:Key="DataChangeNotifColor">#FFFFD149</Color>
 
@@ -50,8 +51,8 @@
     <SolidColorBrush x:Key="TextBrushDarker" Color="{DynamicResource TextColorDarker}" />
     <SolidColorBrush x:Key="TextBrushDark" Color="{DynamicResource TextColorDark}" />
     <SolidColorBrush x:Key="NormalBrush" Color="{DynamicResource MainColorDark}" />
-    <SolidColorBrush x:Key="NormalBrushDark" Color="{DynamicResource TextColorDark}" />
-    <SolidColorBrush x:Key="NormalBorderBrush" Color="Transparent" />
+    <SolidColorBrush x:Key="NormalBrushDark" Color="{DynamicResource MainColorDarker}" />
+    <SolidColorBrush x:Key="NormalBorderBrush" Color="{DynamicResource HoverColor}" />
     <SolidColorBrush x:Key="HoverBrush" Color="{DynamicResource HoverColor}" />
     <SolidColorBrush x:Key="GlyphBrush" Color="{DynamicResource GlyphColor}" />
     <SolidColorBrush x:Key="HighlightGlyphBrush" Color="{DynamicResource HighlightGlyphColor}" />
@@ -70,16 +71,8 @@
     <SolidColorBrush x:Key="MixedRatingBrush" Color="#FFFFD149" />
 
     <SolidColorBrush x:Key="WarningBrush" Color="#FFFF6250" />
-
-    <LinearGradientBrush x:Key="ExpanderBackgroundBrush" StartPoint="-0.1,0.5" EndPoint="1.2,1" >
-        <GradientStop Color="Transparent" Offset="0"/>
-        <GradientStop Color="Transparent" Offset="0.7"/>
-    </LinearGradientBrush>
-
-    <LinearGradientBrush x:Key="WindowBackgourndBrush" StartPoint="0.5,0" EndPoint="0.5,1">
-        <GradientStop Color="{DynamicResource MainColor}" Offset="0.0" />
-        <GradientStop Color="{DynamicResource MainColor}" Offset="1.0" />
-    </LinearGradientBrush>
+    <SolidColorBrush x:Key="ExpanderBackgroundBrush" Color="{DynamicResource HoverColor}" />
+    <SolidColorBrush x:Key="WindowBackgourndBrush" Color="{DynamicResource MainColor}" />
 
     <SolidColorBrush x:Key="OpaqueHighlightBrush" Color="{DynamicResource GlyphColor}" Opacity="0.25" />
     <SolidColorBrush x:Key="OpaqueHighlightBrushBright" Color="{DynamicResource GlyphColor}" Opacity="0.70"/>
