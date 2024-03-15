@@ -22,7 +22,7 @@
     <FontFamily x:Key="FontFamily">Trebuchet MS</FontFamily>
     <FontFamily x:Key="MonospaceFontFamily">Consolas</FontFamily>
     <Thickness x:Key="PopupBorderThickness">1</Thickness>
-    <Thickness x:Key="ControlBorderThickness">0,0,0,1</Thickness>
+    <Thickness x:Key="ControlBorderThickness">1</Thickness>
     <sys:Double x:Key="EllipseBorderThickness">1</sys:Double>
     <CornerRadius x:Key="ControlCornerRadius">3</CornerRadius>
     <Thickness x:Key="SidebarItemPadding">8</Thickness>
@@ -30,7 +30,7 @@
     <Color x:Key="BlackColor">#FF000000</Color>
     <Color x:Key="WhiteColor">#FFFFFFFF</Color>
     <Color x:Key="TextColor">#FFF2F2F2</Color>
-    <Color x:Key="TextColorDarker">#FF878484</Color>
+    <Color x:Key="TextColorDarker">#FF848484</Color>
     <Color x:Key="TextColorDark">#FF262626</Color>
     <Color x:Key="MainColor">#FF191919</Color>
     <Color x:Key="MainColorDark">#FF262626</Color>
@@ -46,13 +46,13 @@
     <Color x:Key="WindowPanelSeparatorColor">#33FF947D</Color>
     <Color x:Key="DataChangeNotifColor">#FFFFD149</Color>
 
-    <SolidColorBrush x:Key="ControlBackgroundBrush" Color="#FF222222" />
+    <SolidColorBrush x:Key="ControlBackgroundBrush" Color="{DynamicResource MainColorDarker}" />
     <SolidColorBrush x:Key="TextBrush" Color="{DynamicResource TextColor}" />
     <SolidColorBrush x:Key="TextBrushDarker" Color="{DynamicResource TextColorDarker}" />
     <SolidColorBrush x:Key="TextBrushDark" Color="{DynamicResource TextColorDark}" />
     <SolidColorBrush x:Key="NormalBrush" Color="{DynamicResource MainColorDark}" />
     <SolidColorBrush x:Key="NormalBrushDark" Color="{DynamicResource MainColorDarker}" />
-    <SolidColorBrush x:Key="NormalBorderBrush" Color="{DynamicResource HoverColor}" />
+    <SolidColorBrush x:Key="NormalBorderBrush" Color="{DynamicResource MainColorDark}" />
     <SolidColorBrush x:Key="HoverBrush" Color="{DynamicResource HoverColor}" />
     <SolidColorBrush x:Key="GlyphBrush" Color="{DynamicResource GlyphColor}" />
     <SolidColorBrush x:Key="HighlightGlyphBrush" Color="{DynamicResource HighlightGlyphColor}" />

@@ -121,7 +121,7 @@
                                                         </Style.Triggers>
                                                     </Style>                                      
                                                 </StackPanel.Style>
-                                                <ContentControl x:Name="HowLongToBeat_PluginProgressBar" Height="40" Width="310"/>
+                                                <ContentControl x:Name="HowLongToBeat_PluginProgressBar" Height="40" Width="300" />
                                             </StackPanel>
 
                                             <ContentControl x:Name="CheckDlc_PluginButton" Style="{DynamicResource ActionControl}" Visibility="{PluginSettings Plugin=CheckDlc, Path=EnableIntegrationButton, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />

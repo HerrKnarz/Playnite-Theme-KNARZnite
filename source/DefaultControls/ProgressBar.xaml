@@ -14,7 +14,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ProgressBar}">
-                    <Border BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{DynamicResource NormalBorderBrush}"
+                    <Border BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="Transparent"
                             CornerRadius="{DynamicResource ControlCornerRadius}">
                         <Grid SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
                             <Rectangle Fill="{TemplateBinding Background}" />
