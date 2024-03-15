@@ -48,7 +48,7 @@ The following extensions are currently integrated:
 
 To install the theme head over to the [Playnite addon database](https://playnite.link/addons.html) and download the theme or simply find it in the extensions menu in Playnite itself. You could also download the newest release here and drag the file on your playnite window.
 
-If you want your Playnite to look as close to the screenshots as possible, follow [this guide](https://github.com/HerrKnarz/Playnite-Theme-KNARZnite/wiki/How-to-achieve-the-look-from-the-screenshots%3F)!
+If you want your Playnite to look as close to the screenshots as possible, follow [this guide](https://github.com/HerrKnarz/Playnite-Theme-KNARZnite/wiki/How-to-achieve-the-look-from-the-screenshots)!
 
 ## Support
 
