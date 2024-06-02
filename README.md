@@ -37,7 +37,8 @@ The following extensions are currently integrated:
 - [PlayNotes](https://playnite.link/addons.html#PlayNotes_4208657d-4f78-42d2-968f-39f24de275e1) - tab
 - [PlayState](https://playnite.link/addons.html#PlayState) - button
 - [Steam News and Players Viewer](https://playnite.link/addons.html#NewsViewer_15e03ffe-90f6-4e8e-bd4d-94514777481d) - tab
-- [Steam Reviews Viewer](Review_Viewer_ca24e37a-76d9-49bf-89ab-d3cba4a54bd1) - tab
+- [Steam Reviews Viewer](https://playnite.link/addons.html#Review_Viewer_ca24e37a-76d9-49bf-89ab-d3cba4a54bd1) - tab
+- [Steam Screenshots](https://playnite.link/addons.html#SteamScreenshots_8e77fe31-5e62-41e2-8fa2-64844cfd5b6b) - tab
 - [ScreenshotsVisualizer](https://playnite.link/addons.html#playnite-screenshotsvisualizer-plugin) - button and tab, if game has screenshots
 - [SuccessStory](https://playnite.link/addons.html#playnite-successstory-plugin) - button and tab, if game has achievements
 - [SystemChecker](https://playnite.link/addons.html#playnite-systemchecker-plugin) - button
