@@ -52,7 +52,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type FilterPanel}">
                     <Border BorderBrush="{DynamicResource PanelSeparatorBrush}"
-                            Background="{DynamicResource WindowBackgourndBrush}"
+                            Background="Transparent"
                             d:DesignWidth="200"
                             Padding="10,0,10,0">
                         <Border.Style>
@@ -61,6 +61,9 @@
                                 <Style.Triggers>
                                     <DataTrigger Binding="{Settings FilterPanelPosition}" Value="Left">
                                         <Setter Property="BorderThickness" Value="0,0,1,0" />
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Settings ShowPanelSeparators}" Value="False">
+                                        <Setter Property="BorderThickness" Value="0" />
                                     </DataTrigger>
                                 </Style.Triggers>
                             </Style>
