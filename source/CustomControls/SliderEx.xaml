@@ -18,7 +18,7 @@
     <Style TargetType="{x:Type SliderEx}" BasedOn="{StaticResource {x:Type Slider}}">
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Background" Value="{DynamicResource ControlBackgroundBrush}" />
-        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="{DynamicResource NormalBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Slider}">
@@ -28,17 +28,17 @@
                             <RowDefinition Height="Auto" MinHeight="{TemplateBinding MinHeight}" />
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
-                        <TickBar x:Name="TopTick" Visibility="Collapsed" Height="4" Placement="Top"
+                        <TickBar x:Name="TopTick" Visibility="Collapsed" Height="8" Placement="Top"
                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  Fill="{DynamicResource GlyphBrush}" />
-                        <Border x:Name="Border" Grid.Row="1" Margin="0" Height="6" CornerRadius="5"
+                        <Border x:Name="Border" Grid.Row="1" Margin="0" Height="10" CornerRadius="5"
                                 Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{DynamicResource ControlBorderThickness}" />
-                        <Border Grid.Row="1" Margin="1" Height="4" VerticalAlignment="Center" HorizontalAlignment="Left"
+                        <Border Grid.Row="1" Margin="1" Height="8" VerticalAlignment="Center" HorizontalAlignment="Left"
                                 Background="{DynamicResource GlyphBrush}" CornerRadius="5,0,0,5"
                                 Width="{Binding ActualWidth, ElementName=ButtonDecrease}" />
                         <Track Grid.Row="1" x:Name="PART_Track">
                             <Track.Thumb>
-                                <Thumb Width="10" />
+                                <Thumb Width="16" Height="16" />
                             </Track.Thumb>
                             <Track.DecreaseRepeatButton>
                                 <RepeatButton x:Name="ButtonDecrease"
@@ -51,7 +51,7 @@
                                               Command="Slider.IncreaseLarge" />
                             </Track.IncreaseRepeatButton>
                         </Track>
-                        <TickBar x:Name="BottomTick" Visibility="Collapsed" Grid.Row="2" Height="4" Placement="Bottom"
+                        <TickBar x:Name="BottomTick" Visibility="Collapsed" Grid.Row="2" Height="8" Placement="Bottom"
                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Fill="{TemplateBinding Foreground}" />
                     </Grid>
                     <ControlTemplate.Triggers>
