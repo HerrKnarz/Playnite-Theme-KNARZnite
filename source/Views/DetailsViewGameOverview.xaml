@@ -13,7 +13,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type DetailsViewGameOverview}">
                     <ScrollViewer HorizontalScrollBarVisibility="Disabled"
-                                  VerticalScrollBarVisibility="Auto"
+                                  VerticalScrollBarVisibility="Hidden"
                                   Style="{DynamicResource DetailsScrollViewer}"
                                   d:DesignWidth="1280"
                                   d:DesignHeight="1280"
@@ -154,7 +154,7 @@
 
                                         <Separator Background="{DynamicResource GlyphBrush}" />
 
-                                        <GridEx Margin="0,5,0,10"
+                                        <GridEx Margin="0,10,0,10"
                                                 ColumnCount="2" StarColumns="1"
                                                 RowCount="30" AutoLayoutColumns="2">
                                             <Grid.Resources>
@@ -164,43 +164,18 @@
                                                     <Setter Property="FontFamily" Value="{StaticResource FontIcoFont}" />
                                                     <Setter Property="Foreground" Value="{DynamicResource GlyphBrush}" />
                                                 </Style>
+                                                <Style x:Key="MdStyleIcon" TargetType="TextBlock" BasedOn="{StaticResource BaseTextBlockStyle}">
+                                                    <Setter Property="Width" Value="24"/>
+                                                    <Setter Property="FontFamily" Value="{StaticResource FontIcoFont}" />
+                                                    <Setter Property="Foreground" Value="{DynamicResource GlyphBrush}" />
+                                                </Style>
+												<Style x:Key="MdStyleItemOuter" TargetType="ItemsControl">
+												    <Setter Property="Margin" Value="-1, 0, 0, 0"/>
+                                                </Style>
                                                 <Style TargetType="Label">
                                                     <Setter Property="FontWeight" Value="Normal" />
                                                     <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
                                                     <Setter Property="Margin" Value="0,0,0,0" />
-                                                </Style>
-                                                <Style x:Key="FeatureSpan" TargetType="Control">
-                                                    <Setter Property="Grid.ColumnSpan" Value="2"/>
-                                                    <Style.Triggers>
-                                                        <DataTrigger Binding="{Binding Path=Game.Features.Count}" Value="1">
-                                                            <Setter Property="Grid.ColumnSpan" Value="1"></Setter>
-                                                        </DataTrigger>
-                                                        <DataTrigger Binding="{Binding Tag, RelativeSource={RelativeSource Self}, FallbackValue=True}" Value="True">
-                                                            <Setter Property="Grid.ColumnSpan" Value="1"></Setter>
-                                                        </DataTrigger>
-                                                    </Style.Triggers>
-                                                </Style>
-                                                <Style x:Key="FeatureMargin" TargetType="WrapPanel">
-                                                    <Setter Property="Margin" Value="15,0,0,0"/>
-                                                    <Style.Triggers>
-                                                        <DataTrigger Binding="{Binding Path=Game.Features.Count}" Value="1">
-                                                            <Setter Property="Margin" Value="0,0,0,0"></Setter>
-                                                        </DataTrigger>
-                                                        <DataTrigger Binding="{Binding Tag, RelativeSource={RelativeSource Self}, FallbackValue=True}" Value="True">
-                                                            <Setter Property="Margin" Value="0,0,0,0"></Setter>
-                                                        </DataTrigger>
-                                                    </Style.Triggers>
-                                                </Style>
-                                                <Style x:Key="FeatureWrapper" TargetType="TextBlock">
-                                                    <Setter Property="Margin" Value="0,0,0,0"/>
-                                                    <Style.Triggers>
-                                                        <DataTrigger Binding="{Binding Path=Game.Features.Count}" Value="1">
-                                                            <Setter Property="Margin" Value="0,0,1000,0"></Setter>
-                                                        </DataTrigger>
-                                                        <DataTrigger Binding="{Binding Tag, RelativeSource={RelativeSource Self}, FallbackValue=True}" Value="True">
-                                                            <Setter Property="Margin" Value="0,0,1000,0"></Setter>
-                                                        </DataTrigger>
-                                                    </Style.Triggers>
                                                 </Style>
                                                 <Style x:Key="LinkSpan" TargetType="Control">
                                                     <Setter Property="Grid.ColumnSpan" Value="2"/>
@@ -228,39 +203,6 @@
                                                     <Setter Property="Margin" Value="0,0,0,0"/>
                                                     <Style.Triggers>
                                                         <DataTrigger Binding="{Binding Path=Game.Links.Count}" Value="1">
-                                                            <Setter Property="Margin" Value="0,0,1000,0"></Setter>
-                                                        </DataTrigger>
-                                                        <DataTrigger Binding="{Binding Tag, RelativeSource={RelativeSource Self}, FallbackValue=True}" Value="True">
-                                                            <Setter Property="Margin" Value="0,0,1000,0"></Setter>
-                                                        </DataTrigger>
-                                                    </Style.Triggers>
-                                                </Style>
-                                                <Style x:Key="TagSpan" TargetType="Control">
-                                                    <Setter Property="Grid.ColumnSpan" Value="2"/>
-                                                    <Style.Triggers>
-                                                        <DataTrigger Binding="{Binding Path=Game.Tags.Count}" Value="1">
-                                                            <Setter Property="Grid.ColumnSpan" Value="1"></Setter>
-                                                        </DataTrigger>
-                                                        <DataTrigger Binding="{Binding Tag, RelativeSource={RelativeSource Self}, FallbackValue=True}" Value="True">
-                                                            <Setter Property="Grid.ColumnSpan" Value="1"></Setter>
-                                                        </DataTrigger>
-                                                    </Style.Triggers>
-                                                </Style>
-                                                <Style x:Key="TagMargin" TargetType="WrapPanel">
-                                                    <Setter Property="Margin" Value="15,0,0,0"/>
-                                                    <Style.Triggers>
-                                                        <DataTrigger Binding="{Binding Path=Game.Tags.Count}" Value="1">
-                                                            <Setter Property="Margin" Value="0,0,0,0"></Setter>
-                                                        </DataTrigger>
-                                                        <DataTrigger Binding="{Binding Tag, RelativeSource={RelativeSource Self}, FallbackValue=True}" Value="True">
-                                                            <Setter Property="Margin" Value="0,0,0,0"></Setter>
-                                                        </DataTrigger>
-                                                    </Style.Triggers>
-                                                </Style>
-                                                <Style x:Key="TagWrapper" TargetType="TextBlock">
-                                                    <Setter Property="Margin" Value="0,0,0,0"/>
-                                                    <Style.Triggers>
-                                                        <DataTrigger Binding="{Binding Path=Game.Tags.Count}" Value="1">
                                                             <Setter Property="Margin" Value="0,0,1000,0"></Setter>
                                                         </DataTrigger>
                                                         <DataTrigger Binding="{Binding Tag, RelativeSource={RelativeSource Self}, FallbackValue=True}" Value="True">
@@ -342,29 +284,14 @@
                                             </Label>
                                             <ItemsControl Name="PART_ItemsPlatforms" />
 
-                                            <Label Name="PART_ElemCategories" >
-                                                <StackPanel Orientation="Horizontal">
-                                                    <TextBlock Text="&#xEF74;" Style="{DynamicResource Icon}" />
-                                                    <TextBlock Text="{DynamicResource LOCGameCategoriesTitle}" />
-                                                </StackPanel>
-                                            </Label>
-                                            <ItemsControl Name="PART_ItemsCategories" />
+											<ContentControl x:Name="MetadataUtilities_CategoryPrefixItemControl" Tag="&#xEF74;" Grid.ColumnSpan="2" Margin="0"
+											                Visibility="{Binding CategoryVisibility}" />
 
-                                            <Label Name="PART_ElemGenres" >
-                                                <StackPanel Orientation="Horizontal">
-                                                    <TextBlock Text="&#xEF74;" Style="{DynamicResource Icon}" />
-                                                    <TextBlock Text="{DynamicResource LOCGenreLabel}" />
-                                                </StackPanel>
-                                            </Label>
-                                            <ItemsControl Name="PART_ItemsGenres" />
+                                            <ContentControl x:Name="MetadataUtilities_GenrePrefixItemControl" Tag="&#xEF74;" Grid.ColumnSpan="2" Margin="0"
+											                Visibility="{Binding GenreVisibility}" />
 
-                                            <Label Name="PART_ElemSeries" >
-                                                <StackPanel Orientation="Horizontal">
-                                                    <TextBlock Text="&#xEC84;" Style="{DynamicResource Icon}" />
-                                                    <TextBlock Text="{DynamicResource LOCSeriesLabel}" />
-                                                </StackPanel>
-                                            </Label>
-                                            <ItemsControl Name="PART_ItemsSeries" />
+                                            <ContentControl x:Name="MetadataUtilities_SeriesPrefixItemControl" Tag="&#xEC84;" Grid.ColumnSpan="2" Margin="0"
+											                Visibility="{Binding SeriesVisibility}" />
 
                                             <Label Name="PART_ElemDevelopers" >
                                                 <StackPanel Orientation="Horizontal">
@@ -382,13 +309,8 @@
                                             </Label>
                                             <ItemsControl Name="PART_ItemsPublishers" />
 
-                                            <Label Name="PART_ElemAgeRating" >
-                                                <StackPanel Orientation="Horizontal">
-                                                    <TextBlock Text="&#xEF1B;" Style="{DynamicResource Icon}" />
-                                                    <TextBlock Text="{DynamicResource LOCAgeRatingLabel}" />
-                                                </StackPanel>
-                                            </Label>
-                                            <ItemsControl Name="PART_ItemsAgeRatings" />
+                                            <ContentControl x:Name="MetadataUtilities_AgeRatingPrefixItemControl" Tag="&#xEF1B;" Grid.ColumnSpan="2" Margin="0"
+											                Visibility="{Binding AgeRatingVisibility}" />
 
                                             <Label Name="PART_ElemInstallDirectory" >
                                                 <StackPanel Orientation="Horizontal">
@@ -446,30 +368,11 @@
                                             </Label>
                                             <TextBlock Name="PART_TextUserScore" VerticalAlignment="Center" Style="{DynamicResource TextBlockGameScore}" />
 
+											<ContentControl x:Name="MetadataUtilities_FeaturePrefixItemControl" Tag="&#xEF74;" Grid.ColumnSpan="2" Margin="0"
+											                Visibility="{Binding FeatureVisibility}" />
 
-                                            <Label Name="PART_ElemFeatures" Style="{DynamicResource FeatureSpan}" Tag="{DynamicResource DisplayFeaturesAsList}">
-                                                <StackPanel Orientation="Horizontal">
-                                                    <TextBlock Text="&#xEF74;" Style="{DynamicResource Icon}" />
-                                                    <TextBlock Text="{DynamicResource LOCFeaturesLabel}" />
-                                                </StackPanel>
-                                            </Label>
-                                            <ItemsControl ItemsSource="{Binding Game.Features}" Margin="0,3,0,3" Visibility="{Binding FeatureVisibility}" Style="{DynamicResource FeatureSpan}" Tag="{DynamicResource DisplayFeaturesAsList}">
-                                                <ItemsControl.ItemsPanel>
-                                                    <ItemsPanelTemplate>
-                                                        <WrapPanel Orientation="Horizontal" Style="{DynamicResource FeatureMargin}" Tag="{DynamicResource DisplayFeaturesAsList}"/>
-                                                    </ItemsPanelTemplate>
-                                                </ItemsControl.ItemsPanel>
-                                                <ItemsControl.ItemTemplate>
-                                                    <DataTemplate>
-                                                        <DockPanel>
-                                                            <Button DockPanel.Dock="Left" Content="{Binding Name}" Style="{StaticResource PropertyItemFeedPanelButton}"
-                                                                    Command="{Binding RelativeSource={RelativeSource AncestorType=Grid}, Path=DataContext.SetFeatureFilterCommand}"
-                                                                    CommandParameter="{Binding}"/>
-                                                            <TextBlock DockPanel.Dock="Left" Text="" Style="{DynamicResource FeatureWrapper}" Tag="{DynamicResource DisplayFeaturesAsList}"/>
-                                                        </DockPanel>
-                                                    </DataTemplate>
-                                                </ItemsControl.ItemTemplate>
-                                            </ItemsControl>
+											<ContentControl x:Name="MetadataUtilities_TagPrefixItemControl" Tag="&#xEC85;" Grid.ColumnSpan="2" Margin="0"
+											                Visibility="{Binding TagVisibility}" />
 
                                             <Label Name="PART_ElemLinks" Style="{DynamicResource LinkSpan}" Tag="{DynamicResource DisplayLinksAsList}">
                                                 <StackPanel Orientation="Horizontal">
@@ -504,30 +407,6 @@
                                                     </DataTemplate>
                                                 </ItemsControl.ItemTemplate>
                                             </ItemsControl>
-
-                                            <Label Name="PART_ElemTags" Style="{DynamicResource TagSpan}" Tag="{DynamicResource DisplayTagsAsList}">
-                                                <StackPanel Orientation="Horizontal">
-                                                    <TextBlock Text="&#xEC85;" Style="{DynamicResource Icon}" />
-                                                    <TextBlock Text="{DynamicResource LOCTagsLabel}" />
-                                                </StackPanel>
-                                            </Label>
-                                            <ItemsControl ItemsSource="{Binding Game.Tags}" Margin="0,3,0,3" Visibility="{Binding TagVisibility}" Style="{DynamicResource TagSpan}" Tag="{DynamicResource DisplayTagsAsList}">
-                                                <ItemsControl.ItemsPanel>
-                                                    <ItemsPanelTemplate>
-                                                        <WrapPanel Orientation="Horizontal" Style="{DynamicResource TagMargin}" Tag="{DynamicResource DisplayTagsAsList}"/>
-                                                    </ItemsPanelTemplate>
-                                                </ItemsControl.ItemsPanel>
-                                                <ItemsControl.ItemTemplate>
-                                                    <DataTemplate>
-                                                        <DockPanel>
-                                                            <Button Content="{Binding Name}" Style="{StaticResource PropertyItemFeedPanelButton}"
-                                                                    Command="{Binding RelativeSource={RelativeSource AncestorType=Grid}, Path=DataContext.SetTagFilterCommand}"
-                                                                    CommandParameter="{Binding}"/>
-                                                            <TextBlock DockPanel.Dock="Left" Text="" Style="{DynamicResource TagWrapper}" Tag="{DynamicResource DisplayTagsAsList}"/>
-                                                        </DockPanel>
-                                                    </DataTemplate>
-                                                </ItemsControl.ItemTemplate>
-                                            </ItemsControl>
                                         </GridEx>
                                     </StackPanel>
                                     
@@ -537,7 +416,7 @@
                                             <TabItem.Header>
                                                 <TextBlock Text="{DynamicResource LOCGameDescriptionTitle}" Style="{DynamicResource DetailsViewTabHeaderStyle}" />
                                             </TabItem.Header>
-                                            <StackPanel Margin="0,16,0,0">
+                                            <StackPanel Margin="0,13,0,0">
                                                 <HtmlTextView Name="PART_HtmlDescription"
                                                         Margin="0,5,0,5"
                                                         HtmlFontSize="{DynamicResource FontSize}"
@@ -553,7 +432,7 @@
                                             <TabItem.Header>
                                                 <TextBlock Text="{DynamicResource LOCNotesLabel}" Style="{DynamicResource DetailsViewTabHeaderStyle}" />
                                             </TabItem.Header>
-                                            <StackPanel Margin="0,16,0,0">
+                                            <StackPanel Margin="0,15,0,0">
 
                                                 <TextBlock x:Name="NotesVisibilityProxy" Visibility="Collapsed">
                                                     <TextBlock.Style>
@@ -588,7 +467,7 @@
                                                        Style="{DynamicResource DetailsViewTabHeaderStyle}" />
                                             </TabItem.Header>
                                             <StackPanel Orientation="Vertical" Background="{TemplateBinding Background}" Margin="0,15,0,0">
-                                                <ContentControl x:Name="SteamScreenshots_SteamScreenshotsViewControl" Margin="0,10,0,0" FontWeight="Normal"/>
+                                                <ContentControl x:Name="SteamScreenshots_SteamScreenshotsViewControl" Margin="0,0,0,0" FontWeight="Normal"/>
                                             </StackPanel>
                                         </TabItem>
 
@@ -612,7 +491,7 @@
                                                     </Style.Triggers>
                                                 </Style>
                                             </TabItem.Style>
-                                            <StackPanel Margin="0,16,0,0">
+                                            <StackPanel Margin="0,15,0,0">
                                                 <ContentControl x:Name="ExtraMetadataLoader_VideoLoaderControl" VerticalAlignment="Top"/>
                                             </StackPanel>
                                         </TabItem>
@@ -639,7 +518,7 @@
                                                 <TextBlock Text="{DynamicResource LOCSsvTitle}" Style="{DynamicResource DetailsViewTabHeaderStyle}" />
                                             </TabItem.Header>
                                             <StackPanel Orientation="Vertical" Background="{TemplateBinding Background}" Margin="0,15,0,0">
-                                                <ContentControl x:Name="ScreenshotsVisualizer_PluginListScreenshotsVertical" Margin="0,10,20,0" Height="500"/>
+                                                <ContentControl x:Name="ScreenshotsVisualizer_PluginListScreenshotsVertical" Margin="0,0,0,0" Height="500"/>
                                             </StackPanel>
                                         </TabItem>
                                         <!--#endregion -->
@@ -650,7 +529,7 @@
                                                 <TextBlock Text="{DynamicResource LOCGameActivityTitle}" Style="{DynamicResource DetailsViewTabHeaderStyle}" />
                                             </TabItem.Header>
                                             <StackPanel Orientation="Vertical" Background="{TemplateBinding Background}" Margin="0,15,0,0">
-                                                <ContentControl x:Name="GameActivity_PluginChartTime" Margin="0,10,0,0" />
+                                                <ContentControl x:Name="GameActivity_PluginChartTime" Margin="0,0,0,0" />
                                             </StackPanel>
                                         </TabItem>
                                         <!--#endregion-->
@@ -660,7 +539,7 @@
                                                 <TextBlock Text="{DynamicResource LOCReview_Viewer_ReviewsLabel}" Style="{DynamicResource DetailsViewTabHeaderStyle}" />
                                             </TabItem.Header>
                                             <StackPanel Orientation="Vertical" Margin="0,15,0,0">
-                                                <ContentControl x:Name="ReviewViewer_ReviewsControl" Margin="0,5,0,5" FontWeight="Normal"/>
+                                                <ContentControl x:Name="ReviewViewer_ReviewsControl" Margin="0,0,0,5" FontWeight="Normal"/>
                                             </StackPanel>
                                         </TabItem>
                                         <!--#endregion-->
@@ -670,7 +549,7 @@
                                                 <TextBlock Text="{DynamicResource LOC_NewsViewer_NewsViewerControl_NewsLabel}" Style="{DynamicResource DetailsViewTabHeaderStyle}" />
                                             </TabItem.Header>
                                             <StackPanel Orientation="Vertical" Margin="0,15,0,0">
-                                                <ContentControl x:Name="NewsViewer_NewsViewerControl" Margin="0,5,0,5" FontWeight="Normal"/>
+                                                <ContentControl x:Name="NewsViewer_NewsViewerControl" Margin="0,0,0,5" FontWeight="Normal"/>
                                             </StackPanel>
                                         </TabItem>
                                         <!--#endregion-->
@@ -686,7 +565,7 @@
                                                         <Setter Property="BorderThickness" Value="0" />
                                                     </Style>
                                                 </StackPanel.Resources>
-                                                <ContentControl x:Name="CheckDlc_PluginListDlcAll" Height="700" Margin="0,5,0,5"/>
+                                                <ContentControl x:Name="CheckDlc_PluginListDlcAll" Height="700" Margin="0,0,0,5"/>
                                                 <ContentControl x:Name="CheckDlc_PluginListDlcOwned" Height="700" Margin="0,5,0,5"/>
                                                 <ContentControl x:Name="CheckDlc_PluginListDlcNotOwned" Height="700" Margin="0,5,0,5"/>
                                             </StackPanel>
@@ -698,7 +577,7 @@
                                                 <TextBlock Text="{DynamicResource LOCGameRelations_RelatedGamesLabel}"
                                                                Style="{DynamicResource DetailsViewTabHeaderStyle}" />
                                             </TabItem.Header>
-                                            <StackPanel Orientation="Vertical" Margin="0,15,0,0">
+                                            <StackPanel Orientation="Vertical" Margin="0,10,0,0">
                                                 <TextBlock x:Name="GameRelationsVisibilityProxy" Visibility="Collapsed">
                                                     <TextBlock.Style>
                                                         <Style TargetType="TextBlock">
@@ -723,7 +602,7 @@
                                                 <Expander x:Name="Panel_GameRelations_SimilarGamesControl"
                                                               Header="{DynamicResource LOCGameRelations_SimilarGamesLabel}"
                                                               IsExpanded="True"
-                                                              Margin="0,10,0,0"
+                                                              Margin="0,00,0,10"
                                                               Visibility="{PluginSettings Plugin=GameRelations, Path=SimilarGamesControlSettings.IsVisible, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue=Collapsed}">
                                                     <ContentControl x:Name="GameRelations_SimilarGamesControl" Margin="0,10,0,0" />
                                                 </Expander>
@@ -731,7 +610,7 @@
                                                 <Expander x:Name="Panel_GameRelations_SameSeriesControl"
                                                               Header="{DynamicResource LOCGameRelations_SameSeriesLabel}"
                                                               IsExpanded="True"
-                                                              Margin="0,10,0,0"
+                                                              Margin="0,0,0,10"
                                                               Visibility="{PluginSettings Plugin=GameRelations, Path=SameSeriesControlSettings.IsVisible, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue=Collapsed}">
                                                     <ContentControl x:Name="GameRelations_SameSeriesControl" Margin="0,10,0,0" />
                                                 </Expander>
@@ -739,7 +618,7 @@
                                                 <Expander x:Name="Panel_GameRelations_SameDeveloperControl"
                                                               Header="{DynamicResource LOCGameRelations_SameDeveloperLabel}"
                                                               IsExpanded="True"
-                                                              Margin="0,10,0,0"
+                                                              Margin="0,0,0,10"
                                                               Visibility="{PluginSettings Plugin=GameRelations, Path=SameDeveloperControlSettings.IsVisible, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue=Collapsed}">
                                                     <ContentControl x:Name="GameRelations_SameDeveloperControl" Margin="0,10,0,0" />
                                                 </Expander>
@@ -747,9 +626,9 @@
                                                 <Expander x:Name="Panel_GameRelations_SamePublisherControl"
                                                               Header="{DynamicResource LOCGameRelations_SamePublisherLabel}"
                                                               IsExpanded="True"
-                                                              Margin="0,10,0,0"
+                                                              Margin="0,0,0,10"
                                                               Visibility="{PluginSettings Plugin=GameRelations, Path=SamePublisherControlSettings.IsVisible, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue=Collapsed}">
-                                                    <ContentControl x:Name="GameRelations_SamePublisherControl" Margin="0,10,0,0" />
+                                                    <ContentControl x:Name="GameRelations_SamePublisherControl" Margin="0,0,0,0" />
                                                 </Expander>
                                             </StackPanel>
                                         </TabItem>

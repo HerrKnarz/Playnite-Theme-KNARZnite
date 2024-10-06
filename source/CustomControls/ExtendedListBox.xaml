@@ -12,6 +12,11 @@
                                       HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}"
                                       VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}"
                                       CanContentScroll="{TemplateBinding ScrollViewer.CanContentScroll}">
+                            <ScrollViewer.Resources>
+                                <Style TargetType="ScrollContentPresenter">
+                                    <Setter Property="Grid.ColumnSpan" Value="2"/>
+                                </Style>
+                            </ScrollViewer.Resources>
                             <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                             Margin="{TemplateBinding Padding}"/>
                         </ScrollViewer>

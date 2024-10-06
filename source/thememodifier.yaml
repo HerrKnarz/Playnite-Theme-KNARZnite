@@ -1,8 +1,6 @@
 Constants:
 - General
 - HidePlayButtonForManualGames: 'Hide install button on not installed manually added games'
-- DisplayFeaturesAsList: Display features as a list (true) or box (false)
-- DisplayTagsAsList: Display tags as a list (true) or box (false)
 - DisplayLinksAsList: Display links as a list (true) or box (false)
 - Details View
 - DetailsViewDetailsMaxWidth(1024,2400): 'Maximum width of details'

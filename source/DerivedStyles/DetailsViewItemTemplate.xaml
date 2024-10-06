@@ -10,9 +10,9 @@
                 <ControlTemplate TargetType="{x:Type GameListItem}">
                     <Border Name="PART_PanelHost" Padding="10,3,0,3" Background="Transparent"
                             d:DataContext="{x:Static DesignMainViewModel.DesignSelectedGameIntance}">
-                        <DockPanel>
+                        <DockPanel Margin="5">
                             <TextBlock Text="&#xF000;" Foreground="{DynamicResource GlyphBrush}"
-                                       Margin="3,0,6,0"
+                                       Margin="3,0,10,0"
                                        VerticalAlignment="Center"
                                        DockPanel.Dock="Right"
                                        FontFamily="{DynamicResource FontIcoFont}"
@@ -43,7 +43,7 @@
                             <Image Name="PART_ImageIcon"
                                    Height="{Settings DetailsViewListIconSize}"
                                    RenderOptions.BitmapScalingMode="Fant"
-                                   DockPanel.Dock="Left" Margin="0,0,8,0" />
+                                   DockPanel.Dock="Left" Margin="0,0,15,0" />
                             <TextBlock Text="{Binding DisplayName}" TextTrimming="CharacterEllipsis" x:Name="DisplayName"
                                        VerticalAlignment="Center" DockPanel.Dock="Left">
                             </TextBlock>
