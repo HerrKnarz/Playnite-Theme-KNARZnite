@@ -1,5 +1,16 @@
 AddonId: KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9
 Packages:
+  - Version: 1.7
+    RequiredApiVersion: 2.6
+    ReleaseDate: 2024-10-06
+    PackageUrl: https://github.com/HerrKnarz/Playnite-Theme-KNARZnite/releases/download/v1.7/KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9_1_7.pthm
+    Changelog:
+      - ATTENTION! To use the theme and display categories, tags etc. it is now mandatory to have the addon Metadata Utilities installed, because the theme replaces some standard controls with the ones from Metadata Utilities.
+      - Support to display virtual custom fields via Metadata Utilities and its prefixes feature.
+      - Added optional link bar between the game buttons and the details as an alternative to have the links in the details itself.
+      - Removed option to show features and tags as a box. May come back later through a setting in Metadata Utilities.
+      - Moved the links to the bottom of the details panel.
+      - Several small layout optimizations
   - Version: 1.6
     RequiredApiVersion: 2.6
     ReleaseDate: 2024-06-02
