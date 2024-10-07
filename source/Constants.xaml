@@ -13,6 +13,7 @@
     <sys:Boolean x:Key="DisplayFeaturesAsList">True</sys:Boolean>
     <sys:Boolean x:Key="DisplayTagsAsList">True</sys:Boolean>
     <sys:Boolean x:Key="DisplayLinksAsList">True</sys:Boolean>
+    <sys:Boolean x:Key="DisplayLinkBar">True</sys:Boolean>
 
     <sys:Double x:Key="FontSizeSmall">12</sys:Double>
     <sys:Double x:Key="FontSize">14</sys:Double>
