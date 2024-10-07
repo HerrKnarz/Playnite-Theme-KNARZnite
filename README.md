@@ -8,6 +8,8 @@
 
 This is my personal lightweight Playnite theme with all the features I need. It's basically the default theme with bits from [Harmony](https://playnite.link/addons.html#Harmony_d49ef7bc-49de-4fd0-9a67-bd1f26b56047) and [DH_Dawn](https://playnite.link/addons.html#felixkmh_DesktopTheme_DH_Dawn) and some own ideas thrown in. My goal was a simple, lightweight and elegant theme without slow animations, that still integrates several extensions. It's mainly designed for full and half screen use on my widescreen display, but should work in every modern resolution.
 
+**Attention:** From version 1.7 on Metadata Utilities has to be installed, if you want to see  age ratings, categories, features, genres, series or tags in your details, because the theme replaces those controls with the ones from Metadata Utilities.
+
 ## Screenshots
 
 ### Grid view in widescreen format
@@ -22,7 +24,13 @@ This is my personal lightweight Playnite theme with all the features I need. It'
 
 ![Screenshot](https://raw.githubusercontent.com/HerrKnarz/Playnite-Theme-KNARZnite/main/screenshots/ListView.webp)
 
-## Extensions
+## Features
+- Fast and lightweight, without looking too simplistic.
+- Optional link bar between the game buttons and details for quick access to your links.
+- Optionally display links as a box instead of a list to save space in the details view.
+- Supports the display of virtual custom fields via the Metadata Utilities addon. You can basically group your tags etc. into virtual fields using prefixes and display those like any other field in the details list.
+
+### Extensions
 
 The following extensions are currently integrated:
 
@@ -34,11 +42,12 @@ The following extensions are currently integrated:
 - [Game Relations](https://playnite.link/addons.html#GameRelations_a4c15d63-9ab4-4d96-9a0c-8f9b35d43a1f) - tab
 - [HowLongToBeat](https://playnite.link/addons.html#playnite-howlongtobeat-plugin) - button and progress bar
 - [LibraryManagement](https://playnite.link/addons.html#playnite-librarymanagement-plugin) - displays feature icons in detail and grid view
+- [Metadata Utilities](https://playnite.link/addons.html#MetadataUtilities_485ab5f0-bfb1-4c17-93cc-20d8338673be) - displays age ratings, categories, features, genres, series and tags in its own controls
 - [PlayNotes](https://playnite.link/addons.html#PlayNotes_4208657d-4f78-42d2-968f-39f24de275e1) - tab
 - [PlayState](https://playnite.link/addons.html#PlayState) - button
 - [Steam News and Players Viewer](https://playnite.link/addons.html#NewsViewer_15e03ffe-90f6-4e8e-bd4d-94514777481d) - tab
 - [Steam Reviews Viewer](https://playnite.link/addons.html#Review_Viewer_ca24e37a-76d9-49bf-89ab-d3cba4a54bd1) - tab
-- [Steam Screenshots](https://playnite.link/addons.html#SteamScreenshots_8e77fe31-5e62-41e2-8fa2-64844cfd5b6b) - tab
+- [Steam Store Screenshots Viewer](https://playnite.link/addons.html#SteamScreenshots_8e77fe31-5e62-41e2-8fa2-64844cfd5b6b) - tab
 - [ScreenshotsVisualizer](https://playnite.link/addons.html#playnite-screenshotsvisualizer-plugin) - button and tab, if game has screenshots
 - [SuccessStory](https://playnite.link/addons.html#playnite-successstory-plugin) - button and tab, if game has achievements
 - [SystemChecker](https://playnite.link/addons.html#playnite-systemchecker-plugin) - button
