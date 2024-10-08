@@ -9,20 +9,19 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type GroupItem}">
-                    <ExpanderEx BorderThickness="0" SaveGameGroupId="{Binding Name, Mode=OneWay}"
+                    <ExpanderEx BorderThickness="0" SaveGameGroupId="{Binding Name, Mode=OneWay}" Background="Transparent"
                                 IsExpanded="True">
                         <ExpanderEx.Header>
-                            <Grid>
-                                <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource GlyphBrush}"
-                                        Opacity="0.15" Margin="0,0,15,0" />
+                            <Grid Margin="0, 5">
+                                <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource OpaqueHighlightBrush}" />
                                 <Border Padding="3">
-                                    <DockPanel Background="Transparent">
+                                    <DockPanel Background="Transparent" Margin="0, 5">
                                         <DockPanel.ContextMenu>
                                             <GameGroupMenu />
                                         </DockPanel.ContextMenu>
                                         <TextBlock DockPanel.Dock="Left"
-                                                   VerticalAlignment="Center" HorizontalAlignment="Left"
-                                                   TextAlignment="Center" Margin="0,0,5,0">
+                                                   VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="{StaticResource FontSizeLarge}"
+                                                   TextAlignment="Center" Margin="0,0,5,0" Typography.Capitals="AllSmallCaps">
                                             <TextBlock.Style>
                                                 <Style TargetType="TextBlock" BasedOn="{StaticResource BaseTextBlockStyle}">
                                                     <Setter Property="Text" Value="{Binding Name, Converter={StaticResource ObjectToStringConverter}}" />

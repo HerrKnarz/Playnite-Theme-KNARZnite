@@ -64,6 +64,7 @@
     <Style TargetType="TextBlock" x:Key="DetailsViewTabHeaderStyle">
         <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
         <Setter Property="FontWeight" Value="Normal" />
+		<Setter Property="Typography.Capitals" Value="AllSmallCaps" />
         <Style.Triggers>
             <DataTrigger Binding="{Binding Path=IsSelected, RelativeSource={RelativeSource AncestorType={x:Type TabItem}}}" Value="True">
                 <Setter Property="Foreground" Value="{DynamicResource GlyphBrush}" />

@@ -36,15 +36,15 @@
     <Color x:Key="MainColor">#FF191919</Color>
     <Color x:Key="MainColorDark">#FF262626</Color>
     <Color x:Key="MainColorDarker">#FF121212</Color>
-    <Color x:Key="HoverColor">#FF003d48</Color>
-    <Color x:Key="GlyphColor">#FF3797a2</Color>
-    <Color x:Key="HighlightGlyphColor">#FF6cc9d1</Color>
+    <Color x:Key="HoverColor">#7FC34934</Color>
+    <Color x:Key="GlyphColor">#FFC34934</Color>
+    <Color x:Key="HighlightGlyphColor">#FFeb6047</Color>
     <Color x:Key="PopupBackgroundColor">#FF191919</Color>
     <Color x:Key="PopupBorderColor">#FF121212</Color>
-    <Color x:Key="BackgroundToneColor">#FF3797a2</Color>
+    <Color x:Key="BackgroundToneColor">#FFFF6250</Color>
     <Color x:Key="GridItemBackgroundColor">#FF1F1F1F</Color>
     <Color x:Key="PanelSeparatorColor">#FF1F1F1F</Color>
-    <Color x:Key="WindowPanelSeparatorColor">#33003d48</Color>
+    <Color x:Key="WindowPanelSeparatorColor">#33FF947D</Color>
     <Color x:Key="DataChangeNotifColor">#FFFFD149</Color>
 
     <SolidColorBrush x:Key="ControlBackgroundBrush" Color="{DynamicResource MainColorDarker}" />

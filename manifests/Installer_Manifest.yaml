@@ -1,5 +1,14 @@
 AddonId: KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9
 Packages:
+  - Version: 1.8
+    RequiredApiVersion: 2.6
+    ReleaseDate: 2024-10-08
+    PackageUrl: https://github.com/HerrKnarz/Playnite-Theme-KNARZnite/releases/download/v1.8/KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9_1_8.pthm
+    Changelog:
+      - Changed red colors to blue. If you want the old color scheme back, simply replace the constants.xaml with the constants-red.xaml in the theme folder.
+      - Several changes to group headers and tab buttons in grid and details view. For optimal experience it is now recommended to use "Corbel" as the application font. It's included in Windows.
+      - Added subtle drop shadows to all buttons and the covers in grid view
+      - Made some bright colors a bit more subtle
   - Version: 1.7
     RequiredApiVersion: 2.6
     ReleaseDate: 2024-10-06
