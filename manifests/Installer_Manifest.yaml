@@ -1,5 +1,11 @@
 AddonId: KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9
 Packages:
+  - Version: 1.8.1
+    RequiredApiVersion: 2.6
+    ReleaseDate: 2024-10-08
+    PackageUrl: https://github.com/HerrKnarz/Playnite-Theme-KNARZnite/releases/download/v1.8.1/KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9_1_8_1.pthm
+    Changelog:
+      - Fixed covers looking a bit blurry since the last update.
   - Version: 1.8
     RequiredApiVersion: 2.6
     ReleaseDate: 2024-10-08
