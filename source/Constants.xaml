@@ -44,7 +44,7 @@
     <Color x:Key="BackgroundToneColor">#FF3797a2</Color>
     <Color x:Key="GridItemBackgroundColor">#FF1F1F1F</Color>
     <Color x:Key="PanelSeparatorColor">#FF1F1F1F</Color>
-    <Color x:Key="WindowPanelSeparatorColor">#33003d48</Color>
+    <Color x:Key="WindowPanelSeparatorColor">#FF3797a2</Color>
     <Color x:Key="DataChangeNotifColor">#FFFFD149</Color>
 
     <SolidColorBrush x:Key="ControlBackgroundBrush" Color="{DynamicResource MainColorDarker}" />

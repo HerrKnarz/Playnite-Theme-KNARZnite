@@ -184,9 +184,39 @@
 
                                         <Separator Background="{DynamicResource OpaqueHighlightBrush}" />
 
-                                        <GridEx Margin="0,10,0,10"
-                                                ColumnCount="2" StarColumns="1"
-                                                RowCount="30" AutoLayoutColumns="2">
+                                        <Grid Margin="0,10,0,10">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
                                             <Grid.Resources>
                                                 <Style TargetType="TextBlock" BasedOn="{StaticResource BaseTextBlockStyle}" />
                                                 <Style x:Key="Icon" TargetType="TextBlock" BasedOn="{StaticResource BaseTextBlockStyle}">
@@ -199,9 +229,6 @@
                                                     <Setter Property="FontFamily" Value="{StaticResource FontIcoFont}" />
                                                     <Setter Property="Foreground" Value="{DynamicResource GlyphBrush}" />
                                                 </Style>
-												<Style x:Key="MdStyleItemOuter" TargetType="ItemsControl">
-												    <Setter Property="Margin" Value="-8, 0, 0, 0"/>
-                                                </Style>
                                                 <Style TargetType="Label">
                                                     <Setter Property="FontWeight" Value="Normal" />
                                                     <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
@@ -209,12 +236,18 @@
                                                 </Style>
                                                 <Style x:Key="LinkSpan" TargetType="Control">
                                                     <Setter Property="Grid.ColumnSpan" Value="2"/>
+                                                    <Setter Property="Grid.Column" Value="0"/>
+                                                    <Setter Property="Grid.Row" Value="25"/>
                                                     <Style.Triggers>
                                                         <DataTrigger Binding="{Binding Path=Game.Links.Count}" Value="1">
-                                                            <Setter Property="Grid.ColumnSpan" Value="1"></Setter>
+                                                            <Setter Property="Grid.ColumnSpan" Value="1"/>
+                                                            <Setter Property="Grid.Column" Value="1"/>
+                                                            <Setter Property="Grid.Row" Value="24"/>
                                                         </DataTrigger>
                                                         <DataTrigger Binding="{Binding Tag, RelativeSource={RelativeSource Self}, FallbackValue=True}" Value="True">
-                                                            <Setter Property="Grid.ColumnSpan" Value="1"></Setter>
+                                                            <Setter Property="Grid.ColumnSpan" Value="1"/>
+                                                            <Setter Property="Grid.Column" Value="1"/>
+                                                            <Setter Property="Grid.Row" Value="24"/>
                                                         </DataTrigger>
                                                     </Style.Triggers>
                                                 </Style>
@@ -222,10 +255,10 @@
                                                     <Setter Property="Margin" Value="15,0,0,0"/>
                                                     <Style.Triggers>
                                                         <DataTrigger Binding="{Binding Path=Game.Links.Count}" Value="1">
-                                                            <Setter Property="Margin" Value="0,0,0,0"></Setter>
+                                                            <Setter Property="Margin" Value="0,0,0,0"/>
                                                         </DataTrigger>
                                                         <DataTrigger Binding="{Binding Tag, RelativeSource={RelativeSource Self}, FallbackValue=True}" Value="True">
-                                                            <Setter Property="Margin" Value="0,0,0,0"></Setter>
+                                                            <Setter Property="Margin" Value="0,0,0,0"/>
                                                         </DataTrigger>
                                                     </Style.Triggers>
                                                 </Style>
@@ -233,10 +266,10 @@
                                                     <Setter Property="Margin" Value="0,0,0,0"/>
                                                     <Style.Triggers>
                                                         <DataTrigger Binding="{Binding Path=Game.Links.Count}" Value="1">
-                                                            <Setter Property="Margin" Value="0,0,1000,0"></Setter>
+                                                            <Setter Property="Margin" Value="0,0,1000,0"/>
                                                         </DataTrigger>
                                                         <DataTrigger Binding="{Binding Tag, RelativeSource={RelativeSource Self}, FallbackValue=True}" Value="True">
-                                                            <Setter Property="Margin" Value="0,0,1000,0"></Setter>
+                                                            <Setter Property="Margin" Value="0,0,1000,0"/>
                                                         </DataTrigger>
                                                     </Style.Triggers>
                                                 </Style>
@@ -248,163 +281,163 @@
                                                     <TextBlock Text="{DynamicResource LOCCompletionStatus}" />
                                                 </StackPanel>
                                             </Label>
-                                            <Button Name="PART_ButtonCompletionStatus" VerticalAlignment="Center" />
+                                            <Button Name="PART_ButtonCompletionStatus" VerticalAlignment="Center" Grid.Column="1" />
 
-                                            <Label Name="PART_ElemPlayTime" >
+                                            <Label Name="PART_ElemPlayTime" Grid.Row="1">
                                                 <StackPanel Orientation="Horizontal">
                                                     <TextBlock Text="&#xEEDC;" Style="{DynamicResource Icon}" />
                                                     <TextBlock Text="{DynamicResource LOCTimePlayed}" />
                                                 </StackPanel>
                                             </Label>
-                                            <TextBlock Name="PART_TextPlayTime" VerticalAlignment="Center" />
+                                            <TextBlock Name="PART_TextPlayTime" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" />
 
-                                            <Label Name="PART_ElemLastPlayed" >
+                                            <Label Name="PART_ElemLastPlayed" Grid.Row="2" >
                                                 <StackPanel Orientation="Horizontal">
                                                     <TextBlock Text="&#xEC45;" Style="{DynamicResource Icon}" />
                                                     <TextBlock Text="{DynamicResource LOCLastPlayed}" />
                                                 </StackPanel>
                                             </Label>
-                                            <TextBlock Name="PART_TextLastActivity" VerticalAlignment="Center" />
+                                            <TextBlock Name="PART_TextLastActivity" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" />
 
-                                            <Label Name="PART_ElemRecentActivity" >
+                                            <Label Name="PART_ElemRecentActivity" Grid.Row="3" >
                                                 <StackPanel Orientation="Horizontal">
                                                     <TextBlock Text="&#xEC45;" Style="{DynamicResource Icon}" />
                                                     <TextBlock Text="{DynamicResource LOCRecentActivityLabel}" />
                                                 </StackPanel>
                                             </Label>
-                                            <TextBlock Name="PART_TextRecentActivity" VerticalAlignment="Center" />
+                                            <TextBlock Name="PART_TextRecentActivity" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1" />
 
-                                            <Label Name="PART_ElemAdded" >
+                                            <Label Name="PART_ElemAdded" Grid.Row="4" >
                                                 <StackPanel Orientation="Horizontal">
                                                     <TextBlock Text="&#xEC3E;" Style="{DynamicResource Icon}" />
                                                     <TextBlock Text="{DynamicResource LOCDateAddedLabel}" />
                                                 </StackPanel>
                                             </Label>
-                                            <TextBlock Name="PART_TextAdded" VerticalAlignment="Center" />
+                                            <TextBlock Name="PART_TextAdded" VerticalAlignment="Center" Grid.Row="4" Grid.Column="1" />
 
-                                            <Label Name="PART_ElemReleaseDate" >
+                                            <Label Name="PART_ElemReleaseDate" Grid.Row="5" >
                                                 <StackPanel Orientation="Horizontal">
                                                     <TextBlock Text="&#xEC45;" Style="{DynamicResource Icon}" />
                                                     <TextBlock Text="{DynamicResource LOCGameReleaseDateTitle}" />
                                                 </StackPanel>
                                             </Label>
-                                            <Button Name="PART_ButtonReleaseDate" VerticalAlignment="Center" />
+                                            <Button Name="PART_ButtonReleaseDate" VerticalAlignment="Center" Grid.Row="5" Grid.Column="1" />
 
-                                            <Label Name="PART_ElemLibrary" >
+                                            <Label Name="PART_ElemLibrary" Grid.Row="6" >
                                                 <StackPanel Orientation="Horizontal">
                                                     <TextBlock Text="&#xEF65;" Style="{DynamicResource Icon}" />
                                                     <TextBlock Text="{DynamicResource LOCGameProviderTitle}" />
                                                 </StackPanel>
                                             </Label>
-                                            <Button Name="PART_ButtonLibrary" VerticalAlignment="Center" />
+                                            <Button Name="PART_ButtonLibrary" VerticalAlignment="Center" Grid.Row="6" Grid.Column="1" />
 
-                                            <Label Name="PART_ElemSource" >
+                                            <Label Name="PART_ElemSource" Grid.Row="7" >
                                                 <StackPanel Orientation="Horizontal">
                                                     <TextBlock Text="&#xEF65;" Style="{DynamicResource Icon}" />
                                                     <TextBlock Text="{DynamicResource LOCSourceLabel}" />
                                                 </StackPanel>
                                             </Label>
-                                            <Button Name="PART_ButtonSource" VerticalAlignment="Center" />
+                                            <Button Name="PART_ButtonSource" VerticalAlignment="Center" Grid.Row="7" Grid.Column="1" />
 
-                                            <Label Name="PART_ElemPlatform" >
+                                            <Label Name="PART_ElemPlatform" Grid.Row="8" >
                                                 <StackPanel Orientation="Horizontal">
                                                     <TextBlock Text="&#xEEEE;" Style="{DynamicResource Icon}" />
                                                     <TextBlock Text="{DynamicResource LOCGamePlatformTitle}" />
                                                 </StackPanel>
                                             </Label>
-                                            <ItemsControl Name="PART_ItemsPlatforms" />
+                                            <ItemsControl Name="PART_ItemsPlatforms" Grid.Row="8" Grid.Column="1" />
 
 											<ContentControl x:Name="MetadataUtilities_CategoryPrefixItemControl" Tag="&#xEF74;" Grid.ColumnSpan="2" Margin="0"
-											                Visibility="{Binding CategoryVisibility}" />
+											                Visibility="{Binding CategoryVisibility}" Grid.Row="9" />
 
                                             <ContentControl x:Name="MetadataUtilities_GenrePrefixItemControl" Tag="&#xEF74;" Grid.ColumnSpan="2" Margin="0"
-											                Visibility="{Binding GenreVisibility}" />
+											                Visibility="{Binding GenreVisibility}" Grid.Row="10" />
 
                                             <ContentControl x:Name="MetadataUtilities_SeriesPrefixItemControl" Tag="&#xEC84;" Grid.ColumnSpan="2" Margin="0"
-											                Visibility="{Binding SeriesVisibility}" />
+											                Visibility="{Binding SeriesVisibility}" Grid.Row="11" />
 
-                                            <Label Name="PART_ElemDevelopers" >
+                                            <Label Name="PART_ElemDevelopers" Grid.Row="12" >
                                                 <StackPanel Orientation="Horizontal">
                                                     <TextBlock Text="&#xEEF3;" Style="{DynamicResource Icon}" />
                                                     <TextBlock Text="{DynamicResource LOCDeveloperLabel}" />
                                                 </StackPanel>
                                             </Label>
-                                            <ItemsControl Name="PART_ItemsDevelopers" />
+                                            <ItemsControl Name="PART_ItemsDevelopers" Grid.Row="12" Grid.Column="1" />
 
-                                            <Label Name="PART_ElemPublishers" >
+                                            <Label Name="PART_ElemPublishers" Grid.Row="13" >
                                                 <StackPanel Orientation="Horizontal">
                                                     <TextBlock Text="&#xEEF3;" Style="{DynamicResource Icon}" />
                                                     <TextBlock Text="{DynamicResource LOCPublisherLabel}" />
                                                 </StackPanel>
                                             </Label>
-                                            <ItemsControl Name="PART_ItemsPublishers" />
+                                            <ItemsControl Name="PART_ItemsPublishers" Grid.Row="13" Grid.Column="1" />
 
                                             <ContentControl x:Name="MetadataUtilities_AgeRatingPrefixItemControl" Tag="&#xEF1B;" Grid.ColumnSpan="2" Margin="0"
-											                Visibility="{Binding AgeRatingVisibility}" />
+											                Visibility="{Binding AgeRatingVisibility}" Grid.Row="14" />
 
-                                            <Label Name="PART_ElemInstallDirectory" >
+                                            <Label Name="PART_ElemInstallDirectory" Grid.Row="15" >
                                                 <StackPanel Orientation="Horizontal">
                                                     <TextBlock Text="&#xEC5B;" Style="{DynamicResource Icon}" />
                                                     <TextBlock Text="{DynamicResource LOCGameInstallDirTitle}" />
                                                 </StackPanel>
                                             </Label>
-                                            <Button Name="PART_ButtonInstallDirectory" VerticalAlignment="Center" />
+                                            <Button Name="PART_ButtonInstallDirectory" VerticalAlignment="Center" Grid.Row="15" Grid.Column="1" />
 
-                                            <Label Name="PART_ElemInstallSize" >
+                                            <Label Name="PART_ElemInstallSize" Grid.Row="16" >
                                                 <StackPanel Orientation="Horizontal">
                                                     <TextBlock Text="&#xef43;" Style="{DynamicResource Icon}" />
                                                     <TextBlock Text="{DynamicResource LOCInstallSizeLabel}" />
                                                 </StackPanel>
                                             </Label>
-                                            <TextBlock Name="PART_TextInstallSize" VerticalAlignment="Center" />
+                                            <TextBlock Name="PART_TextInstallSize" VerticalAlignment="Center" Grid.Row="16" Grid.Column="1" />
 
-                                            <Label Name="PART_ElemRegion" >
+                                            <Label Name="PART_ElemRegion" Grid.Row="17" >
                                                 <StackPanel Orientation="Horizontal">
                                                     <TextBlock Text="&#xF02C;" Style="{DynamicResource Icon}" />
                                                     <TextBlock Text="{DynamicResource LOCRegionLabel}" />
                                                 </StackPanel>
                                             </Label>
-                                            <ItemsControl Name="PART_ItemsRegions" />
+                                            <ItemsControl Name="PART_ItemsRegions" Grid.Row="17" Grid.Column="1" />
 
-                                            <Label Name="PART_ElemVersion" >
+                                            <Label Name="PART_ElemVersion" Grid.Row="18" >
                                                 <StackPanel Orientation="Horizontal">
                                                     <TextBlock Text="&#xEFD1;" Style="{DynamicResource Icon}" />
                                                     <TextBlock Text="{DynamicResource LOCVersionLabel}" />
                                                 </StackPanel>
                                             </Label>
-                                            <Button Name="PART_ButtonVersion" VerticalAlignment="Center" />
+                                            <Button Name="PART_ButtonVersion" VerticalAlignment="Center" Grid.Row="18" Grid.Column="1" />
 
-                                            <Label Name="PART_ElemCommunityScore" >
+                                            <Label Name="PART_ElemCommunityScore" Grid.Row="19" >
                                                 <StackPanel Orientation="Horizontal">
                                                     <TextBlock Text="&#xEF01;" Style="{DynamicResource Icon}" />
                                                     <TextBlock Text="{DynamicResource LOCCommunityScore}" />
                                                 </StackPanel>
                                             </Label>
-                                            <TextBlock Name="PART_TextCommunityScore" VerticalAlignment="Center" Style="{DynamicResource TextBlockGameScore}" />
+                                            <TextBlock Name="PART_TextCommunityScore" VerticalAlignment="Center" Grid.Row="19" Grid.Column="1" Style="{DynamicResource TextBlockGameScore}" />
 
-                                            <Label Name="PART_ElemCriticScore" >
+                                            <Label Name="PART_ElemCriticScore" Grid.Row="20" >
                                                 <StackPanel Orientation="Horizontal">
                                                     <TextBlock Text="&#xF000;" Style="{DynamicResource Icon}" />
                                                     <TextBlock Text="{DynamicResource LOCCriticScore}" />
                                                 </StackPanel>
                                             </Label>
-                                            <TextBlock Name="PART_TextCriticScore" VerticalAlignment="Center" Style="{DynamicResource TextBlockGameScore}" />
+                                            <TextBlock Name="PART_TextCriticScore" VerticalAlignment="Center" Grid.Row="20" Grid.Column="1" Style="{DynamicResource TextBlockGameScore}" />
 
-                                            <Label Name="PART_ElemUserScore" >
+                                            <Label Name="PART_ElemUserScore" Grid.Row="21" >
                                                 <StackPanel Orientation="Horizontal">
                                                     <TextBlock Text="&#xF000;" Style="{DynamicResource Icon}" />
                                                     <TextBlock Text="{DynamicResource LOCUserScore}" />
                                                 </StackPanel>
                                             </Label>
-                                            <TextBlock Name="PART_TextUserScore" VerticalAlignment="Center" Style="{DynamicResource TextBlockGameScore}" />
+                                            <TextBlock Name="PART_TextUserScore" VerticalAlignment="Center" Grid.Row="21" Grid.Column="1" Style="{DynamicResource TextBlockGameScore}" />
 
 											<ContentControl x:Name="MetadataUtilities_FeaturePrefixItemControl" Tag="&#xEF74;" Grid.ColumnSpan="2" Margin="0"
-											                Visibility="{Binding FeatureVisibility}" />
+											                Visibility="{Binding FeatureVisibility}" Grid.Row="22" />
 
 											<ContentControl x:Name="MetadataUtilities_TagPrefixItemControl" Tag="&#xEC85;" Grid.ColumnSpan="2" Margin="0"
-											                Visibility="{Binding TagVisibility}" />
+											                Visibility="{Binding TagVisibility}" Grid.Row="23" />
 
-                                            <Label Name="PART_ElemLinks" Style="{DynamicResource LinkSpan}" Tag="{DynamicResource DisplayLinksAsList}">
+                                            <Label Name="PART_ElemLinks" Grid.Row="24" Tag="{DynamicResource DisplayLinksAsList}">
                                                 <StackPanel Orientation="Horizontal">
                                                     <TextBlock Text="&#xEF71;" Style="{DynamicResource Icon}" />
                                                     <TextBlock Text="{DynamicResource LOCLinksLabel}" />
@@ -437,7 +470,7 @@
                                                     </DataTemplate>
                                                 </ItemsControl.ItemTemplate>
                                             </ItemsControl>
-                                        </GridEx>
+                                        </Grid>
                                     </StackPanel>
 
                                     <TabControl Margin="0,4,10,0" Style="{DynamicResource TabControlDetailsView}"
