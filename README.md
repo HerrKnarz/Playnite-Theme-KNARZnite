@@ -6,7 +6,7 @@
 
 # Playnite-Theme-KNARZnite
 
-This is my personal lightweight Playnite theme with all the features I need. It's basically the default theme with bits from [Harmony](https://playnite.link/addons.html#Harmony_d49ef7bc-49de-4fd0-9a67-bd1f26b56047) and [DH_Dawn](https://playnite.link/addons.html#felixkmh_DesktopTheme_DH_Dawn) and some own ideas thrown in. My goal was a simple, lightweight and elegant theme without slow animations, that still integrates several extensions. It's mainly designed for full and half screen use on my widescreen display, but should work in every modern resolution.
+This is my personal semi lightweight Playnite theme with all the features I need. It's basically the default theme with bits from [Harmony](https://playnite.link/addons.html#Harmony_d49ef7bc-49de-4fd0-9a67-bd1f26b56047) and [DH_Dawn](https://playnite.link/addons.html#felixkmh_DesktopTheme_DH_Dawn) and some own ideas thrown in. My goal was a simple, lightweight and elegant theme without slow animations, that still integrates several extensions. It's mainly designed for full and half screen use on my widescreen display, but should work in every modern resolution.
 
 **Attention:** From version 1.7 on Metadata Utilities has to be installed, if you want to see  age ratings, categories, features, genres, series or tags in your details, because the theme replaces those controls with the ones from Metadata Utilities.
 
@@ -27,13 +27,14 @@ This is my personal lightweight Playnite theme with all the features I need. It'
 ## Features
 - Fast and lightweight, without looking too simplistic.
 - Optional link bar between the game buttons and details for quick access to your links.
-- Optionally display links as a box instead of a list to save space in the details view.
+- Edit completion status and user rating directly in the details panel.
 - Supports the display of virtual custom fields via the Metadata Utilities addon. You can basically group your tags etc. into virtual fields using prefixes and display those like any other field in the details list.
 
 ### Extensions
 
 The following extensions are currently integrated:
 
+- [BackgroundChanger](https://playnite.link/addons.html#playnite-backgroundchanger-plugin) - background and cover slideshow
 - [CheckDlc](https://playnite.link/addons.html#playnite-checkdlc-plugin) - button and tab, if game has DLC
 - [CheckLocalizations](https://playnite.link/addons.html#playnite-checklocalizations-plugin) - button
 - [DuplicateHider](https://playnite.link/addons.html#felixkmh_DuplicateHider_Plugin) - displays buttons to duplicates on mouse over in detail view list
@@ -51,7 +52,7 @@ The following extensions are currently integrated:
 - [ScreenshotsVisualizer](https://playnite.link/addons.html#playnite-screenshotsvisualizer-plugin) - button and tab, if game has screenshots
 - [SuccessStory](https://playnite.link/addons.html#playnite-successstory-plugin) - button and tab, if game has achievements
 - [SystemChecker](https://playnite.link/addons.html#playnite-systemchecker-plugin) - button
-- [ThemeExtras](https://playnite.link/addons.html#felixkmh_Extras_Plugin) - link icons and banners in detail and grid view
+- [ThemeExtras](https://playnite.link/addons.html#felixkmh_Extras_Plugin) - link icons, banners, editable completion status, star ratings and image context menu in detail and grid view
 - [ThemeModifier](https://playnite.link/addons.html#playnite-thememodifier-plugin) - theme and color settings
 
 ## Installation
