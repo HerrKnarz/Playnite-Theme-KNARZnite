@@ -20,17 +20,115 @@
                                   d:DataContext="{x:Static DesignMainViewModel.DesignSelectedGameDetailsIntance}"
                                   x:Name="PART_ScrollViewHost">
                         <Grid>
-                            <FadeImage x:Name="PART_ImageBackground" Stretch="Uniform"
+                            <Grid>
+                                <Grid.ContextMenu>
+                                    <ContextMenu Visibility="{PluginStatus Plugin=felixkmh_Extras_Plugin, Path=IsInstalled}"
+                                                 IsOpen="{PluginSettings Plugin=ThemeExtras, Path=Menus.IsOpen, Mode=OneWayToSource, FallbackValue={StaticResource False}}">
+                                        <MenuItem Header="ExtraMetadataLoader" 
+                                                  Visibility="{PluginStatus Plugin=ExtraMetadataLoader_705fdbca-e1fc-4004-b839-1d040b8b4429, Path=IsInstalled}"
+                                                  ItemsSource="{PluginSettings Plugin=ThemeExtras, Path=Menus.EMLGameMenuItems, FallbackValue={x:Null}}"/>
+                                        <MenuItem Header="BackgroundChanger" 
+                                                  Visibility="{PluginStatus Plugin=playnite-backgroundchanger-plugin, Path=IsInstalled}"
+                                                  ItemsSource="{PluginSettings Plugin=ThemeExtras, Path=Menus.BackgroundChangerGameMenuItems, FallbackValue={x:Null}}"/>
+                                        <Separator/>
+                                        <MenuItem Header="{DynamicResource LOCOpenMetadataFolder}" 
+                                                  Command="{PluginSettings Plugin=ThemeExtras, Path=Commands.OpenGameAssetFolderCommand,FallbackValue={x:Null}}"/>
+                                    </ContextMenu>
+                                </Grid.ContextMenu>
+
+
+   <Grid x:Name="BackgroundImageGrid" HorizontalAlignment="Center" VerticalAlignment="Top">
+ 
+                                <Grid.Style>
+                                    <Style TargetType="Grid">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=BackgroundChanger, Path=Visibility}" Value="Visible">
+                                                <Setter Property="Visibility" Value="Collapsed" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{PluginSettings Plugin=BackgroundChanger, Path=EnableBackgroundImage, FallbackValue=False}" Value="False">
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Grid.Style>
+                                <FadeImage x:Name="PART_ImageBackground" Stretch="Uniform" 
                                        HorizontalAlignment="Center" VerticalAlignment="Top">
                                 <FadeImage.ImageOpacityMask>
-                                    <RadialGradientBrush GradientOrigin="0.5,0" Center="0.5,0" RadiusX="2" RadiusY="0.9">
-                                        <RadialGradientBrush.GradientStops>
-                                            <GradientStop Color="Black" Offset="0.3" />
-                                            <GradientStop Color="Transparent" Offset="1" />
-                                        </RadialGradientBrush.GradientStops>
-                                    </RadialGradientBrush>
-                                </FadeImage.ImageOpacityMask>
-                            </FadeImage>
+	    		                            <RadialGradientBrush GradientOrigin="0.5,0" Center="0.5,0" RadiusX="2" RadiusY="0.9">
+		    		                            <RadialGradientBrush.GradientStops>
+			    		                            <GradientStop Color="Black" Offset="0.3" />
+				    	                            <GradientStop Color="Transparent" Offset="1" />
+    				                            </RadialGradientBrush.GradientStops>
+	    		                            </RadialGradientBrush>
+    		                            </FadeImage.ImageOpacityMask>
+                                </FadeImage>
+ 
+                            </Grid>
+ 
+                            <Grid x:Name="BackgroundChanger" HorizontalAlignment="Center" VerticalAlignment="Top">
+                                <Grid.Style>
+                                    <Style TargetType="Grid">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{PluginSettings Plugin=BackgroundChanger, Path=EnableBackgroundImage}" Value="False">
+                                                <Setter Property="Visibility" Value="Collapsed" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Grid.Style>
+                            <FadeImage x:Name="ImageBackgroundChanger" Stretch="Uniform" 
+                                       HorizontalAlignment="Center" VerticalAlignment="Top">
+                                    <FadeImage.Source>
+                                        <PriorityBinding>
+                                            <Binding ElementName="BackgroundChanger_PluginBackgroundImage" Path="Content.Source" />
+                                            <Binding ElementName="PART_ImageBackground" Path="Source" />
+                                        </PriorityBinding>
+                                    </FadeImage.Source>
+                                <FadeImage.ImageOpacityMask>
+	    		                            <RadialGradientBrush GradientOrigin="0.5,0" Center="0.5,0" RadiusX="2" RadiusY="0.9">
+		    		                            <RadialGradientBrush.GradientStops>
+			    		                            <GradientStop Color="Black" Offset="0.3" />
+				    	                            <GradientStop Color="Transparent" Offset="1" />
+    				                            </RadialGradientBrush.GradientStops>
+	    		                            </RadialGradientBrush>
+    		                            </FadeImage.ImageOpacityMask>
+                                </FadeImage>
+ 
+                            </Grid>
+ 
+                            <ContentControl x:Name="BackgroundChanger_PluginBackgroundImage"
+        HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Collapsed" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                               
+                            </Grid>
 
                             <Grid HorizontalAlignment="Stretch" Margin="20,0,20,0">
                                 <Grid.RowDefinitions>
@@ -67,17 +165,24 @@
                                                x:Name="CoverDockPanel"
                                                Effect="{DynamicResource DefaultDropShadow}">
                                         <ContentControl x:Name="ThemeExtras_Banner"
+                                                        RenderOptions.BitmapScalingMode="Fant"
+                                                        Width="{Binding ActualWidth, ElementName=PART_ImageCover}"
+                                                        Tag="{DynamicResource DetailsViewCoverDisplayLibraryBanner}"
+                                                        DockPanel.Dock="Top"
+                                                        Visibility="{Binding Tag, RelativeSource={RelativeSource Self}, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                                        <Grid DockPanel.Dock="Top"
+                                                  x:Name="CoverGrid">
+                                            <Image Name="PART_ImageCover" 
+										           Height="{Settings GameDetailsCoverHeight}"
+                                                   StretchDirection="Both" Stretch="Uniform"
+                                                   RenderOptions.BitmapScalingMode="Fant"
+                                                   Visibility="{Binding IsVisible, ElementName=BackgroundChanger_PluginBackgroundImage, Converter={StaticResource InvertedBooleanToVisibilityConverter}}"/>
+                                            <ContentControl x:Name="BackgroundChanger_PluginCoverImage"
+                                                            DockPanel.Dock="Right" VerticalAlignment="Bottom"
+                                                            Height="{Settings GameDetailsCoverHeight}" 
                                                             RenderOptions.BitmapScalingMode="Fant"
-                                                            Width="{Binding ActualWidth, ElementName=PART_ImageCover}"
-                                                            Tag="{DynamicResource DetailsViewCoverDisplayLibraryBanner}"
-                                                            DockPanel.Dock="Top"
-                                                            Visibility="{Binding Tag, RelativeSource={RelativeSource Self}, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-                                        <Image Name="PART_ImageCover" 
-										       DockPanel.Dock="Bottom"
-                                               Height="{Settings GameDetailsCoverHeight}"
-                                               StretchDirection="Both" Stretch="Uniform"
-                                               RenderOptions.BitmapScalingMode="Fant"
-                                        />
+                                                            Visibility="{PluginSettings Plugin=BackgroundChanger, Path=HasDataCover, FallbackValue={x:Static Visibility.Collapsed}, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                                        </Grid>
                                     </DockPanel>
                                     <!--#regionend-->
                                 </Grid>
@@ -234,45 +339,6 @@
                                                     <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
                                                     <Setter Property="Margin" Value="0,0,0,0" />
                                                 </Style>
-                                                <Style x:Key="LinkSpan" TargetType="Control">
-                                                    <Setter Property="Grid.ColumnSpan" Value="2"/>
-                                                    <Setter Property="Grid.Column" Value="0"/>
-                                                    <Setter Property="Grid.Row" Value="25"/>
-                                                    <Style.Triggers>
-                                                        <DataTrigger Binding="{Binding Path=Game.Links.Count}" Value="1">
-                                                            <Setter Property="Grid.ColumnSpan" Value="1"/>
-                                                            <Setter Property="Grid.Column" Value="1"/>
-                                                            <Setter Property="Grid.Row" Value="24"/>
-                                                        </DataTrigger>
-                                                        <DataTrigger Binding="{Binding Tag, RelativeSource={RelativeSource Self}, FallbackValue=True}" Value="True">
-                                                            <Setter Property="Grid.ColumnSpan" Value="1"/>
-                                                            <Setter Property="Grid.Column" Value="1"/>
-                                                            <Setter Property="Grid.Row" Value="24"/>
-                                                        </DataTrigger>
-                                                    </Style.Triggers>
-                                                </Style>
-                                                <Style x:Key="LinkMargin" TargetType="WrapPanel">
-                                                    <Setter Property="Margin" Value="15,0,0,0"/>
-                                                    <Style.Triggers>
-                                                        <DataTrigger Binding="{Binding Path=Game.Links.Count}" Value="1">
-                                                            <Setter Property="Margin" Value="0,0,0,0"/>
-                                                        </DataTrigger>
-                                                        <DataTrigger Binding="{Binding Tag, RelativeSource={RelativeSource Self}, FallbackValue=True}" Value="True">
-                                                            <Setter Property="Margin" Value="0,0,0,0"/>
-                                                        </DataTrigger>
-                                                    </Style.Triggers>
-                                                </Style>
-                                                <Style x:Key="LinkWrapper" TargetType="TextBlock">
-                                                    <Setter Property="Margin" Value="0,0,0,0"/>
-                                                    <Style.Triggers>
-                                                        <DataTrigger Binding="{Binding Path=Game.Links.Count}" Value="1">
-                                                            <Setter Property="Margin" Value="0,0,1000,0"/>
-                                                        </DataTrigger>
-                                                        <DataTrigger Binding="{Binding Tag, RelativeSource={RelativeSource Self}, FallbackValue=True}" Value="True">
-                                                            <Setter Property="Margin" Value="0,0,1000,0"/>
-                                                        </DataTrigger>
-                                                    </Style.Triggers>
-                                                </Style>
                                             </Grid.Resources>
 
                                             <Label Name="PART_ElemCompletionStatus" >
@@ -281,7 +347,14 @@
                                                     <TextBlock Text="{DynamicResource LOCCompletionStatus}" />
                                                 </StackPanel>
                                             </Label>
-                                            <Button Name="PART_ButtonCompletionStatus" VerticalAlignment="Center" Grid.Column="1" />
+                                            <Grid Grid.Column="1" VerticalAlignment="Center" Visibility="{Binding CompletionStatusVisibility}">
+                                                <Grid Margin="15,0,0,0" VerticalAlignment="Center"
+												      Visibility="{PluginStatus Plugin=felixkmh_Extras_Plugin, Path=IsInstalled, FallbackValue=Collapsed, Converter={StaticResource InvertedBooleanToVisibilityConverter}}">
+                                                    <Button Name="PART_ButtonCompletionStatus" VerticalAlignment="Center" />
+                                                </Grid>
+                                                <ContentControl x:Name="ThemeExtras_CompletionStatusComboBox" VerticalAlignment="Center" Grid.Column="1"
+												            	Visibility="{PluginStatus Plugin=felixkmh_Extras_Plugin, Status=Installed}"  />
+											</Grid>
 
                                             <Label Name="PART_ElemPlayTime" Grid.Row="1">
                                                 <StackPanel Orientation="Horizontal">
@@ -413,7 +486,13 @@
                                                     <TextBlock Text="{DynamicResource LOCCommunityScore}" />
                                                 </StackPanel>
                                             </Label>
-                                            <TextBlock Name="PART_TextCommunityScore" VerticalAlignment="Center" Grid.Row="19" Grid.Column="1" Style="{DynamicResource TextBlockGameScore}" />
+                                            <DockPanel Grid.Row="19" Grid.Column="1" VerticalAlignment="Center">											
+												<StackPanel Visibility="{PluginStatus Plugin=felixkmh_Extras_Plugin, Status=Installed}" VerticalAlignment="Center" DockPanel.Dock="Left" Margin="0,0,5,0">
+													<ContentControl x:Name="ThemeExtras_CommunityRating" Visibility="{Binding CommunityScoreVisibility}" />
+												</StackPanel>
+												<TextBlock Name="PART_TextCommunityScore" VerticalAlignment="Center" Style="{DynamicResource TextBlockGameScore}"
+														   DockPanel.Dock="Left" />
+											</DockPanel>
 
                                             <Label Name="PART_ElemCriticScore" Grid.Row="20" >
                                                 <StackPanel Orientation="Horizontal">
@@ -421,7 +500,13 @@
                                                     <TextBlock Text="{DynamicResource LOCCriticScore}" />
                                                 </StackPanel>
                                             </Label>
-                                            <TextBlock Name="PART_TextCriticScore" VerticalAlignment="Center" Grid.Row="20" Grid.Column="1" Style="{DynamicResource TextBlockGameScore}" />
+											<DockPanel Grid.Row="20" Grid.Column="1" VerticalAlignment="Center">											
+												<StackPanel Visibility="{PluginStatus Plugin=felixkmh_Extras_Plugin, Status=Installed}" VerticalAlignment="Center" DockPanel.Dock="Left" Margin="0,0,5,0">
+													<ContentControl x:Name="ThemeExtras_CriticRating" Visibility="{Binding CriticScoreVisibility}" />
+												</StackPanel>
+												<TextBlock Name="PART_TextCriticScore" VerticalAlignment="Center" Style="{DynamicResource TextBlockGameScore}"
+														   DockPanel.Dock="Left" />
+											</DockPanel>
 
                                             <Label Name="PART_ElemUserScore" Grid.Row="21" >
                                                 <StackPanel Orientation="Horizontal">
@@ -429,7 +514,13 @@
                                                     <TextBlock Text="{DynamicResource LOCUserScore}" />
                                                 </StackPanel>
                                             </Label>
-                                            <TextBlock Name="PART_TextUserScore" VerticalAlignment="Center" Grid.Row="21" Grid.Column="1" Style="{DynamicResource TextBlockGameScore}" />
+											<DockPanel Grid.Row="21" Grid.Column="1" VerticalAlignment="Center">											
+												<StackPanel Visibility="{PluginStatus Plugin=felixkmh_Extras_Plugin, Status=Installed}" VerticalAlignment="Center" DockPanel.Dock="Left" Margin="0,0,5,0">
+													<ContentControl x:Name="ThemeExtras_UserRating" Visibility="{Binding UserScoreVisibility}" />
+												</StackPanel>
+												<TextBlock Name="PART_TextUserScore" VerticalAlignment="Center" Style="{DynamicResource TextBlockGameScore}"
+														   DockPanel.Dock="Left" />
+											</DockPanel>
 
 											<ContentControl x:Name="MetadataUtilities_FeaturePrefixItemControl" Tag="&#xEF74;" Grid.ColumnSpan="2" Margin="0"
 											                Visibility="{Binding FeatureVisibility}" Grid.Row="22" />
@@ -443,33 +534,43 @@
                                                     <TextBlock Text="{DynamicResource LOCLinksLabel}" />
                                                 </StackPanel>
                                             </Label>
-                                            <ItemsControl ItemsSource="{Binding Game.Links}" Visibility="{Binding LinkVisibility}" Style="{DynamicResource LinkSpan}" Tag="{DynamicResource DisplayLinksAsList}">
-                                                <ItemsControl.ItemsPanel>
-                                                    <ItemsPanelTemplate>
-                                                        <WrapPanel Orientation="Horizontal" Style="{DynamicResource LinkMargin}" Tag="{DynamicResource DisplayLinksAsList}"/>
-                                                    </ItemsPanelTemplate>
-                                                </ItemsControl.ItemsPanel>
-                                                <ItemsControl.ItemTemplate>
-                                                    <DataTemplate DataType="{x:Type Link}">
-                                                        <DockPanel Margin="0,4,10,4">
-                                                            <Viewbox DockPanel.Dock="Left" Margin="0,0,5,0" Width="18" Height="18" 
-                                                                                     RenderOptions.ClearTypeHint="Enabled" RenderOptions.BitmapScalingMode="Fant">
-                                                                <ContentControl DockPanel.Dock="Left"
-                                                                                    Content="{Binding Value, TargetNullValue={StaticResource DefaultLinkTextBlock}}"
-                                                                                    DataContext="{Binding Url, Converter={PluginConverter Plugin=ThemeExtras, Converter=UrlToAsyncIconConverter}}"/>
-                                                            </Viewbox>
-                                                            <TextBlock DockPanel.Dock="Left" VerticalAlignment="Center" TextTrimming="CharacterEllipsis"
-                                                                                       ToolTip="{Binding Url}">
-                                                                    <Hyperlink Command="{Binding RelativeSource={RelativeSource AncestorType=Grid}, Path=DataContext.OpenLinkCommand}"
-                                                                               CommandParameter="{Binding}">
-                                                                        <Run Text="{Binding Name}"/>
-                                                                    </Hyperlink>
-                                                            </TextBlock>
-                                                            <TextBlock DockPanel.Dock="Left" Text="" Style="{DynamicResource LinkWrapper}" Tag="{DynamicResource DisplayLinksAsList}"/>
-                                                        </DockPanel>
-                                                    </DataTemplate>
-                                                </ItemsControl.ItemTemplate>
-                                            </ItemsControl>
+											<Grid Visibility="{Binding LinkVisibility}" Grid.Row="24" Grid.Column="1">
+												<ContentControl x:Name="ThemeExtras_Links" Visibility="{PluginStatus Plugin=felixkmh_Extras_Plugin, Status=Installed}">
+													<ContentControl.Resources>
+														<Style TargetType="ItemsControl">
+															<Setter Property="ItemTemplate">
+																<Setter.Value>
+																	<DataTemplate>
+																		<DockPanel Margin="0,4,10,4">
+																			<Viewbox DockPanel.Dock="Left" Margin="0,0,5,0" Width="18" Height="18">
+																				<ContentControl>
+																					<ContentControl.Content>
+																						<Binding Path="Icon">
+																							<Binding.TargetNullValue>
+																								<TextBlock Text="&#xEF71;" 
+																										Style="{DynamicResource BaseTextBlockStyle}" 
+																										FontFamily="{StaticResource FontIcoFont}"/>
+																							</Binding.TargetNullValue>
+																						</Binding>
+																					</ContentControl.Content>
+																				</ContentControl>
+																			</Viewbox>
+																			<TextBlock DockPanel.Dock="Left" 
+																					VerticalAlignment="Center" 
+																					TextTrimming="CharacterEllipsis"
+																					ToolTip="{Binding Url}">
+																				<Hyperlink Command="{Binding OpenLinkCommand}">
+																					<Run Text="{Binding Name}"/>
+																				</Hyperlink>    
+																			</TextBlock>
+																		</DockPanel>
+																	</DataTemplate>
+																</Setter.Value>
+															</Setter>
+														</Style>
+													</ContentControl.Resources>
+												</ContentControl>
+											</Grid>
                                         </Grid>
                                     </StackPanel>
 

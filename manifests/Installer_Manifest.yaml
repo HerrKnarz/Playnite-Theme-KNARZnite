@@ -1,5 +1,16 @@
 AddonId: KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9
 Packages:
+  - Version: 2.0.0
+    RequiredApiVersion: 2.6
+    ReleaseDate: 2024-10-11
+    PackageUrl: https://github.com/HerrKnarz/Playnite-Theme-KNARZnite/releases/download/v2.0.0/KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9_2_0_0.pthm
+    Changelog:
+      - Added support for Background Changer
+      - Added editable completion status and user rating in the details panel (via Theme Extras)
+      - Added stars to ratings in details panel (via Theme Extras)
+      - Added context menu to Background image to quickly access ExtraMetadata and BackgroundChanger functions. 
+      - Fixed missing drop shadows
+      - removed option to display links as a box, but added functionality to add your own link icons (via Theme Extras)
   - Version: 1.9.0
     RequiredApiVersion: 2.6
     ReleaseDate: 2024-10-09

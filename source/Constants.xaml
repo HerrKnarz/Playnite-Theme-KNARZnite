@@ -10,9 +10,6 @@
     <sys:Boolean x:Key="GridViewCoverDisplayLibraryBanner">True</sys:Boolean>
     <sys:Boolean x:Key="GridViewLibraryGameShowFavorite">True</sys:Boolean>
     <sys:Boolean x:Key="HidePlayButtonForManualGames">False</sys:Boolean>
-    <sys:Boolean x:Key="DisplayFeaturesAsList">True</sys:Boolean>
-    <sys:Boolean x:Key="DisplayTagsAsList">True</sys:Boolean>
-    <sys:Boolean x:Key="DisplayLinksAsList">True</sys:Boolean>
     <sys:Boolean x:Key="DisplayLinkBar">True</sys:Boolean>
 
     <sys:Double x:Key="FontSizeSmall">12</sys:Double>
@@ -76,7 +73,10 @@
     <SolidColorBrush x:Key="WindowBackgourndBrush" Color="{DynamicResource MainColor}" />
 
     <SolidColorBrush x:Key="OpaqueHighlightBrush" Color="{DynamicResource GlyphColor}" Opacity="0.2" />
-    <SolidColorBrush x:Key="OpaqueHighlightBrushBright" Color="{DynamicResource GlyphColor}" Opacity="0.70"/>
+    <SolidColorBrush x:Key="OpaqueHighlightBrushBright" Color="{DynamicResource GlyphColor}" Opacity="0.70"/>    
+
+	<SolidColorBrush x:Key="Extras_FilledStarBrush" Color="{DynamicResource HighlightGlyphColor}"/>
+	<SolidColorBrush x:Key="Extras_EmptyStarBrush" Color="{DynamicResource HighlightGlyphColor}" Opacity="0.5"/>
 
     <DropShadowEffect x:Key="DefaultDropShadow" ShadowDepth="0" BlurRadius="10" Opacity="0.75" Color="{DynamicResource MainColorDark}" RenderingBias="Performance" />
     <DropShadowEffect x:Key="DefaultSubtleDropShadow" ShadowDepth="0" BlurRadius="5" Opacity="0.5" Color="{DynamicResource MainColorDark}" RenderingBias="Performance" />
