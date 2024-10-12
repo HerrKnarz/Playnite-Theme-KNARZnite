@@ -37,7 +37,7 @@ The following extensions are currently integrated:
 - [BackgroundChanger](https://playnite.link/addons.html#playnite-backgroundchanger-plugin) - background and cover slideshow
 - [CheckDlc](https://playnite.link/addons.html#playnite-checkdlc-plugin) - button and tab, if game has DLC
 - [CheckLocalizations](https://playnite.link/addons.html#playnite-checklocalizations-plugin) - button
-- [DuplicateHider](https://playnite.link/addons.html#felixkmh_DuplicateHider_Plugin) - displays buttons to duplicates on mouse over in detail view list
+- [DuplicateHider](https://playnite.link/addons.html#felixkmh_DuplicateHider_Plugin) - displays buttons to duplicates on mouse over in detail view list and top left of the game background
 - [Extra Metadata Loader](https://playnite.link/addons.html#ExtraMetadataLoader_705fdbca-e1fc-4004-b839-1d040b8b4429) - logo support and video tab in detail and grid view
 - [GameActivity](https://playnite.link/addons.html#playnite-gameactivity-plugin) - button and tab
 - [Game Relations](https://playnite.link/addons.html#GameRelations_a4c15d63-9ab4-4d96-9a0c-8f9b35d43a1f) - tab
@@ -46,7 +46,7 @@ The following extensions are currently integrated:
 - [Metadata Utilities](https://playnite.link/addons.html#MetadataUtilities_485ab5f0-bfb1-4c17-93cc-20d8338673be) - displays age ratings, categories, features, genres, series and tags in its own controls
 - [PlayNotes](https://playnite.link/addons.html#PlayNotes_4208657d-4f78-42d2-968f-39f24de275e1) - tab
 - [PlayState](https://playnite.link/addons.html#PlayState) - button
-- [Steam News and Players Viewer](https://playnite.link/addons.html#NewsViewer_15e03ffe-90f6-4e8e-bd4d-94514777481d) - tab
+- [Steam News and Players Viewer](https://playnite.link/addons.html#NewsViewer_15e03ffe-90f6-4e8e-bd4d-94514777481d) - tab and player count
 - [Steam Reviews Viewer](https://playnite.link/addons.html#Review_Viewer_ca24e37a-76d9-49bf-89ab-d3cba4a54bd1) - tab
 - [Steam Store Screenshots Viewer](https://playnite.link/addons.html#SteamScreenshots_8e77fe31-5e62-41e2-8fa2-64844cfd5b6b) - tab
 - [ScreenshotsVisualizer](https://playnite.link/addons.html#playnite-screenshotsvisualizer-plugin) - button and tab, if game has screenshots
