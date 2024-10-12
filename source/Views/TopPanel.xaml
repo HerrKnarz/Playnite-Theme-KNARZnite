@@ -6,22 +6,22 @@
                     mc:Ignorable="d">
 
     <DataTemplate x:Key="TopPanelGeneralViewSettingsTemplate">
-        <TextBlock Text="&#xefe2;" FontFamily="{DynamicResource FontIcoFont}" FontSize="18"                   
+        <TextBlock Text="&#xefe2;" FontFamily="{StaticResource FontIcoFont}" FontSize="18"                   
                    VerticalAlignment="Center" HorizontalAlignment="Center" />
     </DataTemplate>
 
     <DataTemplate x:Key="TopPanelFilterPresetsSelectionTemplate">
-        <TextBlock Text="&#xeec0;" FontFamily="{DynamicResource FontIcoFont}" FontSize="20"
+        <TextBlock Text="&#xeec0;" FontFamily="{StaticResource FontIcoFont}" FontSize="20"
                    VerticalAlignment="Center" HorizontalAlignment="Center" />
     </DataTemplate>
 
     <DataTemplate x:Key="TopPanelGroupSettingsTemplate">
-        <TextBlock Text="&#xee03;" FontFamily="{DynamicResource FontIcoFont}" FontSize="20"
+        <TextBlock Text="&#xee03;" FontFamily="{StaticResource FontIcoFont}" FontSize="20"
                    VerticalAlignment="Center" HorizontalAlignment="Center" />
     </DataTemplate>
 
     <DataTemplate x:Key="TopPanelSortSettingsTemplate">
-        <TextBlock Text="&#xefee;" FontFamily="{DynamicResource FontIcoFont}" FontSize="20"
+        <TextBlock Text="&#xefee;" FontFamily="{StaticResource FontIcoFont}" FontSize="20"
                    VerticalAlignment="Center" HorizontalAlignment="Center" />
     </DataTemplate>
 
@@ -43,26 +43,26 @@
     <DataTemplate x:Key="TopPanelUpdateButtonTemplate">
         <TextBlock Foreground="{DynamicResource WarningBrush}"
                    VerticalAlignment="Center" HorizontalAlignment="Center"
-                   Text="&#xef08;" FontSize="24" FontFamily="{DynamicResource FontIcoFont}" />
+                   Text="&#xef08;" FontSize="24" FontFamily="{StaticResource FontIcoFont}" />
     </DataTemplate>
 
     <DataTemplate x:Key="TopPanelExplorerSwitchTemplate">
-        <TextBlock Text="&#xeeed;" FontFamily="{DynamicResource FontIcoFont}" FontSize="20"
+        <TextBlock Text="&#xeeed;" FontFamily="{StaticResource FontIcoFont}" FontSize="20"
                    VerticalAlignment="Center" HorizontalAlignment="Center" />
     </DataTemplate>
 
     <DataTemplate x:Key="TopPanelSelectRandomGameButtonTemplate">
-        <TextBlock Text="&#xef03;" FontFamily="{DynamicResource FontIcoFont}" FontSize="20"
+        <TextBlock Text="&#xef03;" FontFamily="{StaticResource FontIcoFont}" FontSize="20"
                    VerticalAlignment="Center" HorizontalAlignment="Center" />
     </DataTemplate>
 
     <DataTemplate x:Key="TopPanelViewSelectRandomGameButtonTemplate">
-        <TextBlock Text="&#xefcf;" FontFamily="{DynamicResource FontIcoFont}" FontSize="20"
+        <TextBlock Text="&#xefcf;" FontFamily="{StaticResource FontIcoFont}" FontSize="20"
                    VerticalAlignment="Center" HorizontalAlignment="Center" />
     </DataTemplate>
     
     <DataTemplate x:Key="TopPanelSearchButtonTemplate">
-        <TextBlock Text="&#xed12;" FontFamily="{DynamicResource FontIcoFont}" FontSize="20"
+        <TextBlock Text="&#xed12;" FontFamily="{StaticResource FontIcoFont}" FontSize="20"
                    VerticalAlignment="Center" HorizontalAlignment="Center" />
     </DataTemplate>
 
@@ -81,7 +81,7 @@
                             BorderThickness="{TemplateBinding BorderThickness}"
                             Background="{TemplateBinding Background}"
                             Grid.IsSharedSizeScope="True"
-                            CornerRadius="{DynamicResource ControlCornerRadius}">
+                            CornerRadius="{StaticResource ControlCornerRadius}">
                         <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
                             <ItemsPresenter KeyboardNavigation.DirectionalNavigation="Cycle"/>
                         </ScrollViewer>
@@ -105,11 +105,11 @@
                             CornerRadius="3">
                         <StackPanel Orientation="Horizontal" Margin="6,0,6,0">
                             <TextBlock Text="&#xef29;"
-                                       FontFamily="{DynamicResource FontIcoFont}" FontSize="20"
+                                       FontFamily="{StaticResource FontIcoFont}" FontSize="20"
                                        VerticalAlignment="Center" HorizontalAlignment="Center"
                                        Foreground="{TemplateBinding Foreground}"/>
-                            <TextBlock Text="{DynamicResource LOCFilterActiveLabel}"
-                                       Style="{DynamicResource BaseTextBlockStyle}"
+                            <TextBlock Text="{StaticResource LOCFilterActiveLabel}"
+                                       Style="{StaticResource BaseTextBlockStyle}"
                                        Margin="3,0,0,0" VerticalAlignment="Center"
                                        Foreground="{TemplateBinding Foreground}"
                                        Name="TextFilter" />
@@ -146,7 +146,7 @@
                 <ControlTemplate>
                     <Border Background="Transparent">
                         <Grid>
-                            <TextBlock Text="&#xeea3;" FontFamily="{DynamicResource FontIcoFont}" FontSize="24"
+                            <TextBlock Text="&#xeea3;" FontFamily="{StaticResource FontIcoFont}" FontSize="24"
                                        Foreground="{TemplateBinding Foreground}"
                                        HorizontalAlignment="Center"/>
                             <Border CornerRadius="3" Width="15" Height="15"
@@ -197,7 +197,7 @@
                             <StackPanel x:Name="PART_PanelMainItems" Orientation="Horizontal"
                                         VerticalAlignment="Stretch" Margin="0,6,0,6"/>
 
-                            <CheckBox x:Name="PART_ToggleFilter" ToolTip="{DynamicResource LOCFilters}"
+                            <CheckBox x:Name="PART_ToggleFilter" ToolTip="{StaticResource LOCFilters}"
                                       Style="{DynamicResource TopPanelFilterToggle}"
                                       DockPanel.Dock="Left" />
 
@@ -215,11 +215,11 @@
                                     <ProgressBar Name="PART_ProgressGlobal" />
                                     <TextBlock Name="PART_TextProgressText"
                                                VerticalAlignment="Center" HorizontalAlignment="Center"
-                                               Style="{DynamicResource BaseTextBlockStyle}" Margin="5,0,5,0" />
+                                               Style="{StaticResource BaseTextBlockStyle}" Margin="5,0,5,0" />
                                 </Grid>
 
                                 <Button Name="PART_ButtonProgressCancel"
-                                        Content="{DynamicResource LOCCancelLabel}"
+                                        Content="{StaticResource LOCCancelLabel}"
                                         WindowChrome.IsHitTestVisibleInChrome="True"
                                         Margin="5,0,0,0" />
                             </StackPanel>                    

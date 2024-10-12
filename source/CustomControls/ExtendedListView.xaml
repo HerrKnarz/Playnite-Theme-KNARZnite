@@ -3,5 +3,6 @@
 
     <Style TargetType="{x:Type ExtendedListView}" BasedOn="{StaticResource {x:Type ListView}}">
         <Setter Property="Background" Value="{DynamicResource ControlBackgroundBrush}" />
+        <Setter Property="VirtualizingStackPanel.VirtualizationMode" Value="Recycling" />
     </Style>
 </ResourceDictionary>

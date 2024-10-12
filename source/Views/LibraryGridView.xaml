@@ -18,7 +18,8 @@
                             <ExtendedListBox x:Name="PART_ListGames" Padding="5"
                                              ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                                              ScrollViewer.PanningMode="VerticalOnly"
-                                             ItemContainerStyle="{DynamicResource GridViewItemStyle}"
+                                             VirtualizingStackPanel.VirtualizationMode="Recycling"
+                                             ItemContainerStyle="{StaticResource GridViewItemStyle}"
                                              SelectionMode="Extended"
                                              DockPanel.Dock="Left"
                                              BorderThickness="0">
@@ -32,7 +33,7 @@
                                 </ExtendedListBox.GroupStyle>
                             </ExtendedListBox>
                             <TextBlock FontSize="{StaticResource FontSizeLarge}" Margin="0,40,0,0"
-                                       Text="{DynamicResource LOCNoItemsFound}" TextWrapping="Wrap"                                      
+                                       Text="{StaticResource LOCNoItemsFound}" TextWrapping="Wrap"                                      
                                        TextAlignment="Center" HorizontalAlignment="Center">
                                 <TextBlock.Style>
                                     <Style TargetType="TextBlock" BasedOn="{StaticResource BaseTextBlockStyle}">
@@ -46,8 +47,8 @@
                                 </TextBlock.Style>
                             </TextBlock>
 							<StackPanel Margin="5" Orientation="Horizontal" VerticalAlignment="Bottom">
-								<Label Content="&#xEC97;" FontFamily="{DynamicResource FontIcoFont}" FontSize="20" Margin="10,0,10,0"/>
-								<SliderWithPopup x:Name="PART_SliderZoom" />
+								<Label Content="&#xEC97;" FontFamily="{StaticResource FontIcoFont}" FontSize="20" Margin="10,0,10,0"/>
+								<SliderWithPopup x:Name="PART_SliderZoom"/>
                             </StackPanel>
                         </Grid>
                     </DockPanel>

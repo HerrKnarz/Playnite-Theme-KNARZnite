@@ -1,5 +1,19 @@
 AddonId: KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9
 Packages:
+  - Version: 2.1.0
+    RequiredApiVersion: 2.6
+    ReleaseDate: 2024-10-12
+    PackageUrl: https://github.com/HerrKnarz/Playnite-Theme-KNARZnite/releases/download/v2.1.0/KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9_2_1_0.pthm
+    Changelog:
+      - Added steam player count (via Steam News Viewer).
+      - Added Duplicate Hider buttons to the game details (appear, when hovering over the background image).
+      - Removed uneccessary animation from Duplicate Hider items to fit the theme better and for better performance.
+      - Performance optimizations
+      - Fixed game name offset, when no logo is available and game name is only shown, when there is no logo.
+      - Fixed background image of last game is shown, when the selected game has no background.
+      - Fixed backgrounds in details mode only working, when BackgroundChanger addon is installed.
+      - Fixed more missing drop shadows.
+      - Fixed double drop shadow on addon buttons.
   - Version: 2.0.0
     RequiredApiVersion: 2.6
     ReleaseDate: 2024-10-11
