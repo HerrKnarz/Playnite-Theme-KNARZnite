@@ -8,10 +8,10 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type GameListItem}">
-                    <DockPanel Margin="15,8,5,8" Name="PART_PanelHost" Background="Transparent"
+                    <DockPanel Margin="15,8,20,8" Name="PART_PanelHost" Background="Transparent"
                         d:DataContext="{x:Static DesignMainViewModel.DesignSelectedGameIntance}">
                         <TextBlock Text="&#xF000;" Foreground="{DynamicResource GlyphBrush}"
-                                   Margin="3,0,15,0"
+                                   Margin="3,0,0,0"
                                    VerticalAlignment="Center"
                                    DockPanel.Dock="Right"
                                    FontFamily="{StaticResource FontIcoFont}"

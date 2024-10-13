@@ -46,10 +46,26 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-							<StackPanel Margin="5" Orientation="Horizontal" VerticalAlignment="Bottom">
-								<Label Content="&#xEC97;" FontFamily="{StaticResource FontIcoFont}" FontSize="20" Margin="10,0,10,0"/>
-								<SliderWithPopup x:Name="PART_SliderZoom"/>
-                            </StackPanel>
+                            <Border x:Name="SliderBox" Height="40" Margin="5" VerticalAlignment="Bottom" HorizontalAlignment="Left" Style="{StaticResource BorderBlock}">
+                                <StackPanel Margin="5" Orientation="Horizontal" VerticalAlignment="Center">
+                                    <Label Content="&#xEFD5;" FontFamily="{StaticResource FontIcoFont}" FontSize="20"/>
+
+                                    <Grid>
+                                        <Grid.Style>
+                                            <Style TargetType="Grid">
+                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding ElementName=SliderBox, Path=IsMouseOver}" Value="True">
+                                                        <Setter Property="Visibility" Value="Visible" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Grid.Style>
+
+                                        <SliderWithPopup x:Name="PART_SliderZoom" Margin="10,0,0,0"/>
+                                    </Grid>
+                                </StackPanel>
+                            </Border>
                         </Grid>
                     </DockPanel>
                 </ControlTemplate>

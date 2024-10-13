@@ -194,20 +194,35 @@
                                     </DockPanel>
                                     <!--#regionend-->
                                 </Grid>
-                                <DockPanel Margin="0,20,0,15" MaxWidth="{DynamicResource DetailsViewDetailsMaxWidth}" Grid.Row="2" Background="Transparent">
+                                <DockPanel Margin="0,20,0,15" MaxWidth="{DynamicResource DetailsViewDetailsMaxWidth}" Grid.Row="2" Background="Transparent"
+                                           x:Name="ButtonBar" Tag="{DynamicResource LinkBarAsBox}">
                                     <StackPanel VerticalAlignment="Bottom" DockPanel.Dock="Left">
-                                        <DockPanel Margin="0,15,0,0" LastChildFill="False">
-                                            <Button DockPanel.Dock="Left" x:Name="ButtonPlayAction" VerticalAlignment="Center" Style="{DynamicResource PlayButton}" Command="{Binding ContextActionCommand}" ToolTip="{Binding ContextActionDescription}"/>
-                                            <Button DockPanel.Dock="Left" x:Name="ButtonInstallAction" VerticalAlignment="Center" Style="{DynamicResource InstallButton}" Command="{Binding ContextActionCommand}" ToolTip="{Binding ContextActionDescription}" Tag="{DynamicResource HidePlayButtonForManualGames}"/>
-                                            <Button DockPanel.Dock="Left" x:Name="ButtonContextAction" VerticalAlignment="Center" Style="{DynamicResource ContextActionButton}" Command="{Binding ContextActionCommand}" ToolTip="{Binding ContextActionDescription}"/>
-                                            <Button DockPanel.Dock="Left" x:Name="PART_ButtonEditGame" Content="&#xEDED;" VerticalAlignment="Center" Margin="10,0,0,0" Height="40" Width="40" FontFamily="{DynamicResource FontIcoFont}" />
-                                            <Button DockPanel.Dock="Left" x:Name="PART_ButtonMoreActions" Content="&#xEFA2;" VerticalAlignment="Center" Margin="10,0,0,0" Height="40" Width="40" FontFamily="{DynamicResource FontIcoFont}" />
+                                        <WrapPanel Margin="0,15,0,0" Orientation="Horizontal">
+                                            <Button x:Name="ButtonPlayAction" VerticalAlignment="Center" Style="{DynamicResource PlayButton}" Command="{Binding ContextActionCommand}" ToolTip="{Binding ContextActionDescription}"/>
+                                            <Button x:Name="ButtonInstallAction" VerticalAlignment="Center" Style="{DynamicResource InstallButton}" Command="{Binding ContextActionCommand}" ToolTip="{Binding ContextActionDescription}" Tag="{DynamicResource HidePlayButtonForManualGames}"/>
+                                            <Button x:Name="ButtonContextAction" VerticalAlignment="Center" Style="{DynamicResource ContextActionButton}" Command="{Binding ContextActionCommand}" ToolTip="{Binding ContextActionDescription}"/>
+                                            <Button x:Name="PART_ButtonEditGame" Content="&#xEDED;" VerticalAlignment="Center" Margin="10,0,0,0" Height="40" Width="40" FontFamily="{DynamicResource FontIcoFont}" />
+                                            <Button x:Name="PART_ButtonMoreActions" Content="&#xEFA2;" VerticalAlignment="Center" Margin="10,0,0,0" Height="40" Width="40" FontFamily="{DynamicResource FontIcoFont}" />
+
+                                            <Border x:Name="PlayTimeButton" Style="{StaticResource BorderBlock}" Height="40" Margin="10,0,0,0"
+                                                    Padding="8,0" Tag="{DynamicResource ShowPlayTimeInButtonBar}">
+                                                <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                                                    <TextBlock Style="{DynamicResource BaseTextBlockStyle}" Text="&#xEEDC;" FontFamily="{StaticResource FontIcoFont}" FontSize="24"
+                                                               Margin="0,0,10,0" Foreground="{DynamicResource GlyphBrush}" VerticalAlignment="Center"/>
+                                                    <StackPanel VerticalAlignment="Center">
+                                                        <TextBlock Style="{DynamicResource BaseTextBlockStyle}" Text="{DynamicResource LOCTimePlayed}" FontSize="{DynamicResource FontSizeSmall}"/>
+                                                        <TextBlock Style="{DynamicResource BaseTextBlockStyle}"
+                                                                   Text="{Binding Game.Playtime, Converter={StaticResource PlayTimeToStringConverter}}" FontSize="{DynamicResource FontSizeSmall}" />
+                                                    </StackPanel>
+                                                </StackPanel>
+                                            </Border>
+
                                             <ContentControl x:Name="PlayState_GameStateSwitchControl" Style="{DynamicResource ActionControl}" Visibility="{PluginSettings Plugin=PlayState, Path=IsControlVisible, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
                                             <ContentControl x:Name="ScreenshotsVisualizer_PluginButton" Style="{DynamicResource ActionControl}" Visibility="{PluginSettings Plugin=ScreenshotsVisualizer, Path=HasData, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
                                             <ContentControl x:Name="HowLongToBeat_PluginButton" Style="{DynamicResource ActionControl}" Visibility="{PluginSettings Plugin=HowLongToBeat, Path=EnableIntegrationButton, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
-                                            
-                                            <StackPanel Margin="10,0,0,0" VerticalAlignment="Center"> 
-                                                <StackPanel.Style>     
+
+                                            <StackPanel Margin="10,0,0,0" VerticalAlignment="Center">
+                                                <StackPanel.Style>
                                                     <Style TargetType="{x:Type StackPanel}">
                                                         <Setter Property="Visibility" Value="Collapsed" />
                                                         <Style.Triggers>
@@ -215,7 +230,7 @@
                                                                 <Setter Property="Visibility" Value="Visible" />
                                                             </DataTrigger>
                                                         </Style.Triggers>
-                                                    </Style>                                      
+                                                    </Style>
                                                 </StackPanel.Style>
                                                 <ContentControl x:Name="HowLongToBeat_PluginProgressBar" Height="40" Width="250" />
                                             </StackPanel>
@@ -230,12 +245,16 @@
                                                     <Style TargetType="Button" BasedOn="{StaticResource PlayersCountButtonStyle}" />
                                                 </ContentControl.Resources>
                                             </ContentControl>
+
                                             <ContentControl x:Name="LibraryManagement_PluginFeaturesIconList" Height="35" Margin="10,0,0,0" VerticalAlignment="Center" Opacity="0.85"
                                                             Visibility="{PluginSettings Plugin=LibraryManagement, Path=EnableIntegrationFeatures, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
-                                        </DockPanel>
-                                        <DockPanel Margin="0,20,0,0" Tag="{DynamicResource DisplayLinkBar}">
-                                            <DockPanel.Style>
-                                                <Style TargetType="{x:Type DockPanel}">
+                                        </WrapPanel>
+
+                                        <Border x:Name="LinkBar" Margin="0,20,0,0" Tag="{DynamicResource DisplayLinkBar}" Background="{DynamicResource OpaqueButtonBackgroundBrush}"
+                                                CornerRadius="{StaticResource ControlCornerRadius}" Effect="{DynamicResource DefaultSubtleDropShadow}"
+                                                Padding="5" BorderBrush="{DynamicResource NormalBorderBrush}" BorderThickness="{StaticResource ControlBorderThickness}">
+                                            <Border.Style>
+                                                <Style TargetType="{x:Type Border}">
                                                     <Setter Property="Visibility" Value="Collapsed"/>
                                                     <Style.Triggers>
                                                         <DataTrigger Binding="{Binding Tag, RelativeSource={RelativeSource Self}, FallbackValue=True}" Value="True">
@@ -243,31 +262,34 @@
                                                         </DataTrigger>
                                                     </Style.Triggers>
                                                 </Style>
-                                            </DockPanel.Style>
-                                            <TextBlock Text="&#xef71;" FontFamily="{StaticResource FontIcoFont}" Foreground="{DynamicResource GlyphBrush}" FontSize="40" VerticalAlignment="Center" Margin="10,5,20,5" />
-                                            <ItemsControl ItemsSource="{Binding Game.Links}" DockPanel.Dock="Left">
-                                                <ItemsControl.ItemsPanel>
-                                                    <ItemsPanelTemplate>
-                                                        <WrapPanel Orientation="Horizontal" VerticalAlignment="Center" />
-                                                    </ItemsPanelTemplate>
-                                                </ItemsControl.ItemsPanel>
-                                                <ItemsControl.ItemTemplate>
-                                                    <DataTemplate DataType="{x:Type Link}">
-                                                        <TextBlock DockPanel.Dock="Left" Margin="0,4,10,4" Typography.Capitals="AllSmallCaps">
-                                                                <Hyperlink Command="{Binding RelativeSource={RelativeSource AncestorType=Grid}, Path=DataContext.OpenLinkCommand}"
-                                                                           CommandParameter="{Binding}">
-                                                                    <Run Text="{Binding Name}"/>
-                                                                </Hyperlink>
-                                                        </TextBlock>
-                                                    </DataTemplate>
-                                                </ItemsControl.ItemTemplate>
-                                            </ItemsControl>
-                                        </DockPanel>
+                                            </Border.Style>
+                                            <DockPanel>
+                                                <TextBlock Text="&#xef71;" FontFamily="{StaticResource FontIcoFont}" Foreground="{DynamicResource GlyphBrush}" FontSize="40" VerticalAlignment="Center" Margin="10,5,20,5" />
+                                                <ItemsControl ItemsSource="{Binding Game.Links}" DockPanel.Dock="Left">
+                                                    <ItemsControl.ItemsPanel>
+                                                        <ItemsPanelTemplate>
+                                                            <WrapPanel Orientation="Horizontal" VerticalAlignment="Center" />
+                                                        </ItemsPanelTemplate>
+                                                    </ItemsControl.ItemsPanel>
+                                                    <ItemsControl.ItemTemplate>
+                                                        <DataTemplate DataType="{x:Type Link}">
+                                                            <TextBlock DockPanel.Dock="Left" Margin="0,4,10,4" Typography.Capitals="AllSmallCaps">
+                                                                    <Hyperlink Command="{Binding RelativeSource={RelativeSource AncestorType=Grid}, Path=DataContext.OpenLinkCommand}"
+                                                                               CommandParameter="{Binding}">
+                                                                        <Run Text="{Binding Name}"/>
+                                                                    </Hyperlink>
+                                                            </TextBlock>
+                                                        </DataTemplate>
+                                                    </ItemsControl.ItemTemplate>
+                                                </ItemsControl>
+                                            </DockPanel>
+                                        </Border>
                                     </StackPanel>
                                 </DockPanel>
-                                <DockPanel MaxWidth="{DynamicResource DetailsViewDetailsMaxWidth}" Grid.Row="3">
+
+                                <DockPanel x:Name="DetailsSection" Tag="{DynamicResource DisableDetailsSection}" Grid.Row="3" MaxWidth="{DynamicResource DetailsViewDetailsMaxWidth}">
                                     <StackPanel DockPanel.Dock="Left" Width="300"
-                                                Margin="2,0,10,0">
+                                                Margin="0, 0, 10, 0">
                                         <StackPanel.Resources>
                                             <Style TargetType="ItemsControl">
                                                 <Setter Property="VerticalAlignment" Value="Center" />
@@ -354,7 +376,7 @@
                                                 </Grid>
                                                 <ContentControl x:Name="ThemeExtras_CompletionStatusComboBox" VerticalAlignment="Center" Grid.Column="1"
 												            	Visibility="{PluginStatus Plugin=felixkmh_Extras_Plugin, Status=Installed}"  />
-											</Grid>
+                                            </Grid>
 
                                             <Label Name="PART_ElemPlayTime" Grid.Row="1">
                                                 <StackPanel Orientation="Horizontal">
@@ -420,7 +442,7 @@
                                             </Label>
                                             <ItemsControl Name="PART_ItemsPlatforms" Grid.Row="8" Grid.Column="1" />
 
-											<ContentControl x:Name="MetadataUtilities_CategoryPrefixItemControl" Tag="&#xEF74;" Grid.ColumnSpan="2" Margin="0"
+                                            <ContentControl x:Name="MetadataUtilities_CategoryPrefixItemControl" Tag="&#xEF74;" Grid.ColumnSpan="2" Margin="0"
 											                Visibility="{Binding CategoryVisibility}" Grid.Row="9" />
 
                                             <ContentControl x:Name="MetadataUtilities_GenrePrefixItemControl" Tag="&#xEF74;" Grid.ColumnSpan="2" Margin="0"
@@ -486,13 +508,13 @@
                                                     <TextBlock Text="{DynamicResource LOCCommunityScore}" />
                                                 </StackPanel>
                                             </Label>
-                                            <DockPanel Grid.Row="19" Grid.Column="1" VerticalAlignment="Center">											
-												<StackPanel Visibility="{PluginStatus Plugin=felixkmh_Extras_Plugin, Status=Installed}" VerticalAlignment="Center" DockPanel.Dock="Left" Margin="0,0,5,0">
-													<ContentControl x:Name="ThemeExtras_CommunityRating" Visibility="{Binding CommunityScoreVisibility}" />
-												</StackPanel>
-												<TextBlock Name="PART_TextCommunityScore" VerticalAlignment="Center" Style="{DynamicResource TextBlockGameScore}"
+                                            <DockPanel Grid.Row="19" Grid.Column="1" VerticalAlignment="Center">
+                                                <StackPanel Visibility="{PluginStatus Plugin=felixkmh_Extras_Plugin, Status=Installed}" VerticalAlignment="Center" DockPanel.Dock="Left" Margin="0,0,5,0">
+                                                    <ContentControl x:Name="ThemeExtras_CommunityRating" Visibility="{Binding CommunityScoreVisibility}" />
+                                                </StackPanel>
+                                                <TextBlock Name="PART_TextCommunityScore" VerticalAlignment="Center" Style="{DynamicResource TextBlockGameScore}"
 														   DockPanel.Dock="Left" />
-											</DockPanel>
+                                            </DockPanel>
 
                                             <Label Name="PART_ElemCriticScore" Grid.Row="20" >
                                                 <StackPanel Orientation="Horizontal">
@@ -500,13 +522,13 @@
                                                     <TextBlock Text="{DynamicResource LOCCriticScore}" />
                                                 </StackPanel>
                                             </Label>
-											<DockPanel Grid.Row="20" Grid.Column="1" VerticalAlignment="Center">											
-												<StackPanel Visibility="{PluginStatus Plugin=felixkmh_Extras_Plugin, Status=Installed}" VerticalAlignment="Center" DockPanel.Dock="Left" Margin="0,0,5,0">
-													<ContentControl x:Name="ThemeExtras_CriticRating" Visibility="{Binding CriticScoreVisibility}" />
-												</StackPanel>
-												<TextBlock Name="PART_TextCriticScore" VerticalAlignment="Center" Style="{DynamicResource TextBlockGameScore}"
+                                            <DockPanel Grid.Row="20" Grid.Column="1" VerticalAlignment="Center">
+                                                <StackPanel Visibility="{PluginStatus Plugin=felixkmh_Extras_Plugin, Status=Installed}" VerticalAlignment="Center" DockPanel.Dock="Left" Margin="0,0,5,0">
+                                                    <ContentControl x:Name="ThemeExtras_CriticRating" Visibility="{Binding CriticScoreVisibility}" />
+                                                </StackPanel>
+                                                <TextBlock Name="PART_TextCriticScore" VerticalAlignment="Center" Style="{DynamicResource TextBlockGameScore}"
 														   DockPanel.Dock="Left" />
-											</DockPanel>
+                                            </DockPanel>
 
                                             <Label Name="PART_ElemUserScore" Grid.Row="21" >
                                                 <StackPanel Orientation="Horizontal">
@@ -514,18 +536,18 @@
                                                     <TextBlock Text="{DynamicResource LOCUserScore}" />
                                                 </StackPanel>
                                             </Label>
-											<DockPanel Grid.Row="21" Grid.Column="1" VerticalAlignment="Center">											
-												<StackPanel Visibility="{PluginStatus Plugin=felixkmh_Extras_Plugin, Status=Installed}" VerticalAlignment="Center" DockPanel.Dock="Left" Margin="0,0,5,0">
-													<ContentControl x:Name="ThemeExtras_UserRating" Visibility="{Binding UserScoreVisibility}" />
-												</StackPanel>
-												<TextBlock Name="PART_TextUserScore" VerticalAlignment="Center" Style="{DynamicResource TextBlockGameScore}"
+                                            <DockPanel Grid.Row="21" Grid.Column="1" VerticalAlignment="Center">
+                                                <StackPanel Visibility="{PluginStatus Plugin=felixkmh_Extras_Plugin, Status=Installed}" VerticalAlignment="Center" DockPanel.Dock="Left" Margin="0,0,5,0">
+                                                    <ContentControl x:Name="ThemeExtras_UserRating" Visibility="{Binding UserScoreVisibility}" />
+                                                </StackPanel>
+                                                <TextBlock Name="PART_TextUserScore" VerticalAlignment="Center" Style="{DynamicResource TextBlockGameScore}"
 														   DockPanel.Dock="Left" />
-											</DockPanel>
+                                            </DockPanel>
 
-											<ContentControl x:Name="MetadataUtilities_FeaturePrefixItemControl" Tag="&#xEF74;" Grid.ColumnSpan="2" Margin="0"
+                                            <ContentControl x:Name="MetadataUtilities_FeaturePrefixItemControl" Tag="&#xEF74;" Grid.ColumnSpan="2" Margin="0"
 											                Visibility="{Binding FeatureVisibility}" Grid.Row="22" />
 
-											<ContentControl x:Name="MetadataUtilities_TagPrefixItemControl" Tag="&#xEC85;" Grid.ColumnSpan="2" Margin="0"
+                                            <ContentControl x:Name="MetadataUtilities_TagPrefixItemControl" Tag="&#xEC85;" Grid.ColumnSpan="2" Margin="0"
 											                Visibility="{Binding TagVisibility}" Grid.Row="23" />
 
                                             <Label Name="PART_ElemLinks" Grid.Row="24" Tag="{DynamicResource DisplayLinksAsList}">
@@ -534,46 +556,46 @@
                                                     <TextBlock Text="{DynamicResource LOCLinksLabel}" />
                                                 </StackPanel>
                                             </Label>
-											<Grid Visibility="{Binding LinkVisibility}" Grid.Row="24" Grid.Column="1">
-												<ContentControl x:Name="ThemeExtras_Links" Visibility="{PluginStatus Plugin=felixkmh_Extras_Plugin, Status=Installed}">
-													<ContentControl.Resources>
-														<Style TargetType="ItemsControl">
-															<Setter Property="ItemTemplate">
-																<Setter.Value>
-																	<DataTemplate>
-																		<DockPanel Margin="0,4,10,4">
-																			<Viewbox DockPanel.Dock="Left" Margin="0,0,5,0" Width="18" Height="18">
-																				<ContentControl>
-																					<ContentControl.Content>
-																						<Binding Path="Icon">
-																							<Binding.TargetNullValue>
-																								<TextBlock Text="&#xEF71;" 
+                                            <Grid Visibility="{Binding LinkVisibility}" Grid.Row="24" Grid.Column="1">
+                                                <ContentControl x:Name="ThemeExtras_Links" Visibility="{PluginStatus Plugin=felixkmh_Extras_Plugin, Status=Installed}">
+                                                    <ContentControl.Resources>
+                                                        <Style TargetType="ItemsControl">
+                                                            <Setter Property="ItemTemplate">
+                                                                <Setter.Value>
+                                                                    <DataTemplate>
+                                                                        <DockPanel Margin="0,4,10,4">
+                                                                            <Viewbox DockPanel.Dock="Left" Margin="0,0,5,0" Width="18" Height="18">
+                                                                                <ContentControl>
+                                                                                    <ContentControl.Content>
+                                                                                        <Binding Path="Icon">
+                                                                                            <Binding.TargetNullValue>
+                                                                                                <TextBlock Text="&#xEF71;" 
 																										Style="{DynamicResource BaseTextBlockStyle}" 
 																										FontFamily="{StaticResource FontIcoFont}"/>
-																							</Binding.TargetNullValue>
-																						</Binding>
-																					</ContentControl.Content>
-																				</ContentControl>
-																			</Viewbox>
-																			<TextBlock DockPanel.Dock="Left" 
+                                                                                            </Binding.TargetNullValue>
+                                                                                        </Binding>
+                                                                                    </ContentControl.Content>
+                                                                                </ContentControl>
+                                                                            </Viewbox>
+                                                                            <TextBlock DockPanel.Dock="Left" 
 																					TextTrimming="CharacterEllipsis"
 																					ToolTip="{Binding Url}">
 																				<Hyperlink Command="{Binding OpenLinkCommand}">
 																					<Run Text="{Binding Name}"/>
-																				</Hyperlink>    
-																			</TextBlock>
-																		</DockPanel>
-																	</DataTemplate>
-																</Setter.Value>
-															</Setter>
-														</Style>
-													</ContentControl.Resources>
-												</ContentControl>
-											</Grid>
+																				</Hyperlink>
+                                                                            </TextBlock>
+                                                                        </DockPanel>
+                                                                    </DataTemplate>
+                                                                </Setter.Value>
+                                                            </Setter>
+                                                        </Style>
+                                                    </ContentControl.Resources>
+                                                </ContentControl>
+                                            </Grid>
                                         </Grid>
                                     </StackPanel>
 
-                                    <TabControl Margin="0,4,10,0" Style="{DynamicResource TabControlDetailsView}"
+                                    <TabControl Margin="0,4,0,0" Style="{DynamicResource TabControlDetailsView}"
                                                     Focusable="False">
                                         <TabItem Name="PART_ElemDescription">
                                             <TabItem.Header>
@@ -623,8 +645,8 @@
                                                                     Margin="0,10,0,0" />
                                             </StackPanel>
                                         </TabItem>
-										
-										<TabItem Visibility="{PluginSettings Plugin=SteamScreenshots, Path=IsControlVisible, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
+
+                                        <TabItem Visibility="{PluginSettings Plugin=SteamScreenshots, Path=IsControlVisible, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
                                             <TabItem.Header>
                                                 <TextBlock Text="{DynamicResource LOC_SteamScreenshots_SteamScreenshotsLabel}"
                                                        Style="{DynamicResource DetailsViewTabHeaderStyle}" />
@@ -811,6 +833,18 @@
                             <Setter TargetName="TitleIconPanel" Property="Visibility" Value="Collapsed"/>
                             <Setter TargetName="ExtraMetadataLoader_LogoLoaderControl" Property="Margin" Value="0"/>
                         </MultiDataTrigger>
+                        <DataTrigger Binding="{Binding Tag, ElementName=ButtonBar}" Value="{StaticResource False}">
+                            <Setter TargetName="LinkBar" Property="Background" Value="Transparent" />
+                            <Setter TargetName="LinkBar" Property="Effect" Value="{DynamicResource NoDropShadow}" />
+                            <Setter TargetName="LinkBar" Property="BorderThickness" Value="0" />
+                            <Setter TargetName="LinkBar" Property="Padding" Value="0" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Tag, ElementName=DetailsSection}" Value="{StaticResource True}">
+                            <Setter TargetName="DetailsSection" Property="Visibility" Value="Collapsed" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Tag, ElementName=PlayTimeButton}" Value="{StaticResource False}">
+                            <Setter TargetName="PlayTimeButton" Property="Visibility" Value="Collapsed" />
+                        </DataTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>

@@ -1,5 +1,17 @@
 AddonId: KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9
 Packages:
+  - Version: 2.2.0
+    RequiredApiVersion: 2.6
+    ReleaseDate: 2024-10-13
+    PackageUrl: https://github.com/HerrKnarz/Playnite-Theme-KNARZnite/releases/download/v2.2.0/KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9_2_2_0.pthm
+    Changelog:
+      - Added option to display the link bar as an actual box with background.
+      - Added option to disable the display of the details section including description completely.
+      - Added option to display the time played in the button bar.
+      - Remade the slider to resize the covers in grid mode.
+      - Added subtle borders to buttons.
+      - Fixed Duplicate Hider icons appearing behind the scroll bar.
+      - Removed windows aero glass frame again, since it was causing more trouble than the added drop shadows were worth.      
   - Version: 2.1.0
     RequiredApiVersion: 2.6
     ReleaseDate: 2024-10-12
