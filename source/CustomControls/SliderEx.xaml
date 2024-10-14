@@ -38,7 +38,7 @@
                                 Width="{Binding ActualWidth, ElementName=ButtonDecrease}" />
                         <Track Grid.Row="1" x:Name="PART_Track">
                             <Track.Thumb>
-                                <Thumb Width="16" Height="16" />
+                                <Thumb Width="16" Height="16" Style="{StaticResource SliderThumb}" />
                             </Track.Thumb>
                             <Track.DecreaseRepeatButton>
                                 <RepeatButton x:Name="ButtonDecrease"
