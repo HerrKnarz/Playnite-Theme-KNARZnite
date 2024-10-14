@@ -1,5 +1,13 @@
 AddonId: KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9
 Packages:
+  - Version: 2.2.2
+    RequiredApiVersion: 2.6
+    ReleaseDate: 2024-10-14
+    PackageUrl: https://github.com/HerrKnarz/Playnite-Theme-KNARZnite/releases/download/v2.2.2/KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9_2_2_2.pthm
+    Changelog:
+      - Fixed crashes related to slider controls (videos, several settings pages).
+      - Fixed top/bottom margin in grid view, when it's not grouped.
+      - Hopefully fixed text in time played box, that appeared blurry for some users.
   - Version: 2.2.1
     RequiredApiVersion: 2.6
     ReleaseDate: 2024-10-14

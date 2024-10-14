@@ -15,7 +15,7 @@
                                               Width="{Settings GrdiDetailsWitdh}"
                                               DockPanel.Dock="{Settings GridViewDetailsPosition}" />                   
                         <Grid DockPanel.Dock="Left">
-                            <ExtendedListBox x:Name="PART_ListGames" Padding="5"
+                            <ExtendedListBox x:Name="PART_ListGames" Padding="0"
                                              ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                                              ScrollViewer.PanningMode="VerticalOnly"
                                              VirtualizingStackPanel.VirtualizationMode="Recycling"
