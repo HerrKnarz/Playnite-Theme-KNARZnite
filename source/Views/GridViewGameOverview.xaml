@@ -198,13 +198,13 @@
                                            x:Name="ButtonBar" Tag="{DynamicResource LinkBarAsBox}">
                                     <StackPanel VerticalAlignment="Bottom" DockPanel.Dock="Left">
                                         <WrapPanel Margin="0,15,0,0" Orientation="Horizontal">
-                                            <Button x:Name="ButtonPlayAction" VerticalAlignment="Center" Style="{DynamicResource PlayButton}" Command="{Binding ContextActionCommand}" ToolTip="{Binding ContextActionDescription}"/>
-                                            <Button x:Name="ButtonInstallAction" VerticalAlignment="Center" Style="{DynamicResource InstallButton}" Command="{Binding ContextActionCommand}" ToolTip="{Binding ContextActionDescription}" Tag="{DynamicResource HidePlayButtonForManualGames}"/>
-                                            <Button x:Name="ButtonContextAction" VerticalAlignment="Center" Style="{DynamicResource ContextActionButton}" Command="{Binding ContextActionCommand}" ToolTip="{Binding ContextActionDescription}"/>
-                                            <Button x:Name="PART_ButtonEditGame" Content="&#xEDED;" VerticalAlignment="Center" Margin="10,0,0,0" Height="40" Width="40" FontFamily="{DynamicResource FontIcoFont}" />
-                                            <Button x:Name="PART_ButtonMoreActions" Content="&#xEFA2;" VerticalAlignment="Center" Margin="10,0,0,0" Height="40" Width="40" FontFamily="{DynamicResource FontIcoFont}" />
+                                            <Button x:Name="ButtonPlayAction" VerticalAlignment="Center" Style="{DynamicResource PlayButton}" Command="{Binding ContextActionCommand}" ToolTip="{Binding ContextActionDescription}" />
+                                            <Button x:Name="ButtonInstallAction" VerticalAlignment="Center" Style="{DynamicResource InstallButton}" Command="{Binding ContextActionCommand}" ToolTip="{Binding ContextActionDescription}" Tag="{DynamicResource HidePlayButtonForManualGames}" />
+                                            <Button x:Name="ButtonContextAction" VerticalAlignment="Center" Style="{DynamicResource ContextActionButton}" Command="{Binding ContextActionCommand}" ToolTip="{Binding ContextActionDescription}" />
+                                            <Button x:Name="PART_ButtonEditGame" Content="&#xEDED;" VerticalAlignment="Center" Margin="0,0,10,0" Height="40" Width="40" FontFamily="{DynamicResource FontIcoFont}" />
+                                            <Button x:Name="PART_ButtonMoreActions" Content="&#xEFA2;" VerticalAlignment="Center" Margin="0,0,10,0" Height="40" Width="40" FontFamily="{DynamicResource FontIcoFont}" />
 
-                                            <Border x:Name="PlayTimeButton" Style="{StaticResource BorderBlock}" Height="40" Margin="10,0,0,0"
+                                            <Border x:Name="PlayTimeButton" Style="{StaticResource BorderBlock}" Height="40" Margin="0,0,10,0"
                                                     Padding="8,0" Tag="{DynamicResource ShowPlayTimeInButtonBar}">
                                                 <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
                                                     <TextBlock Style="{DynamicResource BaseTextBlockStyle}" Text="&#xEEDC;" FontFamily="{StaticResource FontIcoFont}" FontSize="24"
@@ -221,7 +221,7 @@
                                             <ContentControl x:Name="ScreenshotsVisualizer_PluginButton" Style="{DynamicResource ActionControl}" Visibility="{PluginSettings Plugin=ScreenshotsVisualizer, Path=HasData, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
                                             <ContentControl x:Name="HowLongToBeat_PluginButton" Style="{DynamicResource ActionControl}" Visibility="{PluginSettings Plugin=HowLongToBeat, Path=EnableIntegrationButton, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
 
-                                            <StackPanel Margin="10,0,0,0" VerticalAlignment="Center">
+                                            <StackPanel Margin="0,0,10,0" VerticalAlignment="Center">
                                                 <StackPanel.Style>
                                                     <Style TargetType="{x:Type StackPanel}">
                                                         <Setter Property="Visibility" Value="Collapsed" />
@@ -246,7 +246,7 @@
                                                 </ContentControl.Resources>
                                             </ContentControl>
 
-                                            <ContentControl x:Name="LibraryManagement_PluginFeaturesIconList" Height="35" Margin="10,0,0,0" VerticalAlignment="Center" Opacity="0.85"
+                                            <ContentControl x:Name="LibraryManagement_PluginFeaturesIconList" Height="35" VerticalAlignment="Center" Opacity="0.85"
                                                             Visibility="{PluginSettings Plugin=LibraryManagement, Path=EnableIntegrationFeatures, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
                                         </WrapPanel>
 
@@ -370,12 +370,58 @@
                                                 </StackPanel>
                                             </Label>
                                             <Grid Grid.Column="1" VerticalAlignment="Center" Visibility="{Binding CompletionStatusVisibility}">
-                                                <Grid Margin="15,0,0,0" VerticalAlignment="Center"
-												      Visibility="{PluginStatus Plugin=felixkmh_Extras_Plugin, Path=IsInstalled, FallbackValue=Collapsed, Converter={StaticResource InvertedBooleanToVisibilityConverter}}">
+                                                <Grid VerticalAlignment="Center" Tag="{DynamicResource DisplayCompletionStatusComboBox}">
+                                                    <Grid.Style>
+                                                        <Style TargetType="Grid">
+                                                            <Setter Property="Visibility" Value="Visible" />
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{PluginStatus Plugin=felixkmh_Extras_Plugin, Status=Installed}" Value="true">
+                                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                                </DataTrigger>
+                                                                <DataTrigger Binding="{Binding Tag, RelativeSource={RelativeSource Self}, FallbackValue=False}" Value="false" >
+                                                                    <Setter Property="Visibility" Value="Visible" />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Grid.Style>
+                                                    
                                                     <Button Name="PART_ButtonCompletionStatus" VerticalAlignment="Center" />
                                                 </Grid>
-                                                <ContentControl x:Name="ThemeExtras_CompletionStatusComboBox" VerticalAlignment="Center" Grid.Column="1"
-												            	Visibility="{PluginStatus Plugin=felixkmh_Extras_Plugin, Status=Installed}"  />
+                                                <Grid HorizontalAlignment="Stretch" Tag="{DynamicResource DisplayCompletionStatusComboBox}">
+                                                    <Grid.Style>
+                                                        <Style TargetType="Grid">
+                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{PluginStatus Plugin=felixkmh_Extras_Plugin, Status=Installed}" Value="true">
+                                                                    <Setter Property="Visibility" Value="Visible" />
+                                                                </DataTrigger>
+                                                                <DataTrigger Binding="{Binding Tag, RelativeSource={RelativeSource Self}, FallbackValue=False}" Value="false" >
+                                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Grid.Style>
+
+                                                    <ContentControl Visibility="{PluginStatus Plugin=felixkmh_Extras_Plugin, Status=Installed}"
+                                                                HorizontalAlignment="Stretch"
+                                                                x:Name="ThemeExtras_SettableCompletionStatus">
+                                                        <ContentControl.Resources>
+                                                            <Style TargetType="UserControl">
+                                                                <Setter Property="Content">
+                                                                    <Setter.Value>
+                                                                        <ComboBox ItemsSource="{Binding CompletionStatusOptions}" SelectedItem="{Binding Value}">
+                                                                            <ComboBox.ItemTemplate>
+                                                                                <DataTemplate DataType="{x:Type CompletionStatus}">
+                                                                                    <TextBlock Text="{Binding Name}"/>
+                                                                                </DataTemplate>
+                                                                            </ComboBox.ItemTemplate>
+                                                                        </ComboBox>
+                                                                    </Setter.Value>
+                                                                </Setter>
+                                                            </Style>
+                                                        </ContentControl.Resources>
+                                                    </ContentControl>
+                                                </Grid>
                                             </Grid>
 
                                             <Label Name="PART_ElemPlayTime" Grid.Row="1">
@@ -434,13 +480,8 @@
                                             </Label>
                                             <Button Name="PART_ButtonSource" Grid.Row="7" Grid.Column="1" />
 
-                                            <Label Name="PART_ElemPlatform" Grid.Row="8" >
-                                                <StackPanel Orientation="Horizontal">
-                                                    <TextBlock Text="&#xEEEE;" Style="{DynamicResource Icon}" />
-                                                    <TextBlock Text="{DynamicResource LOCGamePlatformTitle}" />
-                                                </StackPanel>
-                                            </Label>
-                                            <ItemsControl Name="PART_ItemsPlatforms" Grid.Row="8" Grid.Column="1" />
+                                            <ContentControl x:Name="MetadataUtilities_PlatformPrefixItemControl" Tag="&#xEEEE;" Grid.ColumnSpan="2" Margin="0"
+											                Visibility="{Binding CategoryVisibility}" Grid.Row="8" />
 
                                             <ContentControl x:Name="MetadataUtilities_CategoryPrefixItemControl" Tag="&#xEF74;" Grid.ColumnSpan="2" Margin="0"
 											                Visibility="{Binding CategoryVisibility}" Grid.Row="9" />
@@ -451,21 +492,11 @@
                                             <ContentControl x:Name="MetadataUtilities_SeriesPrefixItemControl" Tag="&#xEC84;" Grid.ColumnSpan="2" Margin="0"
 											                Visibility="{Binding SeriesVisibility}" Grid.Row="11" />
 
-                                            <Label Name="PART_ElemDevelopers" Grid.Row="12" >
-                                                <StackPanel Orientation="Horizontal">
-                                                    <TextBlock Text="&#xEEF3;" Style="{DynamicResource Icon}" />
-                                                    <TextBlock Text="{DynamicResource LOCDeveloperLabel}" />
-                                                </StackPanel>
-                                            </Label>
-                                            <ItemsControl Name="PART_ItemsDevelopers" Grid.Row="12" Grid.Column="1" />
+                                            <ContentControl x:Name="MetadataUtilities_DeveloperPrefixItemControl" Tag="&#xEEF3;" Grid.ColumnSpan="2" Margin="0"
+											                Visibility="{Binding FeatureVisibility}" Grid.Row="12" />
 
-                                            <Label Name="PART_ElemPublishers" Grid.Row="13" >
-                                                <StackPanel Orientation="Horizontal">
-                                                    <TextBlock Text="&#xEEF3;" Style="{DynamicResource Icon}" />
-                                                    <TextBlock Text="{DynamicResource LOCPublisherLabel}" />
-                                                </StackPanel>
-                                            </Label>
-                                            <ItemsControl Name="PART_ItemsPublishers" Grid.Row="13" Grid.Column="1" />
+                                            <ContentControl x:Name="MetadataUtilities_PublisherPrefixItemControl" Tag="&#xEEF3;" Grid.ColumnSpan="2" Margin="0"
+											                Visibility="{Binding FeatureVisibility}" Grid.Row="13" />
 
                                             <ContentControl x:Name="MetadataUtilities_AgeRatingPrefixItemControl" Tag="&#xEF1B;" Grid.ColumnSpan="2" Margin="0"
 											                Visibility="{Binding AgeRatingVisibility}" Grid.Row="14" />
@@ -486,13 +517,8 @@
                                             </Label>
                                             <TextBlock Name="PART_TextInstallSize" Grid.Row="16" Grid.Column="1" />
 
-                                            <Label Name="PART_ElemRegion" Grid.Row="17" >
-                                                <StackPanel Orientation="Horizontal">
-                                                    <TextBlock Text="&#xF02C;" Style="{DynamicResource Icon}" />
-                                                    <TextBlock Text="{DynamicResource LOCRegionLabel}" />
-                                                </StackPanel>
-                                            </Label>
-                                            <ItemsControl Name="PART_ItemsRegions" Grid.Row="17" Grid.Column="1" />
+                                            <ContentControl x:Name="MetadataUtilities_RegionPrefixItemControl" Tag="&#xF02C;" Grid.ColumnSpan="2" Margin="0"
+											                Visibility="{Binding FeatureVisibility}" Grid.Row="17" />
 
                                             <Label Name="PART_ElemVersion" Grid.Row="18" >
                                                 <StackPanel Orientation="Horizontal">

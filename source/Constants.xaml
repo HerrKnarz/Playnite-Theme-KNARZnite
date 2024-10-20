@@ -14,6 +14,7 @@
     <sys:Boolean x:Key="LinkBarAsBox">True</sys:Boolean>
     <sys:Boolean x:Key="DisableDetailsSection">False</sys:Boolean>
     <sys:Boolean x:Key="ShowPlayTimeInButtonBar">False</sys:Boolean>
+    <sys:Boolean x:Key="DisplayCompletionStatusComboBox">False</sys:Boolean>
 
     <sys:Double x:Key="FontSizeSmall">12</sys:Double>
     <sys:Double x:Key="FontSize">14</sys:Double>

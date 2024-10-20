@@ -5,6 +5,7 @@ Constants:
 - LinkBarAsBox: 'Display link bar as box with background'
 - DisableDetailsSection: 'Disable the details and description section'
 - ShowPlayTimeInButtonBar: 'Show time played in button bar'
+- DisplayCompletionStatusComboBox: 'Enable Completion status combobox'
 - Details View
 - DetailsViewDetailsMaxWidth(1024,2400): 'Maximum width of details'
 - DetailsViewCoverDisplayLibraryBanner: 'Show banners (Requires ThemeExtras extension)'
