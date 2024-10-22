@@ -1,5 +1,11 @@
 AddonId: KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9
 Packages:
+  - Version: 2.3.1
+    RequiredApiVersion: 2.6
+    ReleaseDate: 2024-10-22
+    PackageUrl: https://github.com/HerrKnarz/Playnite-Theme-KNARZnite/releases/download/v2.3.1/KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9_2_3_1.pthm
+    Changelog:
+      - Changed display of link icons back to the old style, in the hope that fixes crashes after importing link metadata.
   - Version: 2.3.0
     RequiredApiVersion: 2.6
     ReleaseDate: 2024-10-22

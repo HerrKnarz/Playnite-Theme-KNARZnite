@@ -582,42 +582,32 @@
                                                     <TextBlock Text="{DynamicResource LOCLinksLabel}" />
                                                 </StackPanel>
                                             </Label>
-											<Grid Visibility="{Binding LinkVisibility}" Grid.Row="24" Grid.Column="1">
-												<ContentControl x:Name="ThemeExtras_Links" Visibility="{PluginStatus Plugin=felixkmh_Extras_Plugin, Status=Installed}">
-													<ContentControl.Resources>
-														<Style TargetType="ItemsControl">
-															<Setter Property="ItemTemplate">
-																<Setter.Value>
-																	<DataTemplate>
+											
+											<ItemsControl ItemsSource="{Binding Game.Links}" Visibility="{Binding LinkVisibility}" Grid.Row="24" Grid.Column="1">
+                                                <ItemsControl.ItemsPanel>
+                                                    <ItemsPanelTemplate>
+                                                        <StackPanel/>
+                                                    </ItemsPanelTemplate>
+                                                </ItemsControl.ItemsPanel>
+                                                <ItemsControl.ItemTemplate>
+                                                    <DataTemplate DataType="{x:Type Link}">
                                                                         <DockPanel Margin="0,4,10,4">
-																			<Viewbox DockPanel.Dock="Left" Margin="0,0,5,0" Width="18" Height="18">
-																				<ContentControl>
-																					<ContentControl.Content>
-																						<Binding Path="Icon">
-																							<Binding.TargetNullValue>
-																								<TextBlock Text="&#xEF71;" 
-																										Style="{DynamicResource BaseTextBlockStyle}" 
-																										FontFamily="{StaticResource FontIcoFont}"/>
-																							</Binding.TargetNullValue>
-																						</Binding>
-																					</ContentControl.Content>
-																				</ContentControl>
+                                                            <Viewbox DockPanel.Dock="Left" Margin="0,0,5,0" Width="18" Height="18" RenderOptions.ClearTypeHint="Enabled" RenderOptions.BitmapScalingMode="Fant">
+                                                                <ContentControl DockPanel.Dock="Left"
+                                                                                Content="{Binding Value, TargetNullValue={StaticResource DefaultLinkTextBlock}}"
+                                                                                DataContext="{Binding Url, Converter={PluginConverter Plugin=ThemeExtras, Converter=UrlToAsyncIconConverter}}"/>
                                                                             </Viewbox>
-																			<TextBlock DockPanel.Dock="Left" 
-																					TextTrimming="CharacterEllipsis"
+                                                            <TextBlock DockPanel.Dock="Left" VerticalAlignment="Center" TextTrimming="CharacterEllipsis"
 																					ToolTip="{Binding Url}">
-																				<Hyperlink Command="{Binding OpenLinkCommand}">
+                                                                <Hyperlink Command="{Binding RelativeSource={RelativeSource AncestorType=Grid}, Path=DataContext.OpenLinkCommand}"
+                                                                           CommandParameter="{Binding}">
 																					<Run Text="{Binding Name}"/>
 																				</Hyperlink>
                                                                             </TextBlock>
                                                                         </DockPanel>
                                                                     </DataTemplate>
-																</Setter.Value>
-															</Setter>
-														</Style>
-													</ContentControl.Resources>
-												</ContentControl>
-											</Grid>
+                                                </ItemsControl.ItemTemplate>
+                                            </ItemsControl>
                                         </Grid>
                                     </StackPanel>
                                     
