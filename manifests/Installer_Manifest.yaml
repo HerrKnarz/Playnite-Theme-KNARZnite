@@ -1,5 +1,16 @@
 AddonId: KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9
 Packages:
+  - Version: 2.3.0
+    RequiredApiVersion: 2.6
+    ReleaseDate: 2024-10-22
+    PackageUrl: https://github.com/HerrKnarz/Playnite-Theme-KNARZnite/releases/download/v2.3.0/KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9_2_3_0.pthm
+    Changelog:
+      - Added additional Metadata Utilities controls for developer, publisher, region and Platform.
+      - You can now add and remove values from fields added through Metadata Utilities directly in details view.
+      - Changed Completion Status combobox to fix crashes.
+      - Completion Status combobox can now also be disabled.
+      - Fixed wrong margins for games, that can't be installed.
+      - Changed group box border to a more subtle color.
   - Version: 2.2.2
     RequiredApiVersion: 2.6
     ReleaseDate: 2024-10-14
