@@ -221,7 +221,7 @@
                                             <ContentControl x:Name="ScreenshotsVisualizer_PluginButton" Style="{DynamicResource ActionControl}" Visibility="{PluginSettings Plugin=ScreenshotsVisualizer, Path=HasData, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
                                             <ContentControl x:Name="HowLongToBeat_PluginButton" Style="{DynamicResource ActionControl}" Visibility="{PluginSettings Plugin=HowLongToBeat, Path=EnableIntegrationButton, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
 
-                                            <StackPanel Margin="0,0,10,0" VerticalAlignment="Center">
+                                            <StackPanel VerticalAlignment="Center">
                                                 <StackPanel.Style>
                                                     <Style TargetType="{x:Type StackPanel}">
                                                         <Setter Property="Visibility" Value="Collapsed" />
@@ -232,7 +232,7 @@
                                                         </Style.Triggers>
                                                     </Style>
                                                 </StackPanel.Style>
-                                                <ContentControl x:Name="HowLongToBeat_PluginProgressBar" Height="40" Width="250" />
+                                                <ContentControl x:Name="HowLongToBeat_PluginProgressBar" Height="40" Width="250" Margin="0,0,10,0" />
                                             </StackPanel>
 
                                             <ContentControl x:Name="CheckDlc_PluginButton" Style="{DynamicResource ActionControl}" Visibility="{PluginSettings Plugin=CheckDlc, Path=EnableIntegrationButton, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
