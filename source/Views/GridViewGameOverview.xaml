@@ -221,7 +221,7 @@
                                             <ContentControl x:Name="ScreenshotsVisualizer_PluginButton" Style="{DynamicResource ActionControl}" Visibility="{PluginSettings Plugin=ScreenshotsVisualizer, Path=HasData, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
                                             <ContentControl x:Name="HowLongToBeat_PluginButton" Style="{DynamicResource ActionControl}" Visibility="{PluginSettings Plugin=HowLongToBeat, Path=EnableIntegrationButton, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
 
-                                            <StackPanel VerticalAlignment="Center">
+                                            <StackPanel Margin="0,0,10,0" VerticalAlignment="Center">
                                                 <StackPanel.Style>
                                                     <Style TargetType="{x:Type StackPanel}">
                                                         <Setter Property="Visibility" Value="Collapsed" />
@@ -232,7 +232,7 @@
                                                         </Style.Triggers>
                                                     </Style>
                                                 </StackPanel.Style>
-                                                <ContentControl x:Name="HowLongToBeat_PluginProgressBar" Height="40" Width="250" Margin="0,0,10,0" />
+                                                <ContentControl x:Name="HowLongToBeat_PluginProgressBar" Height="40" Width="250" />
                                             </StackPanel>
 
                                             <ContentControl x:Name="CheckDlc_PluginButton" Style="{DynamicResource ActionControl}" Visibility="{PluginSettings Plugin=CheckDlc, Path=EnableIntegrationButton, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
@@ -481,7 +481,7 @@
                                             <Button Name="PART_ButtonSource" Grid.Row="7" Grid.Column="1" />
 
                                             <ContentControl x:Name="MetadataUtilities_PlatformPrefixItemControl" Tag="&#xEEEE;" Grid.ColumnSpan="2" Margin="0"
-											                Visibility="{Binding CategoryVisibility}" Grid.Row="8" />
+											                Visibility="{Binding PlatformVisibility}" Grid.Row="8" />
 
                                             <ContentControl x:Name="MetadataUtilities_CategoryPrefixItemControl" Tag="&#xEF74;" Grid.ColumnSpan="2" Margin="0"
 											                Visibility="{Binding CategoryVisibility}" Grid.Row="9" />
@@ -493,10 +493,10 @@
 											                Visibility="{Binding SeriesVisibility}" Grid.Row="11" />
 
                                             <ContentControl x:Name="MetadataUtilities_DeveloperPrefixItemControl" Tag="&#xEEF3;" Grid.ColumnSpan="2" Margin="0"
-											                Visibility="{Binding FeatureVisibility}" Grid.Row="12" />
+											                Visibility="{Binding DeveloperVisibility}" Grid.Row="12" />
 
                                             <ContentControl x:Name="MetadataUtilities_PublisherPrefixItemControl" Tag="&#xEEF3;" Grid.ColumnSpan="2" Margin="0"
-											                Visibility="{Binding FeatureVisibility}" Grid.Row="13" />
+											                Visibility="{Binding PublisherVisibility}" Grid.Row="13" />
 
                                             <ContentControl x:Name="MetadataUtilities_AgeRatingPrefixItemControl" Tag="&#xEF1B;" Grid.ColumnSpan="2" Margin="0"
 											                Visibility="{Binding AgeRatingVisibility}" Grid.Row="14" />
@@ -518,7 +518,7 @@
                                             <TextBlock Name="PART_TextInstallSize" Grid.Row="16" Grid.Column="1" />
 
                                             <ContentControl x:Name="MetadataUtilities_RegionPrefixItemControl" Tag="&#xF02C;" Grid.ColumnSpan="2" Margin="0"
-											                Visibility="{Binding FeatureVisibility}" Grid.Row="17" />
+											                Visibility="{Binding RegionVisibility}" Grid.Row="17" />
 
                                             <Label Name="PART_ElemVersion" Grid.Row="18" >
                                                 <StackPanel Orientation="Horizontal">
@@ -613,7 +613,20 @@
 
                                     <TabControl Margin="0,4,0,0" Style="{DynamicResource TabControlDetailsView}"
                                                     Focusable="False">
-                                        <TabItem Name="PART_ElemDescription">
+                                        <TabControl.Template>
+											<ControlTemplate TargetType="{x:Type TabControl}">
+											<DockPanel>
+												<ScrollViewer DockPanel.Dock="Top"
+															HorizontalScrollBarVisibility="Auto"
+															VerticalScrollBarVisibility="Disabled">
+												<StackPanel Orientation="Horizontal" IsItemsHost="True" />
+												</ScrollViewer>
+												<ContentPresenter ContentSource="SelectedContent" />
+											</DockPanel>
+											</ControlTemplate>
+										</TabControl.Template>
+										
+										<TabItem Name="PART_ElemDescription">
                                             <TabItem.Header>
                                                 <TextBlock Text="{DynamicResource LOCGameDescriptionTitle}" Style="{DynamicResource DetailsViewTabHeaderStyle}" />
                                             </TabItem.Header>
@@ -833,6 +846,17 @@
                                                 </Expander>
                                             </StackPanel>
                                         </TabItem>
+										<!--#region WebExplorer-->
+                                        <TabItem Visibility="{Binding ElementName=WebExplorer_BrowserHostViewControl, Path=Content.IsControlVisible, Converter={StaticResource BooleanToVisibilityConverter}, TargetNullValue=Collapsed, FallbackValue=Collapsed}">
+											<TabItem.Header>
+                                                <TextBlock Text="{DynamicResource LOCWebExplorer_WebLabel}"
+                                                               Style="{DynamicResource DetailsViewTabHeaderStyle}" />
+                                            </TabItem.Header>
+											<StackPanel Orientation="Vertical" Background="{TemplateBinding Background}" Margin="0,-25,0,15">
+                                                <ContentControl x:Name="WebExplorer_BrowserHostViewControl" VerticalAlignment="Top" Height="{DynamicResource WebExplorerControlHeight}" />
+                                            </StackPanel>                                            
+                                        </TabItem>
+                                        <!--#endregion-->
                                     </TabControl>
                                 </DockPanel>
                             </Grid>

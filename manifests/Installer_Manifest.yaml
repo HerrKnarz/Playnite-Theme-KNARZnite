@@ -1,5 +1,13 @@
 AddonId: KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9
 Packages:
+  - Version: 2.4.0
+    RequiredApiVersion: 2.6
+    ReleaseDate: 2024-11-13
+    PackageUrl: https://github.com/HerrKnarz/Playnite-Theme-KNARZnite/releases/download/v2.4.0/KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9_2_4_0.pthm
+    Changelog:
+      - Added support for the new WebExplorer addon.
+      - Made tabs scroll horizontally instead of wrapping, when they don't fit anymore.
+      - Fixed visibility of several details controls. Some were tied to the wrong field couldn't be deactivated correctly because of that.
   - Version: 2.3.1
     RequiredApiVersion: 2.6
     ReleaseDate: 2024-10-22
