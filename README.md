@@ -54,6 +54,7 @@ The following extensions are currently integrated:
 - [SystemChecker](https://playnite.link/addons.html#playnite-systemchecker-plugin) - button
 - [ThemeExtras](https://playnite.link/addons.html#felixkmh_Extras_Plugin) - link icons, banners, editable completion status, star ratings and image context menu in detail and grid view
 - [ThemeModifier](https://playnite.link/addons.html#playnite-thememodifier-plugin) - theme and color settings
+- [Web Explorer](https://playnite.link/addons.html#WebExplorer_181ddd05-2168-4162-a116-b9c2a20c652c) - tab
 
 ## Installation
 
