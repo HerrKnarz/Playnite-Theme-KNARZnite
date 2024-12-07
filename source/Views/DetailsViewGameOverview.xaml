@@ -248,6 +248,10 @@
 
                                             <ContentControl x:Name="LibraryManagement_PluginFeaturesIconList" Height="35" VerticalAlignment="Center" Opacity="0.85"
                                                             Visibility="{PluginSettings Plugin=LibraryManagement, Path=EnableIntegrationFeatures, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
+															
+											<ContentControl x:Name="GogSecondClassWatcher_SecondClassWatcherControl"
+                                                            VerticalAlignment="Center"
+                                                            Visibility="{PluginSettings Plugin=GogSecondClassWatcher, Path=IsControlVisible, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" Margin="0,5,0,0"/>
                                         </WrapPanel>
 
                                         <Border x:Name="LinkBar" Margin="0,20,0,0" Tag="{DynamicResource DisplayLinkBar}" Background="{DynamicResource OpaqueButtonBackgroundBrush}"

@@ -111,7 +111,6 @@
 
     <Style x:Key="ContextActionButton" TargetType="{x:Type Button}" BasedOn="{StaticResource PlayButton}">
         <Setter Property="Content" Value="&#xEA31;" />
-        <Setter Property="Margin" Value="0,10,10,10" />
         <Setter Property="FontSize" Value="30" />
         <Style.Triggers>
             <DataTrigger Binding="{Binding IsInstalled}" Value="True">

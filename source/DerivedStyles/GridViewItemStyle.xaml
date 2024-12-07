@@ -1,22 +1,26 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-
     <Style x:Key="GridViewItemStyle" TargetType="{x:Type ListBoxItem}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
 	    <Setter Property="UseLayoutRounding" Value="True" />
         <Setter Property="RenderTransformOrigin" Value="0.5,0.5" />
-        <Setter Property="Effect" Value="{DynamicResource DefaultSubtleDropShadow}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ListBoxItem}">
-                    <Grid Background="{DynamicResource GridItemBackgroundBrush}"
+					<Grid Background="{DynamicResource GridItemBackgroundBrush}"
                           Margin="{Settings ItemSpacingMargin}"
+						  Effect="{DynamicResource DefaultDropShadow}"
                           x:Name="ItemGrid">
-                        <Border x:Name="SelectionBorder" BorderThickness="3" Margin="-3" />
-                        <ContentPresenter />
-                    </Grid>
+						<Grid.CacheMode>
+							<BitmapCache EnableClearType="True" 
+										 RenderAtScale="1" 
+										 SnapsToDevicePixels="False"  />
+						</Grid.CacheMode>
+							<Border x:Name="SelectionBorder" BorderThickness="3" Margin="-3" CornerRadius="{DynamicResource ControlCornerRadius}" />
+							<ContentPresenter />
+					</Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsSelected" Value="True">
                             <Setter Property="BorderBrush" Value="{DynamicResource GlyphBrush}" TargetName="SelectionBorder"/>
