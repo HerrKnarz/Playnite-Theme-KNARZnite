@@ -1,5 +1,11 @@
 AddonId: KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9
 Packages:
+  - Version: 2.5.1
+    RequiredApiVersion: 2.6
+    ReleaseDate: 2024-12-07
+    PackageUrl: https://github.com/HerrKnarz/Playnite-Theme-KNARZnite/releases/download/v2.5.1/KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9_2_5_1.pthm
+    Changelog:
+      - Fixed margin for GOG Second Class Watcher control
   - Version: 2.5.0
     RequiredApiVersion: 2.6
     ReleaseDate: 2024-12-07
