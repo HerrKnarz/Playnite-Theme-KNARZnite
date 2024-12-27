@@ -8,7 +8,7 @@
 
 This is my personal semi lightweight Playnite theme with all the features I need. It's basically the default theme with bits from [Harmony](https://playnite.link/addons.html#Harmony_d49ef7bc-49de-4fd0-9a67-bd1f26b56047) and [DH_Dawn](https://playnite.link/addons.html#felixkmh_DesktopTheme_DH_Dawn) and some own ideas thrown in. My goal was a simple, lightweight and elegant theme without slow animations, that still integrates several extensions. It's mainly designed for full and half screen use on my widescreen display, but should work in every modern resolution.
 
-**Attention:** From version 1.7 on Metadata Utilities has to be installed, if you want to see  age ratings, categories, features, genres, series or tags in your details, because the theme replaces those controls with the ones from Metadata Utilities.
+**Attention:** From version 1.7 on Metadata Utilities has to be installed, if you want to see fields like categories, features, genres etc. in your details, because the theme replaces those controls with the ones from Metadata Utilities.
 
 ## Screenshots
 
