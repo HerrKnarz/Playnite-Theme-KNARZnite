@@ -194,7 +194,7 @@
                                     </DockPanel>
                                     <!--#regionend-->
                                 </Grid>
-                                <DockPanel Margin="0,20,0,15" MaxWidth="{DynamicResource DetailsViewDetailsMaxWidth}" Grid.Row="2" Background="Transparent"
+                                <DockPanel Margin="0,20,0,15" MaxWidth="{DynamicResource DetailsViewDetailsMaxWidth}" Grid.Row="2" Visibility="{Binding LinkVisibility}" Background="Transparent"
                                            x:Name="ButtonBar" Tag="{DynamicResource LinkBarAsBox}">
                                     <StackPanel VerticalAlignment="Bottom" DockPanel.Dock="Left">
                                         <WrapPanel Margin="0,15,0,0" Orientation="Horizontal">
