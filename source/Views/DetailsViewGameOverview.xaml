@@ -254,9 +254,10 @@
                                                             Visibility="{PluginSettings Plugin=GogSecondClassWatcher, Path=IsControlVisible, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" Margin="5,0,0,0"/>
                                         </WrapPanel>
 
-                                        <Border x:Name="LinkBar" Margin="0,20,0,0" Tag="{DynamicResource DisplayLinkBar}" Background="{DynamicResource OpaqueButtonBackgroundBrush}"
-                                                CornerRadius="{StaticResource ControlCornerRadius}" Effect="{DynamicResource DefaultSubtleDropShadow}"
-                                                Padding="5" BorderBrush="{DynamicResource NormalBorderBrush}" BorderThickness="{StaticResource ControlBorderThickness}">
+                                        <Border x:Name="LinkBar" Visibility="{Binding LinkVisibility}" Margin="0,20,0,0" Tag="{DynamicResource DisplayLinkBar}"
+												Background="{DynamicResource OpaqueButtonBackgroundBrush}" CornerRadius="{StaticResource ControlCornerRadius}"
+												Effect="{DynamicResource DefaultSubtleDropShadow}" Padding="5" BorderBrush="{DynamicResource NormalBorderBrush}"
+												BorderThickness="{StaticResource ControlBorderThickness}">
                                             <Border.Style>
                                                 <Style TargetType="{x:Type Border}">
                                                     <Setter Property="Visibility" Value="Collapsed"/>
