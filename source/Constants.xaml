@@ -7,8 +7,15 @@
     <sys:Boolean x:Key="DetailsViewAllowUseOfLogos">True</sys:Boolean>
     <sys:Boolean x:Key="DetailsViewHideGameNameIfLogoVisible">True</sys:Boolean>
     <sys:Boolean x:Key="DetailsViewLibraryGameShowFavorite">True</sys:Boolean>
-    <sys:Boolean x:Key="GridViewCoverDisplayLibraryBanner">True</sys:Boolean>
     <sys:Boolean x:Key="GridViewLibraryGameShowFavorite">True</sys:Boolean>
+	<sys:Boolean x:Key="GridViewCoverZoomOnHover">False</sys:Boolean>
+    <Visibility x:Key="GridViewCoverSubtitleVisibility">Collapsed</Visibility>
+    <Visibility x:Key="GridViewCoverCompStatusSubtitleVisibility">Collapsed</Visibility>
+    <sys:Boolean x:Key="GridViewEnableCoverShineAnimation">False</sys:Boolean>
+    <sys:Boolean x:Key="GridViewCoverDisplayLibraryBanner">True</sys:Boolean>
+    <sys:Boolean x:Key="GridViewCoverUseRoundedCorners">True</sys:Boolean>
+    <sys:Boolean x:Key="GridViewCoverDisplayDropShadowEffect">False</sys:Boolean>
+    <sys:Boolean x:Key="GridViewEnablePlayingGlowBorder">True</sys:Boolean>
     <sys:Boolean x:Key="HidePlayButtonForManualGames">False</sys:Boolean>
     <sys:Boolean x:Key="DisplayLinkBar">True</sys:Boolean>
     <sys:Boolean x:Key="LinkBarAsBox">True</sys:Boolean>
@@ -27,8 +34,18 @@
     <Thickness x:Key="PopupBorderThickness">1</Thickness>
     <Thickness x:Key="ControlBorderThickness">1</Thickness>
     <sys:Double x:Key="EllipseBorderThickness">1</sys:Double>
-    <CornerRadius x:Key="ControlCornerRadius">5</CornerRadius>
+    <sys:Double x:Key="ControlCornerRadiusValue">5</sys:Double>
+    <CornerRadius x:Key="ControlCornerRadius"
+        BottomLeft="{StaticResource ControlCornerRadiusValue}"
+        BottomRight="{StaticResource ControlCornerRadiusValue}"
+        TopLeft="{StaticResource ControlCornerRadiusValue}"
+        TopRight="{StaticResource ControlCornerRadiusValue}" />
+    <CornerRadius x:Key="ControlCornerRadiusSmall">0</CornerRadius>
     <Thickness x:Key="SidebarItemPadding">8</Thickness>
+    <CornerRadius x:Key="GridViewCoverCornerRadius">5</CornerRadius>
+    <CornerRadius x:Key="GridViewCoverGridBackgroundDisabledCornerRadius">5,5,0,0</CornerRadius>
+    <CornerRadius x:Key="GridViewShowGameNameCornerRadius">0,0,5,5</CornerRadius>
+    <CornerRadius x:Key="GridViewSelectionBorderCornerRadius">7</CornerRadius>
 
     <Color x:Key="BlackColor">#FF000000</Color>
     <Color x:Key="WhiteColor">#FFFFFFFF</Color>
@@ -48,6 +65,7 @@
     <Color x:Key="PanelSeparatorColor">#FF1F1F1F</Color>
     <Color x:Key="WindowPanelSeparatorColor">#FF3797a2</Color>
     <Color x:Key="DataChangeNotifColor">#FFFFD149</Color>
+    <Color x:Key="NormalBorderControlsHoverTransparencyColor">#4c919191</Color>
 
     <SolidColorBrush x:Key="ControlBackgroundBrush" Color="{DynamicResource MainColorDarker}" />
     <SolidColorBrush x:Key="TextBrush" Color="{DynamicResource TextColor}" />
@@ -76,6 +94,7 @@
     
     <SolidColorBrush x:Key="ExpanderBackgroundBrush" Color="{DynamicResource HoverColor}" />
     <SolidColorBrush x:Key="WindowBackgourndBrush" Color="{DynamicResource MainColor}" />
+    <SolidColorBrush x:Key="OpaqueGrayHighlightBrush" Color="{DynamicResource NormalBorderControlsHoverTransparencyColor}" />
 
     <SolidColorBrush x:Key="OpaqueHighlightBrush" Color="{DynamicResource GlyphColor}" Opacity="0.2" />
     <SolidColorBrush x:Key="OpaqueHighlightBrushBright" Color="{DynamicResource GlyphColor}" Opacity="0.7"/>
@@ -84,6 +103,10 @@
 
     <SolidColorBrush x:Key="Extras_FilledStarBrush" Color="{DynamicResource HighlightGlyphColor}"/>
 	<SolidColorBrush x:Key="Extras_EmptyStarBrush" Color="{DynamicResource HighlightGlyphColor}" Opacity="0.5"/>
+
+    <SolidColorBrush x:Key="GridViewCoverSelectionBrush" Color="{DynamicResource GlyphColor}" />
+    <SolidColorBrush x:Key="GridViewCoverSubtitleBrush" Color="#b7b7b7" />
+    <SolidColorBrush x:Key="GridViewSeparatorBrush" Color="#4Dc2c2c2" />
 
     <DropShadowEffect x:Key="DefaultDropShadow" ShadowDepth="0" BlurRadius="10" Opacity="0.7" Color="Black" RenderingBias="Performance" />
     <DropShadowEffect x:Key="DefaultSubtleDropShadow" ShadowDepth="0" BlurRadius="6" Opacity="0.5" Color="Black" RenderingBias="Performance" />

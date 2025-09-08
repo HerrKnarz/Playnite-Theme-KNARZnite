@@ -1,5 +1,12 @@
 AddonId: KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9
 Packages:
+  - Version: 2.6.0
+    RequiredApiVersion: 2.6
+    ReleaseDate: 2025-09-08
+    PackageUrl: https://github.com/HerrKnarz/Playnite-Theme-KNARZnite/releases/download/v2.6.0/KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9_2_6_0.pthm
+    Changelog:
+      - Changed display of covers in grid view to zoom on hover etc.
+      - Added several theme modifier settings to Grid View for performance optimizations.
   - Version: 2.5.1
     RequiredApiVersion: 2.6
     ReleaseDate: 2024-12-07
