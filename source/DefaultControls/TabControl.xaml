@@ -109,7 +109,7 @@
                             <RowDefinition Height="*" x:Name="RowDefinition1" />
                         </Grid.RowDefinitions>
                         <Border x:Name="HeaderBorder" Background="Transparent"
-                                BorderThickness="0,0,0,1" BorderBrush="{DynamicResource OpaqueHighlightBrush}">
+                                BorderThickness="0,0,0,1" BorderBrush="{DynamicResource WindowPanelSeparatorBrush}">
                             <TabPanel x:Name="HeaderPanel" IsItemsHost="True" Panel.ZIndex="1" Width="Auto" Height="Auto"
                                       KeyboardNavigation.TabIndex="1" RenderTransformOrigin="0.5,0.5">
                                 <TabPanel.LayoutTransform>
@@ -191,13 +191,13 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TabItem}">
                     <Grid x:Name="TabGrid">
-                        <Border x:Name="SelectedBorder" Margin="1,0,1,0"
+                        <Border x:Name="SelectedBorder" Margin="1,0,5,0"
                                 SnapsToDevicePixels="True" Opacity="0"
                                 BorderThickness="0,0,0,2" BorderBrush="{DynamicResource GlyphBrush}"/>
-                        <TextBlock x:Name="TextContent" Padding="5" Style="{DynamicResource BaseTextBlockStyle}"
+                        <TextBlock x:Name="TextContent" Padding="0, 5" Style="{DynamicResource BaseTextBlockStyle}"
                                    Foreground="{TemplateBinding Foreground}" Cursor="Hand">
                             <ContentPresenter x:Name="ContentSite" RecognizesAccessKey="True" ContentSource="Header"
-                                              HorizontalAlignment="Center" Margin="5" VerticalAlignment="Center" />
+                                              HorizontalAlignment="Center" Margin="5, 5, 9, 5" VerticalAlignment="Center" />
                         </TextBlock>
                     </Grid>
                     <ControlTemplate.Triggers>

@@ -308,12 +308,12 @@
                                             </Style>
                                         </StackPanel.Resources>
 
-                                        <TextBlock Text="{DynamicResource LOCGameDetails}" Margin="0,15,0,7" Typography.Capitals="AllSmallCaps"
-                                                   Style="{DynamicResource BaseTextBlockStyle}" />
+                                        <TextBlock Text="{DynamicResource LOCGameDetails}" Margin="5,14,5,2" FontWeight="Bold" FontSize="{DynamicResource FontSizeLarger}" Typography.Capitals="AllSmallCaps"
+                                                   Style="{DynamicResource BaseTextBlockStyle}" Foreground="{DynamicResource TextBrushDarker}" />
 
-                                        <Separator Background="{DynamicResource OpaqueHighlightBrush}" />
+                                        <Separator Background="{DynamicResource WindowPanelSeparatorBrush}" />
 
-                                        <Grid Margin="0,10,0,10">
+                                        <Grid Margin="0,5,0,10">
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="*"/>
                                                 <ColumnDefinition Width="*"/>

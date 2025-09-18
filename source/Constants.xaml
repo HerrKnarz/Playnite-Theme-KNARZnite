@@ -63,7 +63,7 @@
     <Color x:Key="BackgroundToneColor">#FF3797a2</Color>
     <Color x:Key="GridItemBackgroundColor">#FF1F1F1F</Color>
     <Color x:Key="PanelSeparatorColor">#FF1F1F1F</Color>
-    <Color x:Key="WindowPanelSeparatorColor">#FF3797a2</Color>
+    <Color x:Key="WindowPanelSeparatorColor">#FF262626</Color>
     <Color x:Key="DataChangeNotifColor">#FFFFD149</Color>
     <Color x:Key="NormalBorderControlsHoverTransparencyColor">#4c919191</Color>
 
@@ -85,7 +85,6 @@
     <SolidColorBrush x:Key="WindowPanelSeparatorBrush" Color="{DynamicResource WindowPanelSeparatorColor}" />
     <SolidColorBrush x:Key="PopupBackgroundBrush" Color="{DynamicResource PopupBackgroundColor}" />
     <SolidColorBrush x:Key="CheckBoxCheckMarkBkBrush" Color="{DynamicResource MainColorDark}" />
-    <SolidColorBrush x:Key="DataChangeNotifBrush" Color="{DynamicResource DataChangeNotifColor}" />
 
     <SolidColorBrush x:Key="PositiveRatingBrush" Color="#78ffa0" />
     <SolidColorBrush x:Key="NegativeRatingBrush" Color="#FFFF6250" />
@@ -96,17 +95,13 @@
     <SolidColorBrush x:Key="WindowBackgourndBrush" Color="{DynamicResource MainColor}" />
     <SolidColorBrush x:Key="OpaqueGrayHighlightBrush" Color="{DynamicResource NormalBorderControlsHoverTransparencyColor}" />
 
-    <SolidColorBrush x:Key="OpaqueHighlightBrush" Color="{DynamicResource GlyphColor}" Opacity="0.2" />
-    <SolidColorBrush x:Key="OpaqueHighlightBrushBright" Color="{DynamicResource GlyphColor}" Opacity="0.7"/>
     <SolidColorBrush x:Key="OpaqueButtonBackgroundBrush" Color="{DynamicResource GridItemBackgroundColor}" Opacity="0.7" />
     <SolidColorBrush x:Key="OpaqueNormalBrush" Color="{DynamicResource MainColorDark}" Opacity="0.7" />
 
     <SolidColorBrush x:Key="Extras_FilledStarBrush" Color="{DynamicResource HighlightGlyphColor}"/>
 	<SolidColorBrush x:Key="Extras_EmptyStarBrush" Color="{DynamicResource HighlightGlyphColor}" Opacity="0.5"/>
 
-    <SolidColorBrush x:Key="GridViewCoverSelectionBrush" Color="{DynamicResource GlyphColor}" />
     <SolidColorBrush x:Key="GridViewCoverSubtitleBrush" Color="#b7b7b7" />
-    <SolidColorBrush x:Key="GridViewSeparatorBrush" Color="#4Dc2c2c2" />
 
     <DropShadowEffect x:Key="DefaultDropShadow" ShadowDepth="0" BlurRadius="10" Opacity="0.7" Color="Black" RenderingBias="Performance" />
     <DropShadowEffect x:Key="DefaultSubtleDropShadow" ShadowDepth="0" BlurRadius="6" Opacity="0.5" Color="Black" RenderingBias="Performance" />

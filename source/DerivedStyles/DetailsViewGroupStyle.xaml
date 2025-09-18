@@ -12,7 +12,7 @@
                     <ExpanderEx BorderThickness="0" SaveGameGroupId="{Binding Name, Mode=OneWay}" Background="Transparent"
                                 IsExpanded="True">
                         <ExpanderEx.Header>
-                            <Border Margin="0, 5" BorderThickness="0,0,0,1" BorderBrush="{DynamicResource OpaqueHighlightBrush}">
+                            <Border Margin="0, 5" BorderThickness="0,0,0,1" BorderBrush="{DynamicResource WindowPanelSeparatorBrush}">
                                 <DockPanel Background="Transparent" Margin="3, 8">
                                     <DockPanel.ContextMenu>
                                         <GameGroupMenu />

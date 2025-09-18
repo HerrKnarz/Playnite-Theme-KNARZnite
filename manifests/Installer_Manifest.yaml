@@ -1,5 +1,20 @@
 AddonId: KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9
 Packages:
+  - Version: 2.7.0
+    RequiredApiVersion: 2.8
+    ReleaseDate: 2025-09-18
+    PackageUrl: https://github.com/HerrKnarz/Playnite-Theme-KNARZnite/releases/download/v2.7.0/KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9_2_7_0.pthm
+    Changelog:
+      - Restyled tab headers in details area.
+      - Added some padding to the menus to make it a bit easier to find stuff.
+      - Added close button to the explorer panel to support the latest API versions. Bumps the theme to API version 2.8.0.
+      - Added new red logo fitting the constants-red settings. Just replace the applogo.png with the new applogo-red.png! Thx to qoordination for the recolored logo!
+      - Changed the background color for the game title in grid mode to make it more readable.
+      - Changed some bright border colors to more subtle grey ones.
+      - Changed some more colors slightly to use only the brushes ThemeModifier supports out of the box. Fixes issue 12
+      - Added colors for the rating stars to the edit constants tab in ThemeModifier, since those have to be separate.
+      - Fixed missing settings for users using the constants-red.xaml instead of the default one.
+      - Fixed the Riot Games banner by renaming it to the changed plugin id.
   - Version: 2.6.0
     RequiredApiVersion: 2.6
     ReleaseDate: 2025-09-08

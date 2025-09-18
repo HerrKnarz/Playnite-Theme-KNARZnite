@@ -23,3 +23,6 @@ Constants:
 - GridViewCoverDisplayLibraryBanner: 'Show banners (Requires ThemeExtras extension)'
 - GridViewCoverUseRoundedCorners: 'Use rounded corners (Can cause performance degradation)'
 - GridViewCoverDisplayDropShadowEffect: 'Use dropshadow effect (Can cause performance degradation)'
+- Additional Colors
+- Extras_FilledStarBrush: 'Color used for filled stars in ratings'
+- Extras_EmptyStarBrush: 'Color used for empty stars in ratings'

@@ -15,7 +15,8 @@
                             BorderThickness="{TemplateBinding BorderThickness}"
                             Background="{TemplateBinding Background}"
                             CornerRadius="{DynamicResource ControlCornerRadius}"
-                            Grid.IsSharedSizeScope="True">
+                            Grid.IsSharedSizeScope="True"
+							Padding="10">
                         <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
                             <ItemsPresenter KeyboardNavigation.DirectionalNavigation="Cycle"/>
                         </ScrollViewer>

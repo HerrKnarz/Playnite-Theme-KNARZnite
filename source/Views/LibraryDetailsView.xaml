@@ -63,14 +63,17 @@
     </Style>
 
     <Style TargetType="TextBlock" x:Key="DetailsViewTabHeaderStyle">
-        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
-        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBrushDarker}" />
+        <Setter Property="FontWeight" Value="Bold" />
+		<Setter Property="FontSize" Value="{DynamicResource FontSizeLarger}" />
 		<Setter Property="Typography.Capitals" Value="AllSmallCaps" />
         <Style.Triggers>
             <DataTrigger Binding="{Binding Path=IsSelected, RelativeSource={RelativeSource AncestorType={x:Type TabItem}}}" Value="True">
                 <Setter Property="Foreground" Value="{DynamicResource GlyphBrush}" />
-                <Setter Property="FontWeight" Value="Normal" />
             </DataTrigger>
+			<Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+            </Trigger>
         </Style.Triggers>
     </Style>
 </ResourceDictionary>

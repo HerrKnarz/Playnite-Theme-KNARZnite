@@ -10,7 +10,7 @@
         <Setter Property="Background" Value="{DynamicResource WindowPanelSeparatorBrush}" />
         <Setter Property="UseLayoutRounding" Value="True"/>
         <Setter Property="SnapsToDevicePixels" Value="True"/>
-        <Setter Property="Margin" Value="0,2,0,2" />
+        <Setter Property="Margin" Value="0,7,0,7" />
         <Setter Property="Focusable" Value="False"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -121,11 +121,12 @@
                             BorderThickness="{DynamicResource PopupBorderThickness}"
                             CornerRadius="{DynamicResource ControlCornerRadius}"
                             Effect="{DynamicResource DefaultDropShadow}"
-                            UseLayoutRounding="True" SnapsToDevicePixels="True">
+                            UseLayoutRounding="True" SnapsToDevicePixels="True"
+							Padding="10">
+                        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                            <StackPanel Grid.IsSharedSizeScope="True" IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Cycle" />
+                        </ScrollViewer>
                     </Border>
-                    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-                        <StackPanel Grid.IsSharedSizeScope="True" IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Cycle" />
-                    </ScrollViewer>
                 </Grid>
             </Popup>
         </Grid>

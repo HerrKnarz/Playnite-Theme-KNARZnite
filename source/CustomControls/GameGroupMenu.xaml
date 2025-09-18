@@ -14,7 +14,8 @@
                     <Border BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
                             Background="{TemplateBinding Background}"
-                            Grid.IsSharedSizeScope="True">
+                            Grid.IsSharedSizeScope="True"
+							Padding="10">
                         <ItemsPresenter />
                     </Border>
                 </ControlTemplate>

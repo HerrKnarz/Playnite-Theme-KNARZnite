@@ -13,7 +13,7 @@
             					IsExpanded="True" Padding="10" Cursor="Hand">
                         <ExpanderEx.Header>
                             <Grid>
-                                <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource OpaqueHighlightBrush}" Margin="0,0,15,0" />
+                                <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource WindowPanelSeparatorBrush}" Margin="0,0,15,0" />
                                 <DockPanel Background="Transparent" Margin="3, 8">
                                     <DockPanel.ContextMenu>
                                         <GameGroupMenu />

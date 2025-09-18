@@ -225,7 +225,7 @@
                         <DataTrigger Binding="{Settings ShowGridItemBackground}" Value="True">
                             <Setter Property="Padding" Value="2,5,2,5" TargetName="ShowGameName" />
                             <Setter Property="TextAlignment" Value="Center" TargetName="ShowGameName" />
-                            <Setter Property="Background" Value="{DynamicResource GridViewCoverSelectionBrush}" TargetName="ShowGameNameBorder" />
+                            <Setter Property="Background" Value="{DynamicResource HoverBrush}" TargetName="ShowGameNameBorder" />
                         </DataTrigger>
                         <DataTrigger Binding="{Binding ElementName=Mask, Path=Tag}" Value="True">
                             <Setter Property="CornerRadius" Value="{DynamicResource GridViewShowGameNameCornerRadius}" TargetName="ShowGameNameBorder" />
