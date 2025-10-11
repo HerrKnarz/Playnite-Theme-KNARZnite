@@ -34,12 +34,7 @@
                             <GridViewGameOverview x:Name="PART_ControlGameView" Width="{Settings GrdiDetailsWitdh}" />
                         </Border>
                         <Grid Margin="{DynamicResource PanelTopPanelSeparator}" DockPanel.Dock="Left">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*" />
-                                <RowDefinition Height="Auto" />
-                            </Grid.RowDefinitions>
                             <ExtendedListBox x:Name="PART_ListGames"
-                                Padding="5"
                                 BorderThickness="0"
                                 DockPanel.Dock="Left"
                                 ItemContainerStyle="{DynamicResource GridViewItemStyle}"
