@@ -689,7 +689,7 @@
                                             </StackPanel>
                                         </TabItem>
 
-										<TabItem Visibility="{PluginSettings Plugin=SteamScreenshots, Path=IsControlVisible, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                        <TabItem Visibility="{PluginSettings Plugin=SteamScreenshots, Path=IsControlVisible, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
                                             <TabItem.Header>
                                                 <TextBlock Text="{DynamicResource LOC_SteamScreenshots_SteamScreenshotsLabel}"
                                                        Style="{DynamicResource DetailsViewTabHeaderStyle}" />
@@ -698,8 +698,8 @@
                                                 <ContentControl x:Name="SteamScreenshots_SteamScreenshotsViewControl" Margin="0,0,0,0" FontWeight="Normal"/>
                                             </StackPanel>
                                         </TabItem>
-
-                                        <TabItem>
+										
+										<TabItem>
                                             <TabItem.Header>
                                                 <TextBlock Text="{DynamicResource LOCExtra_Metadata_Loader_VideoLabel}" Style="{DynamicResource DetailsViewTabHeaderStyle}" />
                                             </TabItem.Header>
