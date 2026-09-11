@@ -1,5 +1,14 @@
 AddonId: KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9
 Packages:
+  - Version: 2.9.0
+    RequiredApiVersion: 2.10
+    ReleaseDate: 2026-09-11
+    PackageUrl: https://github.com/HerrKnarz/Playnite-Theme-KNARZnite/releases/download/v2.9.0/KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9_2_9_0.pthm
+    Changelog:
+      - Updated theme controls to support new game details width introduced in Playnite 10.57
+      - Tweaked theme colors slightly for better contrast between elements
+      - Replaced SuccessStory with PlayniteAchievements
+      - Replaced and updated banners for better platform name recognition and added several new ones
   - Version: 2.8.0
     RequiredApiVersion: 2.8
     ReleaseDate: 2025-10-23
