@@ -293,7 +293,7 @@
                                 </DockPanel>
 
                                 <DockPanel x:Name="DetailsSection" Tag="{DynamicResource DisableDetailsSection}" Grid.Row="3" MaxWidth="{DynamicResource DetailsViewDetailsMaxWidth}">
-                                    <StackPanel DockPanel.Dock="Left" Width="320"
+                                    <StackPanel DockPanel.Dock="Left" Width="{Settings PropertiesPanelWith}"
                                                 Margin="0, 0, 10, 0">
                                         <StackPanel.Resources>
                                             <Style TargetType="ItemsControl">
@@ -435,7 +435,7 @@
                                                     <TextBlock Text="{DynamicResource LOCTimePlayed}" />
                                                 </StackPanel>
                                             </Label>
-                                            <TextBlock Name="PART_TextPlayTime" Grid.Row="1" Grid.Column="1" />
+                                            <TextBlock Name="PART_TextPlayTime" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" />
 
                                             <Label Name="PART_ElemLastPlayed" Grid.Row="2" >
                                                 <StackPanel Orientation="Horizontal">
@@ -443,7 +443,7 @@
                                                     <TextBlock Text="{DynamicResource LOCLastPlayed}" />
                                                 </StackPanel>
                                             </Label>
-                                            <TextBlock Name="PART_TextLastActivity" Grid.Row="2" Grid.Column="1" />
+                                            <TextBlock Name="PART_TextLastActivity" Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" />
 
                                             <Label Name="PART_ElemRecentActivity" Grid.Row="3" >
                                                 <StackPanel Orientation="Horizontal">
@@ -451,7 +451,7 @@
                                                     <TextBlock Text="{DynamicResource LOCRecentActivityLabel}" />
                                                 </StackPanel>
                                             </Label>
-                                            <TextBlock Name="PART_TextRecentActivity" Grid.Row="3" Grid.Column="1" />
+                                            <TextBlock Name="PART_TextRecentActivity" Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" />
 
                                             <Label Name="PART_ElemAdded" Grid.Row="4" >
                                                 <StackPanel Orientation="Horizontal">
@@ -459,7 +459,7 @@
                                                     <TextBlock Text="{DynamicResource LOCDateAddedLabel}" />
                                                 </StackPanel>
                                             </Label>
-                                            <TextBlock Name="PART_TextAdded" Grid.Row="4" Grid.Column="1" />
+                                            <TextBlock Name="PART_TextAdded" Grid.Row="4" Grid.Column="1" TextWrapping="Wrap" />
 
                                             <Label Name="PART_ElemReleaseDate" Grid.Row="5" >
                                                 <StackPanel Orientation="Horizontal">
@@ -520,7 +520,7 @@
                                                     <TextBlock Text="{DynamicResource LOCInstallSizeLabel}" />
                                                 </StackPanel>
                                             </Label>
-                                            <TextBlock Name="PART_TextInstallSize" Grid.Row="16" Grid.Column="1" />
+                                            <TextBlock Name="PART_TextInstallSize" Grid.Row="16" Grid.Column="1" TextWrapping="Wrap" />
 
                                             <ContentControl x:Name="MetadataUtilities_RegionPrefixItemControl" Tag="&#xF02C;" Grid.ColumnSpan="2" Margin="0"
 											                Visibility="{Binding RegionVisibility}" Grid.Row="17" />
