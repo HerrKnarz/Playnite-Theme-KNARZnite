@@ -237,7 +237,7 @@
                                             </StackPanel>
 
                                             <ContentControl x:Name="CheckDlc_PluginButton" Style="{DynamicResource ActionControl}" Visibility="{PluginSettings Plugin=CheckDlc, Path=EnableIntegrationButton, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
-                                            <ContentControl x:Name="PlayniteAchievements_PluginButton" Style="{DynamicResource ActionControl}" Visibility="{PluginSettings Plugin=PlayniteAchievements, Path=HasData, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                                            <ContentControl x:Name="PlayniteAchievements_AchievementButton" Style="{DynamicResource ActionControl}" Visibility="{PluginSettings Plugin=PlayniteAchievements, Path=HasData, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
                                             <ContentControl x:Name="GameActivity_PluginButton" Style="{DynamicResource ActionControl}" Visibility="{PluginSettings Plugin=GameActivity, Path=HasData, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
                                             <ContentControl x:Name="SystemChecker_PluginButton" Style="{DynamicResource ActionControl}" Visibility="{PluginSettings Plugin=SystemChecker, Path=EnableIntegrationButton, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
                                             <ContentControl x:Name="CheckLocalizations_PluginButton" Style="{DynamicResource ActionControl}" Visibility="{PluginSettings Plugin=CheckLocalizations, Path=EnableIntegrationButton, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
@@ -730,12 +730,12 @@
                                                 <TextBlock Text="{DynamicResource LOCPlayniteAchievementsAchievements}" Style="{DynamicResource DetailsViewTabHeaderStyle}" />
                                             </TabItem.Header>
                                             <StackPanel Orientation="Vertical" Background="{TemplateBinding Background}" Margin="0,15,0,0">
-                                                <ContentControl x:Name="PlayniteAchievements_PluginProgressBar" />
-                                                <ContentControl x:Name="PlayniteAchievements_PluginCompactUnlocked" Margin="0,10,20,0" />
-                                                <ContentControl x:Name="PlayniteAchievements_PluginCompactLocked" Margin="0,10,20,0" />
-                                                <ContentControl x:Name="PlayniteAchievements_PluginUserStats" Margin="0,10,20,0" />
-                                                <ContentControl x:Name="PlayniteAchievements_PluginList" Margin="0,10,20,0" MinHeight="300" />
-                                                <ContentControl x:Name="PlayniteAchievements_PluginChart" Margin="0,10,20,0" />
+                                                <ContentControl x:Name="PlayniteAchievements_AchievementProgressBar" />
+                                                <ContentControl x:Name="PlayniteAchievements_AchievementCompactUnlockedList" Margin="0,10,20,0" />
+                                                <ContentControl x:Name="PlayniteAchievements_AchievementCompactLockedList" Margin="0,10,20,0" />
+                                                <ContentControl x:Name="PlayniteAchievements_AchievementStats" Margin="0,10,20,0" />
+                                                <ContentControl x:Name="PlayniteAchievements_AchievementDataGrid" Margin="0,10,20,0" MinHeight="300" />
+                                                <ContentControl x:Name="PlayniteAchievements_AchievementBarChart" Margin="0,10,20,0" />
                                             </StackPanel>
                                         </TabItem>
                                         <!--#endregion-->

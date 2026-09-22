@@ -1,5 +1,11 @@
 AddonId: KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9
 Packages:
+  - Version: 2.9.1
+    RequiredApiVersion: 2.10
+    ReleaseDate: 2026-09-22
+    PackageUrl: https://github.com/HerrKnarz/Playnite-Theme-KNARZnite/releases/download/v2.9.1/KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9_2_9_1.pthm
+    Changelog:
+      - fixed PlayniteAchievements displaying the legacy controls. The new ones currently lack a scroll bar, but that's apparently a bug in the addon itself that's being worked on already.
   - Version: 2.9.0
     RequiredApiVersion: 2.10
     ReleaseDate: 2026-09-11
