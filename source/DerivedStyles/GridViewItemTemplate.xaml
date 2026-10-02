@@ -68,11 +68,18 @@
                                                 Tag="{DynamicResource GridViewCoverDisplayLibraryBanner}"
                                                 HorizontalAlignment="Center"
                                                 Visibility="{Binding Tag, RelativeSource={RelativeSource Self}, Converter={StaticResource BooleanToVisibilityConverter}}" />
-                                    <Image Name="PART_ImageCover" Height="{Settings GridItemHeight}"
-                                            SnapsToDevicePixels="True"
-                                            RenderOptions.BitmapScalingMode="Fant" StretchDirection="Both"
-                                            HorizontalAlignment="Center" VerticalAlignment="Top"
-                                            Stretch="{Settings CoverArtStretch}" />
+                                    <Grid>
+										<Image Name="PART_ImageCover" Height="{Settings GridItemHeight}"
+												SnapsToDevicePixels="True"
+												RenderOptions.BitmapScalingMode="Fant" StretchDirection="Both"
+												HorizontalAlignment="Center" VerticalAlignment="Top"
+												Stretch="{Settings CoverArtStretch}" />
+										<ContentControl x:Name="ImageRotater_Cover"
+														Height="{Settings GridItemHeight}"
+														RenderOptions.BitmapScalingMode="Fant"
+														HorizontalAlignment="Center"
+														VerticalAlignment="Top" />
+									</Grid>											
                                 </StackPanel>
 
                                 <Border Background="#99000000" x:Name="TextGameName" Visibility="Collapsed"
