@@ -1,5 +1,11 @@
 AddonId: KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9
 Packages:
+  - Version: 2.10.1
+    RequiredApiVersion: 2.10
+    ReleaseDate: 2026-10-04
+    PackageUrl: https://github.com/HerrKnarz/Playnite-Theme-KNARZnite/releases/download/v2.10.1/KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9_2_10_1.pthm
+    Changelog:
+      - Fixed original background image shining through when using ImageRotater backgrounds.
   - Version: 2.10.0
     RequiredApiVersion: 2.10
     ReleaseDate: 2026-10-02
