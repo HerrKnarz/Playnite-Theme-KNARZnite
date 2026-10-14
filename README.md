@@ -52,7 +52,7 @@ The following extensions are currently integrated:
 - [Steam News and Players Viewer](https://playnite.link/addons.html#NewsViewer_15e03ffe-90f6-4e8e-bd4d-94514777481d) - tab and player count
 - [Steam Reviews Viewer](https://playnite.link/addons.html#Review_Viewer_ca24e37a-76d9-49bf-89ab-d3cba4a54bd1) - tab
 - [Steam Store Screenshots Viewer](https://playnite.link/addons.html#SteamScreenshots_8e77fe31-5e62-41e2-8fa2-64844cfd5b6b) - tab
-- [ScreenshotsVisualizer](https://playnite.link/addons.html#playnite-screenshotsvisualizer-plugin) - button and tab, if game has screenshots from one of the supported providers
+- [Screenshots Utilities](https://playnite.link/addons.html#playnite-screenshotsvisualizer-plugin) - button and tab, if game has screenshots from one of the supported providers
 - [ScreenshotsVisualizer](https://playnite.link/addons.html#playnite-screenshotsvisualizer-plugin) - button and tab, if game has screenshots
 - [SystemChecker](https://playnite.link/addons.html#playnite-systemchecker-plugin) - button
 - [ThemeExtras](https://playnite.link/addons.html#felixkmh_Extras_Plugin) - link icons, banners, editable completion status, star ratings and image context menu in detail and grid view
