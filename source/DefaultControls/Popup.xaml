@@ -7,10 +7,15 @@
                     mc:Ignorable="d">
 
     <Style TargetType="{x:Type Popup}">
-        <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="UseLayoutRounding" Value="True"/>
-        <Setter Property="AllowsTransparency" Value="True" />
-        <Setter Property="Margin" Value="15"/>
-        <Setter Property="Effect" Value="{DynamicResource DefaultDropShadow}"/>
+        <Setter Property="SnapsToDevicePixels"
+                Value="True" />
+        <Setter Property="UseLayoutRounding"
+                Value="True" />
+        <Setter Property="AllowsTransparency"
+                Value="True" />
+        <Setter Property="Margin"
+                Value="15" />
+        <Setter Property="Effect"
+                Value="{DynamicResource DefaultDropShadow}" />
     </Style>
 </ResourceDictionary>

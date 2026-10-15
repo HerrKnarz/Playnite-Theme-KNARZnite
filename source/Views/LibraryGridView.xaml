@@ -1,45 +1,49 @@
-﻿<ResourceDictionary
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    mc:Ignorable="d">
 
     <Style TargetType="{x:Type LibraryGridView}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type LibraryGridView}">
-                    <DockPanel
-                        d:DataContext="{x:Static DesignMainViewModel.DesignIntance}"
-                        d:DesignHeight="960"
-                        d:DesignWidth="1280"
-                        Background="{TemplateBinding Background}">
-                        <Border
-                            BorderBrush="{DynamicResource PanelSeparatorBrush}"
-                            DockPanel.Dock="{Settings GridViewDetailsPosition}"
-                            Visibility="{Binding ElementName=PART_ControlGameView, Path=Visibility}">
+                    <DockPanel d:DataContext="{x:Static DesignMainViewModel.DesignIntance}"
+                               d:DesignHeight="960"
+                               d:DesignWidth="1280"
+                               Background="{TemplateBinding Background}">
+                        <Border BorderBrush="{DynamicResource PanelSeparatorBrush}"
+                                DockPanel.Dock="{Settings GridViewDetailsPosition}"
+                                Visibility="{Binding ElementName=PART_ControlGameView, Path=Visibility}">
                             <Border.Style>
                                 <Style TargetType="Border">
-                                    <Setter Property="BorderThickness" Value="1,0,0,0" />
+                                    <Setter Property="BorderThickness"
+                                            Value="1,0,0,0" />
                                     <Style.Triggers>
-                                        <DataTrigger Binding="{Settings GridViewDetailsPosition}" Value="Left">
-                                            <Setter Property="BorderThickness" Value="0,0,1,0" />
+                                        <DataTrigger Binding="{Settings GridViewDetailsPosition}"
+                                                     Value="Left">
+                                            <Setter Property="BorderThickness"
+                                                    Value="0,0,1,0" />
                                         </DataTrigger>
-                                        <DataTrigger Binding="{Settings ShowPanelSeparators}" Value="False">
-                                            <Setter Property="BorderThickness" Value="0" />
+                                        <DataTrigger Binding="{Settings ShowPanelSeparators}"
+                                                     Value="False">
+                                            <Setter Property="BorderThickness"
+                                                    Value="0" />
                                         </DataTrigger>
                                     </Style.Triggers>
                                 </Style>
                             </Border.Style>
-                            <GridViewGameOverview x:Name="PART_ControlGameView" Width="{Settings GrdiDetailsWitdh}" />
+                            <GridViewGameOverview x:Name="PART_ControlGameView"
+                                                  Width="{Settings GrdiDetailsWitdh}" />
                         </Border>
-                        <Grid Margin="{DynamicResource PanelTopPanelSeparator}" DockPanel.Dock="Left">
+                        <Grid Margin="{DynamicResource PanelTopPanelSeparator}"
+                              DockPanel.Dock="Left">
                             <ExtendedListBox x:Name="PART_ListGames"
-                                BorderThickness="0"
-                                DockPanel.Dock="Left"
-                                ItemContainerStyle="{DynamicResource GridViewItemStyle}"
-                                ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                                ScrollViewer.PanningMode="VerticalOnly">
+                                             BorderThickness="0"
+                                             DockPanel.Dock="Left"
+                                             ItemContainerStyle="{DynamicResource GridViewItemStyle}"
+                                             ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                             ScrollViewer.PanningMode="VerticalOnly">
                                 <ExtendedListBox.ItemTemplate>
                                     <DataTemplate>
                                         <GameListItem Style="{StaticResource GridViewItemTemplate}" />
@@ -49,41 +53,58 @@
                                     <GroupStyle ContainerStyle="{StaticResource GridViewGroupStyle}" />
                                 </ExtendedListBox.GroupStyle>
                             </ExtendedListBox>
-                            <TextBlock
-                                Margin="0,40,0,0"
-                                HorizontalAlignment="Center"
-                                FontSize="{StaticResource FontSizeLarge}"
-                                Text="{DynamicResource LOCNoItemsFound}"
-                                TextAlignment="Center"
-                                TextWrapping="Wrap">
+                            <TextBlock Margin="0,40,0,0"
+                                       HorizontalAlignment="Center"
+                                       FontSize="{StaticResource FontSizeLarge}"
+                                       Text="{DynamicResource LOCNoItemsFound}"
+                                       TextAlignment="Center"
+                                       TextWrapping="Wrap">
                                 <TextBlock.Style>
-                                    <Style BasedOn="{StaticResource BaseTextBlockStyle}" TargetType="TextBlock">
-                                        <Setter Property="Visibility" Value="Collapsed" />
+                                    <Style BasedOn="{StaticResource BaseTextBlockStyle}"
+                                           TargetType="TextBlock">
+                                        <Setter Property="Visibility"
+                                                Value="Collapsed" />
                                         <Style.Triggers>
-                                            <DataTrigger Binding="{Binding Items.Count, ElementName=PART_ListGames, Mode=OneWay}" Value="0">
-                                                <Setter Property="Visibility" Value="Visible" />
+                                            <DataTrigger Binding="{Binding Items.Count, ElementName=PART_ListGames, Mode=OneWay}"
+                                                         Value="0">
+                                                <Setter Property="Visibility"
+                                                        Value="Visible" />
                                             </DataTrigger>
                                         </Style.Triggers>
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <Border x:Name="SliderBox" Height="40" Margin="5" VerticalAlignment="Bottom" HorizontalAlignment="Left" Style="{StaticResource BorderBlock}">
-                                <StackPanel Margin="5" Orientation="Horizontal" VerticalAlignment="Center">
-                                    <Label Content="&#xEFD5;" FontFamily="{StaticResource FontIcoFont}" FontSize="20" Foreground="{DynamicResource TextBrushDarker}" />
+                            <Border x:Name="SliderBox"
+                                    Height="40"
+                                    Margin="5"
+                                    VerticalAlignment="Bottom"
+                                    HorizontalAlignment="Left"
+                                    Style="{StaticResource BorderBlock}">
+                                <StackPanel Margin="5"
+                                            Orientation="Horizontal"
+                                            VerticalAlignment="Center">
+                                    <Label Content="&#xEFD5;"
+                                           FontFamily="{StaticResource FontIcoFont}"
+                                           FontSize="20"
+                                           Foreground="{DynamicResource TextBrushDarker}" />
 
                                     <Grid>
                                         <Grid.Style>
                                             <Style TargetType="Grid">
-                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                                <Setter Property="Visibility"
+                                                        Value="Collapsed" />
                                                 <Style.Triggers>
-                                                    <DataTrigger Binding="{Binding ElementName=SliderBox, Path=IsMouseOver}" Value="True">
-                                                        <Setter Property="Visibility" Value="Visible" />
+                                                    <DataTrigger Binding="{Binding ElementName=SliderBox, Path=IsMouseOver}"
+                                                                 Value="True">
+                                                        <Setter Property="Visibility"
+                                                                Value="Visible" />
                                                     </DataTrigger>
                                                 </Style.Triggers>
                                             </Style>
                                         </Grid.Style>
 
-                                        <SliderWithPopup x:Name="PART_SliderZoom" Margin="10,0,0,0"/>
+                                        <SliderWithPopup x:Name="PART_SliderZoom"
+                                                         Margin="10,0,0,0" />
                                     </Grid>
                                 </StackPanel>
                             </Border>

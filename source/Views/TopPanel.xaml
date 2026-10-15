@@ -6,74 +6,118 @@
                     mc:Ignorable="d">
 
     <DataTemplate x:Key="TopPanelGeneralViewSettingsTemplate">
-        <TextBlock Text="&#xefe2;" FontFamily="{StaticResource FontIcoFont}" FontSize="18"                   
-                   VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <TextBlock Text="&#xefe2;"
+                   FontFamily="{StaticResource FontIcoFont}"
+                   FontSize="18"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center" />
     </DataTemplate>
 
     <DataTemplate x:Key="TopPanelFilterPresetsSelectionTemplate">
-        <TextBlock Text="&#xeec0;" FontFamily="{StaticResource FontIcoFont}" FontSize="20"
-                   VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <TextBlock Text="&#xeec0;"
+                   FontFamily="{StaticResource FontIcoFont}"
+                   FontSize="20"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center" />
     </DataTemplate>
 
     <DataTemplate x:Key="TopPanelGroupSettingsTemplate">
-        <TextBlock Text="&#xee03;" FontFamily="{StaticResource FontIcoFont}" FontSize="20"
-                   VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <TextBlock Text="&#xee03;"
+                   FontFamily="{StaticResource FontIcoFont}"
+                   FontSize="20"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center" />
     </DataTemplate>
 
     <DataTemplate x:Key="TopPanelSortSettingsTemplate">
-        <TextBlock Text="&#xefee;" FontFamily="{StaticResource FontIcoFont}" FontSize="20"
-                   VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <TextBlock Text="&#xefee;"
+                   FontFamily="{StaticResource FontIcoFont}"
+                   FontSize="20"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center" />
     </DataTemplate>
 
     <DataTemplate x:Key="TopPanelSwitchDetailsViewTemplate">
-        <TextBlock Text="&#xE145;" FontFamily="Segoe UI Symbol" FontSize="20"
-                   VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <TextBlock Text="&#xE145;"
+                   FontFamily="Segoe UI Symbol"
+                   FontSize="20"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center" />
     </DataTemplate>
 
     <DataTemplate x:Key="TopPanelSwitchGridViewTemplate">
-        <TextBlock Text="&#xE138;" FontFamily="Segoe UI Symbol" FontSize="20"
-                   VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <TextBlock Text="&#xE138;"
+                   FontFamily="Segoe UI Symbol"
+                   FontSize="20"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center" />
     </DataTemplate>
 
     <DataTemplate x:Key="TopPanelSwitchListViewTemplate">
-        <TextBlock Text="&#xE14C;" FontFamily="Segoe UI Symbol" FontSize="20"
-                   VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <TextBlock Text="&#xE14C;"
+                   FontFamily="Segoe UI Symbol"
+                   FontSize="20"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center" />
     </DataTemplate>
-    
+
     <DataTemplate x:Key="TopPanelUpdateButtonTemplate">
         <TextBlock Foreground="{DynamicResource WarningBrush}"
-                   VerticalAlignment="Center" HorizontalAlignment="Center"
-                   Text="&#xef08;" FontSize="24" FontFamily="{StaticResource FontIcoFont}" />
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Text="&#xef08;"
+                   FontSize="24"
+                   FontFamily="{StaticResource FontIcoFont}" />
     </DataTemplate>
 
     <DataTemplate x:Key="TopPanelExplorerSwitchTemplate">
-        <TextBlock Text="&#xeeed;" FontFamily="{StaticResource FontIcoFont}" FontSize="20"
-                   VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <TextBlock Text="&#xeeed;"
+                   FontFamily="{StaticResource FontIcoFont}"
+                   FontSize="20"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center" />
     </DataTemplate>
 
     <DataTemplate x:Key="TopPanelSelectRandomGameButtonTemplate">
-        <TextBlock Text="&#xef03;" FontFamily="{StaticResource FontIcoFont}" FontSize="20"
-                   VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <TextBlock Text="&#xef03;"
+                   FontFamily="{StaticResource FontIcoFont}"
+                   FontSize="20"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center" />
     </DataTemplate>
 
     <DataTemplate x:Key="TopPanelViewSelectRandomGameButtonTemplate">
-        <TextBlock Text="&#xefcf;" FontFamily="{StaticResource FontIcoFont}" FontSize="20"
-                   VerticalAlignment="Center" HorizontalAlignment="Center" />
-    </DataTemplate>
-    
-    <DataTemplate x:Key="TopPanelSearchButtonTemplate">
-        <TextBlock Text="&#xed12;" FontFamily="{StaticResource FontIcoFont}" FontSize="20"
-                   VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <TextBlock Text="&#xefcf;"
+                   FontFamily="{StaticResource FontIcoFont}"
+                   FontSize="20"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center" />
     </DataTemplate>
 
-    <Style x:Key="TopPanelMenu" TargetType="{x:Type ContextMenu}">
-        <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="Background" Value="{DynamicResource PopupBackgroundBrush}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource PopupBorderBrush}" />
-        <Setter Property="BorderThickness" Value="{DynamicResource PopupBorderThickness}" />
-        <Setter Property="UseLayoutRounding" Value="True"/>
-        <Setter Property="Margin" Value="15"/>
-        <Setter Property="Effect" Value="{DynamicResource DefaultDropShadow}"/>
+    <DataTemplate x:Key="TopPanelSearchButtonTemplate">
+        <TextBlock Text="&#xed12;"
+                   FontFamily="{StaticResource FontIcoFont}"
+                   FontSize="20"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center" />
+    </DataTemplate>
+
+    <Style x:Key="TopPanelMenu"
+           TargetType="{x:Type ContextMenu}">
+        <Setter Property="SnapsToDevicePixels"
+                Value="True" />
+        <Setter Property="Background"
+                Value="{DynamicResource PopupBackgroundBrush}" />
+        <Setter Property="BorderBrush"
+                Value="{DynamicResource PopupBorderBrush}" />
+        <Setter Property="BorderThickness"
+                Value="{DynamicResource PopupBorderThickness}" />
+        <Setter Property="UseLayoutRounding"
+                Value="True" />
+        <Setter Property="Margin"
+                Value="15" />
+        <Setter Property="Effect"
+                Value="{DynamicResource DefaultDropShadow}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ContextMenu}">
@@ -82,9 +126,10 @@
                             Background="{TemplateBinding Background}"
                             Grid.IsSharedSizeScope="True"
                             CornerRadius="{StaticResource ControlCornerRadius}"
-							Padding="10">
-                        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-                            <ItemsPresenter KeyboardNavigation.DirectionalNavigation="Cycle"/>
+                            Padding="10">
+                        <ScrollViewer HorizontalScrollBarVisibility="Disabled"
+                                      VerticalScrollBarVisibility="Auto">
+                            <ItemsPresenter KeyboardNavigation.DirectionalNavigation="Cycle" />
                         </ScrollViewer>
                     </Border>
                 </ControlTemplate>
@@ -92,70 +137,106 @@
         </Setter>
     </Style>
 
-    <Style x:Key="TopPanelFilterToggle" TargetType="CheckBox">
-        <Setter Property="MinWidth" Value="35" />
-        <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
-        <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Focusable" Value="False" />
-        <Setter Property="Margin" Value="10,6,0,6" />
-        <Setter Property="Foreground" Value="{DynamicResource TextBrushDarker}" />
+    <Style x:Key="TopPanelFilterToggle"
+           TargetType="CheckBox">
+        <Setter Property="MinWidth"
+                Value="35" />
+        <Setter Property="WindowChrome.IsHitTestVisibleInChrome"
+                Value="True" />
+        <Setter Property="Background"
+                Value="Transparent" />
+        <Setter Property="Focusable"
+                Value="False" />
+        <Setter Property="Margin"
+                Value="10,6,0,6" />
+        <Setter Property="Foreground"
+                Value="{DynamicResource TextBrushDarker}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate>
-                    <Border Background="{TemplateBinding Background}" BorderThickness="0"
+                    <Border Background="{TemplateBinding Background}"
+                            BorderThickness="0"
                             CornerRadius="3">
-                        <StackPanel Orientation="Horizontal" Margin="6,0,6,0">
+                        <StackPanel Orientation="Horizontal"
+                                    Margin="6,0,6,0">
                             <TextBlock Text="&#xef29;"
-                                       FontFamily="{StaticResource FontIcoFont}" FontSize="20"
-                                       VerticalAlignment="Center" HorizontalAlignment="Center"
-                                       Foreground="{TemplateBinding Foreground}"/>
+                                       FontFamily="{StaticResource FontIcoFont}"
+                                       FontSize="20"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"
+                                       Foreground="{TemplateBinding Foreground}" />
                             <TextBlock Text="{StaticResource LOCFilterActiveLabel}"
                                        Style="{StaticResource BaseTextBlockStyle}"
-                                       Margin="3,0,0,0" VerticalAlignment="Center"
+                                       Margin="3,0,0,0"
+                                       VerticalAlignment="Center"
                                        Foreground="{TemplateBinding Foreground}"
                                        Name="TextFilter" />
                         </StackPanel>
                     </Border>
                     <ControlTemplate.Triggers>
-                        <Trigger Property="Tag" Value="{StaticResource True}">
-                            <Setter Property="Visibility" Value="Visible" TargetName="TextFilter" />
-                            <Setter Property="Background" Value="{DynamicResource NormalBrush}" />
+                        <Trigger Property="Tag"
+                                 Value="{StaticResource True}">
+                            <Setter Property="Visibility"
+                                    Value="Visible"
+                                    TargetName="TextFilter" />
+                            <Setter Property="Background"
+                                    Value="{DynamicResource NormalBrush}" />
                         </Trigger>
-                        <Trigger Property="Tag" Value="{StaticResource False}">
-                            <Setter Property="Visibility" Value="Collapsed" TargetName="TextFilter" />
+                        <Trigger Property="Tag"
+                                 Value="{StaticResource False}">
+                            <Setter Property="Visibility"
+                                    Value="Collapsed"
+                                    TargetName="TextFilter" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
         <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Foreground" Value="{DynamicResource GlyphBrush}" />
+            <Trigger Property="IsMouseOver"
+                     Value="True">
+                <Setter Property="Foreground"
+                        Value="{DynamicResource GlyphBrush}" />
             </Trigger>
         </Style.Triggers>
     </Style>
 
-    <Style x:Key="TopPanelNotificationsToggle" TargetType="ToggleButton">
-        <Setter Property="Margin" Value="10,6,0,6" />
-        <Setter Property="MinWidth" Value="35" />
-        <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
-        <Setter Property="Foreground" Value="{DynamicResource GlyphBrush}" />
-        <Setter Property="Focusable" Value="False" />
-        <Setter Property="Cursor" Value="Hand"/>
+    <Style x:Key="TopPanelNotificationsToggle"
+           TargetType="ToggleButton">
+        <Setter Property="Margin"
+                Value="10,6,0,6" />
+        <Setter Property="MinWidth"
+                Value="35" />
+        <Setter Property="WindowChrome.IsHitTestVisibleInChrome"
+                Value="True" />
+        <Setter Property="Foreground"
+                Value="{DynamicResource GlyphBrush}" />
+        <Setter Property="Focusable"
+                Value="False" />
+        <Setter Property="Cursor"
+                Value="Hand" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate>
                     <Border Background="Transparent">
                         <Grid>
-                            <TextBlock Text="&#xeea3;" FontFamily="{StaticResource FontIcoFont}" FontSize="24"
+                            <TextBlock Text="&#xeea3;"
+                                       FontFamily="{StaticResource FontIcoFont}"
+                                       FontSize="24"
                                        Foreground="{TemplateBinding Foreground}"
-                                       HorizontalAlignment="Center"/>
-                            <Border CornerRadius="3" Width="15" Height="15"
-                                    Margin="20,0,0,0" Background="OrangeRed"
-                                    HorizontalAlignment="Right" VerticalAlignment="Bottom">
-                                <TextBlock Text="{Api Notifications.Count}" FontSize="12"
+                                       HorizontalAlignment="Center" />
+                            <Border CornerRadius="3"
+                                    Width="15"
+                                    Height="15"
+                                    Margin="20,0,0,0"
+                                    Background="OrangeRed"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Bottom">
+                                <TextBlock Text="{Api Notifications.Count}"
+                                           FontSize="12"
                                            Foreground="{DynamicResource TextBrushDark}"
-                                           HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center" />
                             </Border>
                         </Grid>
                     </Border>
@@ -163,11 +244,15 @@
             </Setter.Value>
         </Setter>
         <Style.Triggers>
-            <DataTrigger Binding="{Api Notifications.Count}" Value="0">
-                <Setter Property="Visibility" Value="Collapsed"/>
+            <DataTrigger Binding="{Api Notifications.Count}"
+                         Value="0">
+                <Setter Property="Visibility"
+                        Value="Collapsed" />
             </DataTrigger>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Foreground" Value="{DynamicResource TextBrushDarker}" />
+            <Trigger Property="IsMouseOver"
+                     Value="True">
+                <Setter Property="Foreground"
+                        Value="{DynamicResource TextBrushDarker}" />
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -176,29 +261,38 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TopPanel}">
-                    <Border Height="50" BorderBrush="{DynamicResource PanelSeparatorBrush}"
+                    <Border Height="50"
+                            BorderBrush="{DynamicResource PanelSeparatorBrush}"
                             Background="{DynamicResource WindowBackgourndBrush}"
                             BorderThickness="0,0,0,1"
                             d:DesignWidth="1280"
                             d:DataContext="{x:Static DesignMainViewModel.DesignIntance}">
                         <DockPanel Margin="0,3,110,3">
-                            <Border x:Name="PART_ElemMainMenu" Background="Transparent"
-                                    DockPanel.Dock="Left" Margin="5,0,0,0" Cursor="Hand"
+                            <Border x:Name="PART_ElemMainMenu"
+                                    Background="Transparent"
+                                    DockPanel.Dock="Left"
+                                    Margin="5,0,0,0"
+                                    Cursor="Hand"
                                     WindowChrome.IsHitTestVisibleInChrome="True">
                                 <Image Source="{ThemeFile 'Images/applogo.png'}"
-                                       Height="40" RenderOptions.BitmapScalingMode="Fant"
-                                       Margin="10,0,5,0"/>
+                                       Height="40"
+                                       RenderOptions.BitmapScalingMode="Fant"
+                                       Margin="10,0,5,0" />
                             </Border>
 
                             <SearchBox x:Name="PART_TextMainSearch"
-                                        Margin="5,6,0,6" DockPanel.Dock="Left"
-                                        WindowChrome.IsHitTestVisibleInChrome="True"
-                                        Width="300" />
+                                       Margin="5,6,0,6"
+                                       DockPanel.Dock="Left"
+                                       WindowChrome.IsHitTestVisibleInChrome="True"
+                                       Width="300" />
 
-                            <StackPanel x:Name="PART_PanelMainItems" Orientation="Horizontal"
-                                        VerticalAlignment="Stretch" Margin="0,6,0,6"/>
+                            <StackPanel x:Name="PART_PanelMainItems"
+                                        Orientation="Horizontal"
+                                        VerticalAlignment="Stretch"
+                                        Margin="0,6,0,6" />
 
-                            <CheckBox x:Name="PART_ToggleFilter" ToolTip="{StaticResource LOCFilters}"
+                            <CheckBox x:Name="PART_ToggleFilter"
+                                      ToolTip="{StaticResource LOCFilters}"
                                       Style="{DynamicResource TopPanelFilterToggle}"
                                       DockPanel.Dock="Left" />
 
@@ -206,24 +300,31 @@
                                       Style="{DynamicResource TopPanelNotificationsToggle}"
                                       DockPanel.Dock="Left" />
 
-                            <StackPanel x:Name="PART_PanelMainPluginItems" Orientation="Horizontal"
-                                        VerticalAlignment="Stretch" Margin="15,6,15,6"
-                                        DockPanel.Dock="{Settings PluginTopPanelAlignment}"/>
+                            <StackPanel x:Name="PART_PanelMainPluginItems"
+                                        Orientation="Horizontal"
+                                        VerticalAlignment="Stretch"
+                                        Margin="15,6,15,6"
+                                        DockPanel.Dock="{Settings PluginTopPanelAlignment}" />
 
-                            <StackPanel Orientation="Horizontal" DockPanel.Dock="Left"
-                                        HorizontalAlignment="Center" Margin="0,5,0,5">
-                                <Grid MaxWidth="600" MinWidth="300">
+                            <StackPanel Orientation="Horizontal"
+                                        DockPanel.Dock="Left"
+                                        HorizontalAlignment="Center"
+                                        Margin="0,5,0,5">
+                                <Grid MaxWidth="600"
+                                      MinWidth="300">
                                     <ProgressBar Name="PART_ProgressGlobal" />
                                     <TextBlock Name="PART_TextProgressText"
-                                               VerticalAlignment="Center" HorizontalAlignment="Center"
-                                               Style="{StaticResource BaseTextBlockStyle}" Margin="5,0,5,0" />
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Center"
+                                               Style="{StaticResource BaseTextBlockStyle}"
+                                               Margin="5,0,5,0" />
                                 </Grid>
 
                                 <Button Name="PART_ButtonProgressCancel"
                                         Content="{StaticResource LOCCancelLabel}"
                                         WindowChrome.IsHitTestVisibleInChrome="True"
                                         Margin="5,0,0,0" />
-                            </StackPanel>                    
+                            </StackPanel>
                         </DockPanel>
                     </Border>
                 </ControlTemplate>
