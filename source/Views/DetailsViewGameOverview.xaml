@@ -1103,6 +1103,17 @@
                                             </StackPanel>
                                         </TabItem>
                                         <!--#endregion-->
+                                        <!--#region VNDB-->
+                                        <TabItem Visibility="{PluginSettings Plugin=VNDBNexus, Path=IsControlVisible, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                            <TabItem.Header>
+                                                <TextBlock Style="{DynamicResource DetailsViewTabHeaderStyle}"
+                                                           Text="VNDB" />
+                                            </TabItem.Header>
+                                            <ContentControl x:Name="VNDBNexus_VndbVisualNovelViewControl"
+                                                            Margin="0,16,0,0"
+                                                            FontWeight="Normal" />
+                                        </TabItem>
+                                        <!--#endregion-->
                                         <!--#region NewsViewer-->
                                         <TabItem Visibility="{PluginSettings Plugin=NewsViewer, Path=ReviewsAvailable, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
                                             <TabItem.Header>
