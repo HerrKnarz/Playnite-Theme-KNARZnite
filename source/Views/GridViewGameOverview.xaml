@@ -23,7 +23,10 @@
                                   d:DataContext="{x:Static DesignMainViewModel.DesignSelectedGameDetailsIntance}"
                                   x:Name="PART_ScrollViewHost">
                         <Grid>
-                            <Grid x:Name="TopGrid">
+                            <Grid x:Name="TopGrid"
+                                  MinHeight="300"
+                                  VerticalAlignment="Top"
+                                  HorizontalAlignment="Stretch">
                                 <Grid.ContextMenu>
                                     <ContextMenu Visibility="{PluginStatus Plugin=felixkmh_Extras_Plugin, Path=IsInstalled}"
                                                  IsOpen="{PluginSettings Plugin=ThemeExtras, Path=Menus.IsOpen, Mode=OneWayToSource, FallbackValue={StaticResource False}}">
@@ -38,6 +41,7 @@
                                                   Command="{PluginSettings Plugin=ThemeExtras, Path=Commands.OpenGameAssetFolderCommand,FallbackValue={x:Null}}" />
                                     </ContextMenu>
                                 </Grid.ContextMenu>
+                                <Rectangle Fill="Transparent" />
                                 <Border HorizontalAlignment="Center"
                                         VerticalAlignment="Top"
                                         Margin="0,0,0,0"
@@ -56,21 +60,19 @@
                                         </RadialGradientBrush>
                                     </Border.OpacityMask>
                                     <Grid>
-                                        <Image Stretch="UniformToFill"
-                                               x:Name="TopBackground"
-                                               Source="{Binding Game.DisplayBackgroundImage, Converter={StaticResource ImageStringToImageConverter}}"
-                                               VerticalAlignment="Center"
+                                        <FadeImage x:Name="PART_ImageBackground" 
+                                                   Stretch="Uniform" 
                                                HorizontalAlignment="Center"
-                                               StretchDirection="Both"
-                                               Visibility="{Binding IsVisible, ElementName=BackgroundChanger_PluginBackgroundImage, Converter={StaticResource InvertedBooleanToVisibilityConverter}}">
-                                        </Image>
+                                                   VerticalAlignment="Center"
+                                                   Visibility="{Binding IsVisible, ElementName=BackgroundChanger_PluginBackgroundImage, Converter={StaticResource InvertedBooleanToVisibilityConverter}}"/>
                                         <ContentControl x:Name="ImageRotater_Background"
                                                         HorizontalAlignment="Stretch"
                                                         VerticalAlignment="Stretch"
                                                         HorizontalContentAlignment="Stretch"
                                                         VerticalContentAlignment="Stretch"
                                                         Focusable="False"
-                                                        IsTabStop="False" />
+                                                        IsTabStop="False" 
+                                                        Visibility="{Binding BackgroundVisibility}" />
                                         <ContentControl x:Name="BackgroundChanger_PluginBackgroundImage"
                                                         HorizontalAlignment="Center"
                                                         VerticalAlignment="Top"
