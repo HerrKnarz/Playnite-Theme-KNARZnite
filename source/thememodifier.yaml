@@ -12,6 +12,8 @@ Constants:
 - DetailsViewCoverDisplayLibraryBanner: 'Show banners (Requires ThemeExtras extension)'
 - DetailsViewAllowUseOfLogos: 'Allow use of logos (Requires Extra Metadata Loader extension)'
 - DetailsViewHideGameNameIfLogoVisible: 'Hide game name if logo is visible'
+- DetailsViewHideIconInTabHeader: 'Hide icon in details tab header'
+- DetailsViewHideTextInTabHeader: 'Hide text in details tab header'
 - DetailsViewLibraryGameShowFavorite: 'Show favorites icon in list view'
 - Grid View
 - GridViewCoverZoomOnHover: 'Zoom when hovered'

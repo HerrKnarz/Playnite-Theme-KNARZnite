@@ -890,8 +890,14 @@
                                             </ItemsControl>
                                         </Grid>
                                     </StackPanel>
-
-                                    <TabControl Margin="0,4,0,0"
+                                    <Border Name="TabIconVisibility" 
+                                            Visibility="Collapsed"
+                                            Tag="{DynamicResource DetailsViewHideIconInTabHeader}" />
+                                    <Border Name="TabTextVisibility" 
+                                            Visibility="Collapsed" 
+                                            Tag="{DynamicResource DetailsViewHideTextInTabHeader}" />
+                                    <TabControl Name="TabControlDetails"
+                                                Margin="0,4,0,0"
                                                 Style="{DynamicResource TabControlDetailsView}"
                                                 Focusable="False">
                                         <TabControl.Template>
@@ -910,8 +916,15 @@
 
                                         <TabItem Name="PART_ElemDescription">
                                             <TabItem.Header>
-                                                <TextBlock Text="{DynamicResource LOCGameDescriptionTitle}"
-                                                           Style="{DynamicResource DetailsViewTabHeaderStyle}" />
+                                                <TextBlock Style="{DynamicResource DetailsViewTabHeaderStyle}"
+                                                           ToolTip="{DynamicResource LOCGameDescriptionTitle}">
+                                                    <Run Name="TabIconDesc"
+                                                         Text="&#xeb2a;"                                                             
+                                                         FontWeight="Normal"
+                                                         FontFamily="{StaticResource FontIcoFont}"/><Run Name="TabGapDesc"
+                                                         Text=" "/><Run Name="TabTextDesc"
+                                                         Text="{DynamicResource LOCGameDescriptionTitle}"/>
+                                                </TextBlock>
                                             </TabItem.Header>
                                             <StackPanel Margin="0,13,0,0">
                                                 <HtmlTextView Name="PART_HtmlDescription"
@@ -927,8 +940,15 @@
 
                                         <TabItem Visibility="{Binding ElementName=NotesVisibilityProxy, Path=Tag}">
                                             <TabItem.Header>
-                                                <TextBlock Text="{DynamicResource LOCNotesLabel}"
-                                                           Style="{DynamicResource DetailsViewTabHeaderStyle}" />
+                                                <TextBlock Style="{DynamicResource DetailsViewTabHeaderStyle}"
+                                                           ToolTip="{DynamicResource LOCNotesLabel}">
+                                                    <Run Name="TabIconNotes"
+                                                         Text="&#xefaa;"                                                             
+                                                         FontWeight="Normal"
+                                                         FontFamily="{StaticResource FontIcoFont}"/><Run Name="TabGapNotes"
+                                                         Text=" "/><Run Name="TabTextNotes"
+                                                         Text="{DynamicResource LOCNotesLabel}"/>
+                                                </TextBlock>
                                             </TabItem.Header>
                                             <StackPanel Margin="0,15,0,0">
 
@@ -972,8 +992,15 @@
 
                                         <TabItem Visibility="{PluginSettings Plugin=ScreenshotUtilities, Path=IsViewerControlVisible, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
                                             <TabItem.Header>
-                                                <TextBlock Text="{DynamicResource LOC_ScreenshotUtilities_ControlLabel}"
-                                                           Style="{DynamicResource DetailsViewTabHeaderStyle}" />
+                                                <TextBlock Style="{DynamicResource DetailsViewTabHeaderStyle}"
+                                                           ToolTip="{DynamicResource LOC_ScreenshotUtilities_ControlLabel}">
+                                                    <Run Name="TabIconScreenUtil"
+                                                         Text="&#xef4b;"                                                             
+                                                         FontWeight="Normal"
+                                                         FontFamily="{StaticResource FontIcoFont}"/><Run Name="TabGapScreenUtil"
+                                                         Text=" "/><Run Name="TabTextScreenUtil"
+                                                         Text="{DynamicResource LOC_ScreenshotUtilities_ControlLabel}"/>
+                                                </TextBlock>
                                             </TabItem.Header>
                                             <StackPanel Orientation="Vertical"
                                                         Background="{TemplateBinding Background}"
@@ -987,8 +1014,15 @@
 
                                         <TabItem Visibility="{PluginSettings Plugin=SteamScreenshots, Path=IsControlVisible, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
                                             <TabItem.Header>
-                                                <TextBlock Text="{DynamicResource LOC_SteamScreenshots_SteamScreenshotsLabel}"
-                                                           Style="{DynamicResource DetailsViewTabHeaderStyle}" />
+                                                <TextBlock Style="{DynamicResource DetailsViewTabHeaderStyle}"
+                                                           ToolTip="{DynamicResource LOC_SteamScreenshots_SteamScreenshotsLabel}">
+                                                    <Run Name="TabIconSteamScreen"
+                                                         Text="&#xef4b;"                                                             
+                                                         FontWeight="Normal"
+                                                         FontFamily="{StaticResource FontIcoFont}"/><Run Name="TabGapSteamScreen"
+                                                         Text=" "/><Run Name="TabTextSteamScreen"
+                                                         Text="{DynamicResource LOC_SteamScreenshots_SteamScreenshotsLabel}"/>
+                                                </TextBlock>
                                             </TabItem.Header>
                                             <StackPanel Orientation="Vertical"
                                                         Background="{TemplateBinding Background}"
@@ -1001,8 +1035,15 @@
 
                                         <TabItem>
                                             <TabItem.Header>
-                                                <TextBlock Text="{DynamicResource LOCExtra_Metadata_Loader_VideoLabel}"
-                                                           Style="{DynamicResource DetailsViewTabHeaderStyle}" />
+                                                <TextBlock Style="{DynamicResource DetailsViewTabHeaderStyle}"
+                                                           ToolTip="{DynamicResource LOCExtra_Metadata_Loader_VideoLabel}">
+                                                    <Run Name="TabIconVideo"
+                                                         Text="&#xec92;" 
+                                                         FontWeight="Normal"
+                                                         FontFamily="{StaticResource FontIcoFont}"/><Run Name="TabGapVideo"
+                                                         Text=" "/><Run Name="TabTextVideo"
+                                                         Text="{DynamicResource LOCExtra_Metadata_Loader_VideoLabel}"/>
+                                                </TextBlock>
                                             </TabItem.Header>
                                             <TabItem.Style>
                                                 <Style TargetType="TabItem"
@@ -1037,8 +1078,15 @@
                                         <!--#region PlayniteAchievements-->
                                         <TabItem Visibility="{PluginSettings Plugin=PlayniteAchievements, Path=HasData, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
                                             <TabItem.Header>
-                                                <TextBlock Text="{DynamicResource LOCPlayniteAchievementsAchievements}"
-                                                           Style="{DynamicResource DetailsViewTabHeaderStyle}" />
+                                                <TextBlock Style="{DynamicResource DetailsViewTabHeaderStyle}"
+                                                           ToolTip="{DynamicResource LOCPlayniteAchievementsAchievements}">
+                                                    <Run Name="TabIconAchiev"
+                                                         Text="&#xeace;"                                                             
+                                                         FontWeight="Normal"
+                                                         FontFamily="{StaticResource FontIcoFont}"/><Run Name="TabGapAchiev"
+                                                         Text=" "/><Run Name="TabTextAchiev"
+                                                         Text="{DynamicResource LOCPlayniteAchievementsAchievements}"/>
+                                                </TextBlock>
                                             </TabItem.Header>
                                             <StackPanel Orientation="Vertical"
                                                         Background="{TemplateBinding Background}"
@@ -1062,8 +1110,15 @@
                                         <!--#region ScreenshotsVisualizer-->
                                         <TabItem Visibility="{PluginSettings Plugin=ScreenshotsVisualizer, Path=HasData, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
                                             <TabItem.Header>
-                                                <TextBlock Text="{DynamicResource LOCSsvTitle}"
-                                                           Style="{DynamicResource DetailsViewTabHeaderStyle}" />
+                                                <TextBlock Style="{DynamicResource DetailsViewTabHeaderStyle}"
+                                                           ToolTip="{DynamicResource LOCSsvTitle}">
+                                                    <Run Name="TabIconScreenVis"
+                                                         Text="&#xeece;"                                                             
+                                                         FontWeight="Normal"
+                                                         FontFamily="{StaticResource FontIcoFont}"/><Run Name="TabGapScreenVis"
+                                                         Text=" "/><Run Name="TabTextScreenVis"
+                                                         Text="{DynamicResource LOCSsvTitle}"/>
+                                                </TextBlock>
                                             </TabItem.Header>
                                             <StackPanel Orientation="Vertical"
                                                         Background="{TemplateBinding Background}"
@@ -1078,8 +1133,15 @@
                                         <!--#region GameActivity-->
                                         <TabItem Visibility="{PluginSettings Plugin=GameActivity, Path=HasData, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
                                             <TabItem.Header>
-                                                <TextBlock Text="{DynamicResource LOCGameActivityTitle}"
-                                                           Style="{DynamicResource DetailsViewTabHeaderStyle}" />
+                                                <TextBlock Style="{DynamicResource DetailsViewTabHeaderStyle}"
+                                                           ToolTip="{DynamicResource LOCGameActivityTitle}">
+                                                    <Run Name="TabIconActiv"
+                                                         Text="&#xe979;"                                                             
+                                                         FontWeight="Normal"
+                                                         FontFamily="{StaticResource FontIcoFont}"/><Run Name="TabGapActiv"
+                                                         Text=" "/><Run Name="TabTextActiv"
+                                                         Text="{DynamicResource LOCGameActivityTitle}"/>
+                                                </TextBlock>
                                             </TabItem.Header>
                                             <StackPanel Orientation="Vertical"
                                                         Background="{TemplateBinding Background}"
@@ -1092,8 +1154,15 @@
                                         <!--#region ReviewViewer-->
                                         <TabItem Visibility="{PluginSettings Plugin=ReviewViewer, Path=IsControlVisible, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
                                             <TabItem.Header>
-                                                <TextBlock Text="{DynamicResource LOCReview_Viewer_ReviewsLabel}"
-                                                           Style="{DynamicResource DetailsViewTabHeaderStyle}" />
+                                                <TextBlock Style="{DynamicResource DetailsViewTabHeaderStyle}"
+                                                           ToolTip="{DynamicResource LOCReview_Viewer_ReviewsLabel}">
+                                                    <Run Name="TabIconReview"
+                                                         Text="&#xf00c;"                                                             
+                                                         FontWeight="Normal"
+                                                         FontFamily="{StaticResource FontIcoFont}"/><Run Name="TabGapReview"
+                                                         Text=" "/><Run Name="TabTextReview"
+                                                         Text="{DynamicResource LOCReview_Viewer_ReviewsLabel}"/>
+                                                </TextBlock>
                                             </TabItem.Header>
                                             <StackPanel Orientation="Vertical"
                                                         Margin="0,15,0,0">
@@ -1117,8 +1186,15 @@
                                         <!--#region NewsViewer-->
                                         <TabItem Visibility="{PluginSettings Plugin=NewsViewer, Path=ReviewsAvailable, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
                                             <TabItem.Header>
-                                                <TextBlock Text="{DynamicResource LOC_NewsViewer_NewsViewerControl_NewsLabel}"
-                                                           Style="{DynamicResource DetailsViewTabHeaderStyle}" />
+                                                <TextBlock Style="{DynamicResource DetailsViewTabHeaderStyle}"
+                                                           ToolTip="{DynamicResource LOC_NewsViewer_NewsViewerControl_NewsLabel}">
+                                                    <Run Name="TabIconNews"
+                                                         Text="&#xefa7;"                                                             
+                                                         FontWeight="Normal"
+                                                         FontFamily="{StaticResource FontIcoFont}"/><Run Name="TabGapNews"
+                                                         Text=" "/><Run Name="TabTextNews"
+                                                         Text="{DynamicResource LOC_NewsViewer_NewsViewerControl_NewsLabel}"/>
+                                                </TextBlock>
                                             </TabItem.Header>
                                             <StackPanel Orientation="Vertical"
                                                         Margin="0,15,0,0">
@@ -1159,8 +1235,15 @@
 
                                         <TabItem Visibility="{Binding ElementName=GameRelationsVisibilityProxy, Path=Tag}">
                                             <TabItem.Header>
-                                                <TextBlock Text="{DynamicResource LOCGameRelations_RelatedGamesLabel}"
-                                                           Style="{DynamicResource DetailsViewTabHeaderStyle}" />
+                                                <TextBlock Style="{DynamicResource DetailsViewTabHeaderStyle}"
+                                                           ToolTip="{DynamicResource LOCGameRelations_RelatedGamesLabel}">
+                                                    <Run Name="TabIconRelate"
+                                                         Text="&#xe824;"                                                             
+                                                         FontWeight="Normal"
+                                                         FontFamily="{StaticResource FontIcoFont}"/><Run Name="TabGapRelate"
+                                                         Text=" "/><Run Name="TabTextRelate"
+                                                         Text="{DynamicResource LOCGameRelations_RelatedGamesLabel}"/>
+                                                </TextBlock>
                                             </TabItem.Header>
                                             <StackPanel Orientation="Vertical"
                                                         Margin="0,10,0,0">
@@ -1235,8 +1318,15 @@
                                         <!--#region WebExplorer-->
                                         <TabItem Visibility="{Binding ElementName=WebExplorer_BrowserHostViewControl, Path=Content.IsControlVisible, Converter={StaticResource BooleanToVisibilityConverter}, TargetNullValue=Collapsed, FallbackValue=Collapsed}">
                                             <TabItem.Header>
-                                                <TextBlock Text="{DynamicResource LOCWebExplorer_WebLabel}"
-                                                           Style="{DynamicResource DetailsViewTabHeaderStyle}" />
+                                                <TextBlock Style="{DynamicResource DetailsViewTabHeaderStyle}"
+                                                           ToolTip="{DynamicResource LOCWebExplorer_WebLabel}">
+                                                    <Run Name="TabIconWeb"
+                                                         Text="&#xf028;"                                                             
+                                                         FontWeight="Normal"
+                                                         FontFamily="{StaticResource FontIcoFont}"/><Run Name="TabGapWeb"
+                                                         Text=" "/><Run Name="TabTextWeb"
+                                                         Text="{DynamicResource LOCWebExplorer_WebLabel}"/>
+                                                </TextBlock>
                                             </TabItem.Header>
                                             <StackPanel Orientation="Vertical"
                                                         Background="{TemplateBinding Background}"
@@ -1276,6 +1366,156 @@
                                     Property="Margin"
                                     Value="0" />
                         </MultiDataTrigger>
+                        <DataTrigger Binding="{Binding Tag, ElementName=TabIconVisibility}"
+                                     Value="{StaticResource True }">
+                            <Setter TargetName="TabIconDesc"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabGapDesc"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabIconNotes"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabGapNotes"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabIconScreenUtil"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabGapScreenUtil"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabIconSteamScreen"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabGapSteamScreen"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabIconVideo"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabGapVideo"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabIconAchiev"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabGapAchiev"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabIconScreenVis"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabGapScreenVis"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabIconActiv"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabGapActiv"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabIconReview"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabGapReview"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabIconNews"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabGapNews"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabIconRelate"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabGapRelate"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabIconWeb"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabGapWeb"
+                                    Property="Text"
+                                    Value="" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Tag, ElementName=TabTextVisibility}"
+                                     Value="{StaticResource True }">
+                            <Setter TargetName="TabTextDesc"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabGapDesc"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabTextNotes"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabGapNotes"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabTextScreenUtil"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabGapScreenUtil"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabTextSteamScreen"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabGapSteamScreen"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabTextVideo"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabGapVideo"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabTextAchiev"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabGapAchiev"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabTextScreenVis"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabGapScreenVis"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabTextActiv"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabGapActiv"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabTextReview"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabGapReview"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabTextNews"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabGapNews"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabTextRelate"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabGapRelate"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabTextWeb"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabGapWeb"
+                                    Property="Text"
+                                    Value="" />
+                        </DataTrigger>
                         <DataTrigger Binding="{Binding Tag, ElementName=ButtonBar}"
                                      Value="{StaticResource False}">
                             <Setter TargetName="LinkBar"
