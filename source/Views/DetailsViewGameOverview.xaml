@@ -909,6 +909,9 @@
                                                         <StackPanel Orientation="Horizontal"
                                                                     IsItemsHost="True" />
                                                     </ScrollViewer>
+                                                    <Separator DockPanel.Dock="Top"
+                                                               Background="{DynamicResource WindowPanelSeparatorBrush}"
+                                                               Margin="0"/>
                                                     <ContentPresenter ContentSource="SelectedContent" />
                                                 </DockPanel>
                                             </ControlTemplate>

@@ -381,7 +381,7 @@
                                 BorderThickness="0,0,0,2"
                                 BorderBrush="{DynamicResource GlyphBrush}" />
                         <TextBlock x:Name="TextContent"
-                                   Padding="0, 5"
+                                   Padding="0, 5, 0, 4"
                                    Style="{DynamicResource BaseTextBlockStyle}"
                                    Foreground="{TemplateBinding Foreground}"
                                    Cursor="Hand">
