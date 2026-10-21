@@ -2,7 +2,6 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
                     mc:Ignorable="d">
 
     <Style TargetType="{x:Type GridViewGameOverview}">
@@ -522,6 +521,16 @@
                                                     <Setter Property="Foreground"
                                                             Value="{DynamicResource GlyphBrush}" />
                                                 </Style>
+                                                <Style x:Key="KNARZIcon"
+                                                       TargetType="TextBlock"
+                                                       BasedOn="{StaticResource BaseTextBlockStyle}">
+                                                    <Setter Property="Width"
+                                                            Value="24" />
+                                                    <Setter Property="FontFamily"
+                                                            Value="{DynamicResource KNARZfont}" />
+                                                    <Setter Property="Foreground"
+                                                            Value="{DynamicResource GlyphBrush}" />
+                                                </Style>
                                                 <Style x:Key="MdStyleIcon"
                                                        TargetType="TextBlock"
                                                        BasedOn="{StaticResource BaseTextBlockStyle}">
@@ -849,8 +858,30 @@
                                                            DockPanel.Dock="Left" />
                                             </DockPanel>
 
-                                            <Label Name="PART_ElemUserScore"
+                                            <Label Name="CUSTOM_ElemUserScore"
                                                    Grid.Row="21">
+                                                <Label.Style>
+                                                    <Style TargetType="Label">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding UserScoreVisibility}"
+                                                                         Value="Visible">
+                                                                <Setter Property="Visibility"
+                                                                        Value="Visible" />
+                                                            </DataTrigger>
+                                                            <DataTrigger Binding="{PluginStatus Plugin=felixkmh_Extras_Plugin, Path=IsInstalled}"
+                                                                         Value="True">
+                                                                <Setter Property="Visibility"
+                                                                        Value="Visible" />
+                                                            </DataTrigger>
+                                                            <DataTrigger Binding="{Settings DetailsVisibility.UserScore}"
+                                                                         Value="False">
+                                                                <Setter Property="Visibility"
+                                                                        Value="Collapsed" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </Label.Style>
                                                 <StackPanel Orientation="Horizontal">
                                                     <TextBlock Text="&#xF000;"
                                                                Style="{DynamicResource Icon}" />
@@ -860,12 +891,33 @@
                                             <DockPanel Grid.Row="21"
                                                        Grid.Column="1"
                                                        VerticalAlignment="Center">
+                                                <DockPanel.Style>
+                                                    <Style TargetType="DockPanel">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding UserScoreVisibility}"
+                                                                         Value="Visible">
+                                                                <Setter Property="Visibility"
+                                                                        Value="Visible" />
+                                                            </DataTrigger>
+                                                            <DataTrigger Binding="{PluginStatus Plugin=felixkmh_Extras_Plugin, Path=IsInstalled}"
+                                                                         Value="True">
+                                                                <Setter Property="Visibility"
+                                                                        Value="Visible" />
+                                                            </DataTrigger>
+                                                            <DataTrigger Binding="{Settings DetailsVisibility.UserScore}"
+                                                                         Value="False">
+                                                                <Setter Property="Visibility"
+                                                                        Value="Collapsed" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </DockPanel.Style>
                                                 <StackPanel Visibility="{PluginStatus Plugin=felixkmh_Extras_Plugin, Status=Installed}"
                                                             VerticalAlignment="Center"
                                                             DockPanel.Dock="Left"
                                                             Margin="0,0,5,0">
-                                                    <ContentControl x:Name="ThemeExtras_UserRating"
-                                                                    Visibility="{Binding UserScoreVisibility}" />
+                                                    <ContentControl x:Name="ThemeExtras_UserRating" />
                                                 </StackPanel>
                                                 <TextBlock Name="PART_TextUserScore"
                                                            VerticalAlignment="Center"
@@ -966,9 +1018,9 @@
                                                 <TextBlock Style="{DynamicResource DetailsViewTabHeaderStyle}"
                                                            ToolTip="{DynamicResource LOCGameDescriptionTitle}">
                                                     <Run Name="TabIconDesc"
-                                                         Text="&#xeb2a;"                                                             
+                                                         Text="&#xf116;"                                                             
                                                          FontWeight="Normal"
-                                                         FontFamily="{StaticResource FontIcoFont}"/><Run Name="TabGapDesc"
+                                                         FontFamily="{DynamicResource KNARZfont}"/><Run Name="TabGapDesc"
                                                          Text=" "/><Run Name="TabTextDesc"
                                                          Text="{DynamicResource LOCGameDescriptionTitle}"/>
                                                 </TextBlock>
@@ -990,9 +1042,9 @@
                                                 <TextBlock Style="{DynamicResource DetailsViewTabHeaderStyle}"
                                                            ToolTip="{DynamicResource LOCNotesLabel}">
                                                     <Run Name="TabIconNotes"
-                                                         Text="&#xefaa;"                                                             
+                                                         Text="&#xf117;"                                                             
                                                          FontWeight="Normal"
-                                                         FontFamily="{StaticResource FontIcoFont}"/><Run Name="TabGapNotes"
+                                                         FontFamily="{DynamicResource KNARZfont}"/><Run Name="TabGapNotes"
                                                          Text=" "/><Run Name="TabTextNotes"
                                                          Text="{DynamicResource LOCNotesLabel}"/>
                                                 </TextBlock>
@@ -1042,9 +1094,9 @@
                                                 <TextBlock Style="{DynamicResource DetailsViewTabHeaderStyle}"
                                                            ToolTip="{DynamicResource LOC_ScreenshotUtilities_ControlLabel}">
                                                     <Run Name="TabIconScreenUtil"
-                                                         Text="&#xef4b;"                                                             
+                                                         Text="&#xf118;"                                                             
                                                          FontWeight="Normal"
-                                                         FontFamily="{StaticResource FontIcoFont}"/><Run Name="TabGapScreenUtil"
+                                                         FontFamily="{StaticResource KNARZfont}"/><Run Name="TabGapScreenUtil"
                                                          Text=" "/><Run Name="TabTextScreenUtil"
                                                          Text="{DynamicResource LOC_ScreenshotUtilities_ControlLabel}"/>
                                                 </TextBlock>
@@ -1064,9 +1116,9 @@
                                                 <TextBlock Style="{DynamicResource DetailsViewTabHeaderStyle}"
                                                            ToolTip="{DynamicResource LOC_SteamScreenshots_SteamScreenshotsLabel}">
                                                     <Run Name="TabIconSteamScreen"
-                                                         Text="&#xef4b;"                                                             
+                                                         Text="&#xf118;"                                                             
                                                          FontWeight="Normal"
-                                                         FontFamily="{StaticResource FontIcoFont}"/><Run Name="TabGapSteamScreen"
+                                                         FontFamily="{StaticResource KNARZfont}"/><Run Name="TabGapSteamScreen"
                                                          Text=" "/><Run Name="TabTextSteamScreen"
                                                          Text="{DynamicResource LOC_SteamScreenshots_SteamScreenshotsLabel}"/>
                                                 </TextBlock>
@@ -1183,9 +1235,9 @@
                                                 <TextBlock Style="{DynamicResource DetailsViewTabHeaderStyle}"
                                                            ToolTip="{DynamicResource LOCGameActivityTitle}">
                                                     <Run Name="TabIconActiv"
-                                                         Text="&#xe979;"                                                             
+                                                         Text="&#xf114;"                                                             
                                                          FontWeight="Normal"
-                                                         FontFamily="{StaticResource FontIcoFont}"/><Run Name="TabGapActiv"
+                                                         FontFamily="{StaticResource KNARZfont}"/><Run Name="TabGapActiv"
                                                          Text=" "/><Run Name="TabTextActiv"
                                                          Text="{DynamicResource LOCGameActivityTitle}"/>
                                                 </TextBlock>
@@ -1204,9 +1256,9 @@
                                                 <TextBlock Style="{DynamicResource DetailsViewTabHeaderStyle}"
                                                            ToolTip="{DynamicResource LOCReview_Viewer_ReviewsLabel}">
                                                     <Run Name="TabIconReview"
-                                                         Text="&#xf00c;"                                                             
+                                                         Text="&#xf119;"                                                             
                                                          FontWeight="Normal"
-                                                         FontFamily="{StaticResource FontIcoFont}"/><Run Name="TabGapReview"
+                                                         FontFamily="{StaticResource KNARZfont}"/><Run Name="TabGapReview"
                                                          Text=" "/><Run Name="TabTextReview"
                                                          Text="{DynamicResource LOCReview_Viewer_ReviewsLabel}"/>
                                                 </TextBlock>
@@ -1254,8 +1306,15 @@
                                         <!--#region CheckDlc-->
                                         <TabItem Visibility="{PluginSettings Plugin=CheckDlc, Path=HasData, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
                                             <TabItem.Header>
-                                                <TextBlock Text="DLC"
-                                                           Style="{DynamicResource DetailsViewTabHeaderStyle}" />
+                                                <TextBlock Style="{DynamicResource DetailsViewTabHeaderStyle}"
+                                                           ToolTip="DLC">
+                                                    <Run Name="TabIconDLC"
+                                                         Text="&#xf115;"                                                             
+                                                         FontWeight="Normal"
+                                                         FontFamily="{StaticResource KNARZfont}"/><Run Name="TabGapDLC"
+                                                         Text=" "/><Run Name="TabTextDLC"
+                                                         Text="DLC"/>
+                                                </TextBlock>
                                             </TabItem.Header>
                                             <StackPanel Orientation="Vertical"
                                                         Margin="0,15,0,0">
@@ -1285,7 +1344,7 @@
                                                 <TextBlock Style="{DynamicResource DetailsViewTabHeaderStyle}"
                                                            ToolTip="{DynamicResource LOCGameRelations_RelatedGamesLabel}">
                                                     <Run Name="TabIconRelate"
-                                                         Text="&#xe824;"                                                             
+                                                         Text="&#xe97b;"                                                             
                                                          FontWeight="Normal"
                                                          FontFamily="{StaticResource FontIcoFont}"/><Run Name="TabGapRelate"
                                                          Text=" "/><Run Name="TabTextRelate"
@@ -1368,9 +1427,9 @@
                                                 <TextBlock Style="{DynamicResource DetailsViewTabHeaderStyle}"
                                                            ToolTip="{DynamicResource LOCWebExplorer_WebLabel}">
                                                     <Run Name="TabIconWeb"
-                                                         Text="&#xf028;"                                                             
+                                                         Text="&#xf102;"                                                             
                                                          FontWeight="Normal"
-                                                         FontFamily="{StaticResource FontIcoFont}"/><Run Name="TabGapWeb"
+                                                         FontFamily="{StaticResource KNARZfont}"/><Run Name="TabGapWeb"
                                                          Text=" "/><Run Name="TabTextWeb"
                                                          Text="{DynamicResource LOCWebExplorer_WebLabel}"/>
                                                 </TextBlock>
@@ -1497,6 +1556,12 @@
                             <Setter TargetName="TabGapNews"
                                     Property="Text"
                                     Value="" />
+                            <Setter TargetName="TabIconDLC"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabGapDLC"
+                                    Property="Text"
+                                    Value="" />
                             <Setter TargetName="TabIconRelate"
                                     Property="Text"
                                     Value="" />
@@ -1570,6 +1635,12 @@
                                     Property="Text"
                                     Value="" />
                             <Setter TargetName="TabGapNews"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabTextDLC"
+                                    Property="Text"
+                                    Value="" />
+                            <Setter TargetName="TabGapDLC"
                                     Property="Text"
                                     Value="" />
                             <Setter TargetName="TabTextRelate"

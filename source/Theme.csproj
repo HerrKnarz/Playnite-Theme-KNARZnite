@@ -79,6 +79,7 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <None Include="KNARZIconFont.ttf" />
     <None Include="theme.yaml" />
     <None Include="themeExtras.yaml" />
     <None Include="thememodifier.yaml" />
