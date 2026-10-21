@@ -43,7 +43,7 @@ The following extensions are currently integrated:
 - [Game Relations](https://playnite.link/addons.html#GameRelations_a4c15d63-9ab4-4d96-9a0c-8f9b35d43a1f) - tab
 - [GOG Second Class Game Watcher](https://playnite.link/addons.html#GOGSecondClassGameWatcher_2661ddac-946a-4fee-ba80-3ece762cb64b) - button for games with issues on GOG
 - [HowLongToBeat](https://playnite.link/addons.html#playnite-howlongtobeat-plugin) - button and progress bar
-- [ImageRotater](https://playnite.link/addons.html#ImageRotater.72b7d457-0621-429b-8368-665bc53ff896) - background and cover slideshow - preferred alternative to BackgroundChanger. Don't use both together!
+- [ImageRotater](https://playnite.link/addons.html#ImageRotater.72b7d457-0621-429b-8368-665bc53ff896) - background, cover and logo slideshow - preferred alternative to BackgroundChanger. Don't use both together! For logos Extra Metadata Loader is needed as well.
 - [LibraryManagement](https://playnite.link/addons.html#playnite-librarymanagement-plugin) - displays feature icons in detail and grid view
 - [Metadata Utilities](https://playnite.link/addons.html#MetadataUtilities_485ab5f0-bfb1-4c17-93cc-20d8338673be) - displays age ratings, categories, features, genres, series and tags in its own controls
 - [PlayniteAchievements](https://playnite.link/addons.html#PlayniteAchievements) - button and tab, if game has achievements. Replaces SuccessStory!
