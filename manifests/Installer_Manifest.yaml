@@ -3,7 +3,7 @@ Packages:
   - Version: 2.11.0
     RequiredApiVersion: 2.10
     ReleaseDate: 2026-10-21
-    PackageUrl: https://github.com/HerrKnarz/Playnite-Theme-KNARZnite/releases/download/v2.11.0/KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9_2_11_0.pthm
+    PackageUrl: https://github.com/HerrKnarz/Playnite-Theme-KNARZnite/releases/download/2.11.0/KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9_2_11_0.pthm
     Changelog:
       - Added support for VNDB addon displaying a VNDB tab in the details pane for supported games.
       - Added ImageRotater logo support.
