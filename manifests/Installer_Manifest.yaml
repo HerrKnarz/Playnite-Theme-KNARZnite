@@ -1,5 +1,17 @@
 AddonId: KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9
 Packages:
+  - Version: 2.11.0
+    RequiredApiVersion: 2.10
+    ReleaseDate: 2026-10-21
+    PackageUrl: https://github.com/HerrKnarz/Playnite-Theme-KNARZnite/releases/download/v2.11.0/KNARZnite_68cee656-e677-42ab-a33e-9d9e6dfbefb9_2_11_0.pthm
+    Changelog:
+      - Added support for VNDB addon displaying a VNDB tab in the details pane for supported games.
+      - Added ImageRotater logo support.
+      - Fixed faulty logo positioning on the background image. ATTENTION - due to that change you need to adjust the "Vertical spacing to game details" setting in the Details View section to a higher value.
+      - Added optional icons to the detail tabs. You can disable icons or text using the ThemeModifier addon.
+      - Added subtle divider line between tab headers and content.
+      - fixed background still visible when it's disabled in the settings
+      - fixed DuplicateHider icons and background context menu not visible when the game has no background
   - Version: 2.10.1
     RequiredApiVersion: 2.10
     ReleaseDate: 2026-10-04
